@@ -1,7 +1,4 @@
 oid;material
-33;Marmol
-34;Marmol blanco
-35;Marmol
 4;Bronce
 6;Marmol
 10;Madera
@@ -14,3 +11,6 @@ oid;material
 21;Marmol
 27;Bronce
 28;Flores [] (arreglos florales)
+33;Marmol
+34;Marmol blanco
+35;Marmol
