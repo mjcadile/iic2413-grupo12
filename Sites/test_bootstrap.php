@@ -14,21 +14,25 @@
   <div class="panel panel-default">
     <div class="panel-heading text-center">
       <h2>DCConsultas</h2>
+      <br>
     </div>
     <div class="panel-body">
       <h4 name="Consulta 1">Mostrar todos los nombres distintos de las obras de arte:</h4>
+      <button name="consulta1">Consultar</button>
       <br>
       <br>
       <h4 name="Consulta 2">Mostrar todos los nombres de las plazas que contengan al menos una escultura de "Gian Lorenzo Bernini":</h4>
+      <button name="consulta2">Consultar</button>
       <br>
       <br>
       <h4>Ingrese el nombre de un país</h4>
       <h5> A continuación se muestra el nombre de todos los museos de ese país que tengan obras del renacimiento.</h5>
       <input type="text" class="form-control" name="Consulta 3">
+      <button name="consulta3">Consultar</button>
       <br>
       <br>
       <h4>Para cada artista, se despliega su nombre y el número de obras en las que ha participado.</h4>
-      <input type="text" class="form-control" name="Consulta 4">
+      <button name="consulta4">Consultar</button>
       <br>
       <br>
       <h4>Ingrese una hora de apertura en formato hh:mm:ss, una hora de cierre y una ciudad.</h4>
@@ -36,13 +40,15 @@
       ubicadas en esa ciudad, abiertas entre esas horas (inclusive) 
       junto a todos los nombres de los frescos que encuentra en cada una de ellas.</h5>
       <input type="text" class="form-control" name="Consulta 5">
+      <button name="consulta5">Consultar</button>
       <br>
       <br>
       <h4>Se despliega el nombre de cada museo, plaza o iglesia que tenga obras de todos los periodos del arte que existan en nuestro registro</h4>
-      <input type="text" class="form-control" name="Consulta 6">
+      <button name="consulta6">Consultar</button>
       <br>
       <br>
     </div>
+    <div class="panel-footer"></div>
   </div>
 </div>
 
