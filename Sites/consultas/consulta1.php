@@ -1,9 +1,10 @@
 <?php include('../templates/header.html');   ?>
 </head >
 <style>
-body  {
+div {
   background-image: url('consultas/galery.png');
 }
+
 h1 {text-align: center;}
 p {text-align: center;}
 img {
