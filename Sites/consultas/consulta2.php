@@ -23,7 +23,7 @@
 
   <table>
     <tr>
-      <th>nombres</th>
+      <th>Nombres</th>
     </tr>
   
       <?php
