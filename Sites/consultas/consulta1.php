@@ -1,16 +1,14 @@
 <?php include('../templates/header.html');   ?>
 </head >
 <style>
-style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');">
-
 h1 {text-align: center;}
 p {text-align: center;}
 </style>
 
-<h1>Distintas obras de arte1</h1>
+<h1>Distintas obras de arte 2</h1>
 
 <body>
-<div style="background-image:url('consultas/galery.png');">
+<div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');">
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
