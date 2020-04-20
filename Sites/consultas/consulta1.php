@@ -1,5 +1,9 @@
 <?php include('../templates/header.html');   ?>
-</head style="text-align:center">
+</head >
+<style>
+h1 {text-align: center;}
+p {text-align: center;}
+</style>
 
 <h1>Distintas obras de arte</h1>
 
