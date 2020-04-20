@@ -6,28 +6,37 @@
   require("../config/conexion.php");
 
   #Se obtiene el valor del input del usuario
-  $altura = $_POST["altura"];
-  $altura = intval($altura);
+  $h_apertura = $_POST["h_apertura"];
+  $h_cierre = $_POST["h_cierre"];
+  $ciudad = $_POST["ciudad"];
+  $searchVal = array("á", "é", "í", "ó", "ú", 'Á', "É", "Í", "Ó", "Ú");
+  $replaceVal = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U");
+  $ciudad = str_replace($searchVal, $replaceVal, $ciudad);
+  $ciudad= strtolower($ciudad);
 
   #Se construye la consulta como un string
- 	$query = "SELECT id, nombre, altura FROM ejercicio_ayudantia where altura>=$altura order by altura desc;";
+ 	$query = "SELECT Iglesias.nombre, Frescos.nombre FROM 
+   (SELECT Lugares.lid, Lugares.nombre FROM Iglesias, Lugares,Ciudades 
+   WHERE Iglesias.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND 
+   Iglesias.horario_apertura <= '$h_apertura' AND Iglesias.horario_cierre >= '$h_cierre' 
+   AND LOWER(Ciudades.nombre) LIKE LOWER('%$ciudad%')) AS Iglesias, (SELECT * FROM 
+   Frescos, Obras WHERE Frescos.oid = Obras.oid) AS Frescos WHERE Frescos.lid = Iglesias.lid;";
 
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result = $db -> prepare($query);
 	$result -> execute();
-	$pokemones = $result -> fetchAll();
+	$tupla = $result -> fetchAll();
   ?>
 
   <table>
     <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Altura</th>
+      <th>Nombre Iglesia</th>
+      <th>Nombre Fresco</th>
     </tr>
   
       <?php
-        foreach ($pokemones as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
+        foreach ($tupla as $t) {
+          echo "<tr><td>$t[0]</td><td>$t[1]</td></tr>";
       }
       ?>
       
