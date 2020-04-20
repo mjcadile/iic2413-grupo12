@@ -10,11 +10,11 @@
   #$altura = intval($altura);
 
   #Se construye la consulta como un string
-  $query = SELECT Plazas.nombre FROM (SELECT 
+  $query = "SELECT Plazas.nombre FROM (SELECT 
   Lugares.lid, Lugares.nombre FROM Lugares, Plazas WHERE Plazas.lid = Lugares.lid) as 
   Plazas,  (SELECT Esculturas.oid, Obras.lid FROM Esculturas, Obras, Hecha_por, 
   Artistas WHERE Artistas.nombre = 'Gian Lorenzo Bernini' AND Esculturas.oid = Hecha_por.oid AND 
-  Hecha_por.aid = Artistas.aid AND Obras.oid = Esculturas.oid) as Foo WHERE Foo.lid = Plazas.lid;
+  Hecha_por.aid = Artistas.aid AND Obras.oid = Esculturas.oid) as Foo WHERE Foo.lid = Plazas.lid;";
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result = $db -> prepare($query);
 	$result -> execute();
