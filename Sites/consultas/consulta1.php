@@ -5,7 +5,7 @@ h1 {text-align: center;}
 p {text-align: center;}
 </style>
 
-<h1>Distintas obras de arte</h1>
+<h1>Distintas obras de arte1</h1>
 
 <body>
 <body background="galery.jpgf">
