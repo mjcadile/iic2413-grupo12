@@ -3,6 +3,9 @@
 <style>
 h1 {text-align: center;}
 p {text-align: center;}
+img {
+  opacity: 0.5;
+}
 </style>
 
 <h1>Distintas obras de arte12</h1>
