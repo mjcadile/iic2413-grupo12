@@ -2,7 +2,7 @@
 </head >
 <style>
 div {
-  background-image: url("https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg");
+  background-image: url(https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg);
 }
 h1 {text-align: center;}
 p {text-align: center;}
