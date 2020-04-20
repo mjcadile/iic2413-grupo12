@@ -2,17 +2,13 @@
 </head >
 <style>
 div {
-  background-image: url('consultas/galery.png');
+  background-image: url('galery.png');
 }
-
 h1 {text-align: center;}
 p {text-align: center;}
-img {
-  opacity: 0.5;
-}
 </style>
 
-<h1>Distintas obras de arte12</h1>
+<h1>Distintas obras de arte3</h1>
 
 <body>
 <div style="background-image:url('consultas/galery.png');">
