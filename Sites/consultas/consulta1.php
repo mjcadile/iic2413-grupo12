@@ -5,10 +5,10 @@ h1 {text-align: center;}
 p {text-align: center;}
 </style>
 
-<h1>Distintas obras de arte1</h1>
+<h1>Distintas obras de arte12</h1>
 
 <body>
-<div style="background-image:url('["galery.jpgf"]');">
+<div style="background-image:url('["https://www.todocuadros.com/imagenes/museos/bellas-artes-boston/1500/galeria-museo-boston.jpg"]');">
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
