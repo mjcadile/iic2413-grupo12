@@ -30,8 +30,6 @@
       <div class="row">
         <div class="col-sm">
           <h5 name="Consulta 1">Mostrar todos los nombres distintos de las obras de arte:</h5>
-        </div>
-        <div class="col-sm">
           <button class="btn btn-primary" name="consulta1">Consultar</button>
         </div>
       </div>
