@@ -2,7 +2,7 @@
 </head >
 <style>
 div {
-  background-image: url("consultas/galery.gif");
+  background-image: url("galery.gif");
 }
 h1 {text-align: center;}
 p {text-align: center;}
