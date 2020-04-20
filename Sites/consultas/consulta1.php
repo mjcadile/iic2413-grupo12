@@ -10,24 +10,22 @@
   #$altura = intval($altura);
 
   #Se construye la consulta como un string
- 	$query = "SELECT id, nombre, altura FROM ejercicio_ayudantia where altura>=$altura order by altura desc;";
-
+ 	$query = "SELECT DISTINCT Obras.nombre FROM Obras;";
+   
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	$result = $db -> prepare($query);
 	$result -> execute();
-	$pokemones = $result -> fetchAll();
+	$nombres = $result -> fetchAll();
   ?>
 
   <table>
     <tr>
-      <th>ID</th>
       <th>Nombre</th>
-      <th>Altura</th>
     </tr>
   
       <?php
-        foreach ($pokemones as $p) {
-          echo "<tr><td>$p[0]</td><td>$p[1]</td><td>$p[2]</td></tr>";
+        foreach ($nombre as $n) {
+          echo "<tr><td>$p[0]</td></tr>";
       }
       ?>
       
