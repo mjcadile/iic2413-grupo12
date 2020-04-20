@@ -2,13 +2,13 @@
 </head >
 <style>
 div {
-  background-image: url("galery.gif");
+  background-image: url("https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg");
 }
 h1 {text-align: center;}
 p {text-align: center;}
 </style>
 
-<h1>Distintas obras de arte2</h1>
+<h1>Distintas obras de arte3</h1>
 
 <body>
 <div style="background-image:url('consultas/galery.png');">
