@@ -11,7 +11,7 @@ img {
 <h1>Distintas obras de arte12</h1>
 
 <body>
-<div style="background-image:url('https://www.todocuadros.com/imagenes/museos/bellas-artes-boston/1500/galeria-museo-boston.jpg');">
+<div style="background-image:url('consultas/galery.png');">
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
