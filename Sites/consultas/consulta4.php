@@ -27,7 +27,7 @@
     </tr>
   
       <?php
-        foreach ($tuplas as $t) {
+        foreach ($tupla as $t) {
           echo "<tr><td>$t[0]</td><td>$t[1]</td></tr>";
       }
       ?>
