@@ -8,7 +8,7 @@ p {text-align: center;}
 <h1>Distintas obras de arte1</h1>
 
 <body>
-<body background="galery.jpgf">
+<div style="background-image:url('["galery.jpgf"]');">
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
