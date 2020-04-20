@@ -31,7 +31,7 @@
     </tr>
   
       <?php
-        foreach ($nomres as $n) {
+        foreach ($nombres as $n) {
           echo "<tr><td>$p[0]</td></tr>";
       }
       ?>
