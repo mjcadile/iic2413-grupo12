@@ -1,4 +1,5 @@
-<?php include('templates/header.html');   ?>
+<?php include('templates/header.html');  
+# http://codd.ing.puc.cl/~grupo12/index_copia.php? ?>
 
 <body>
   <h1 align="center">DCConsultas </h1>
@@ -7,7 +8,7 @@
 
   <br>
 
-  <h3 align="center"> Mostrar todos los nombres distintos de las obras de arte:</h3>
+  <h4 align="center"> Mostrar todos los nombres distintos de las obras de arte:</h4>
 
   <form align="center" action="consultas/consulta1.php" method="post">
     <input type="submit" class="btn btn-primary" value="Consultar">
@@ -17,8 +18,8 @@
   <br>
   <br>
 
-  <h3 align="center"> Mostrar todos los nombres de las plazas que 
-          contengan al menos una escultura de "Gian Lorenzo Bernini":</h3>
+  <h4 align="center"> Mostrar todos los nombres de las plazas que 
+          contengan al menos una escultura de "Gian Lorenzo Bernini":</h4>
 
   <form align="center" action="consultas/consulta2.php" method="post">
     <br/><br/>
@@ -29,8 +30,8 @@
   <br>
   <br>
 
-  <h3 align="center"> A continuación se muestra el nombre de todos los museos 
-          de un país que tenga obras del renacimiento.</h3>
+  <h4 align="center"> A continuación se muestra el nombre de todos los museos 
+          de un país que tenga obras del renacimiento.</h4>
 
   <form align="center" action="consultas/consulta3.php" method="post">
     Ingrese el nombre del país que quiera consultar:
@@ -42,7 +43,7 @@
   <br>
   <br>
 
-  <h3 align="center">Para cada artista, se despliega su nombre y el número de obras en las que ha participado.</h3>
+  <h4 align="center">Para cada artista, se despliega su nombre y el número de obras en las que ha participado.</h4>
 
   <?php
   #Primero obtenemos todos los tipos de pokemones
@@ -62,9 +63,9 @@
   <br>
   <br>
 
-  <h3 align="center"> A continuación se muestran los nombres de las iglesias 
+  <h4 align="center"> A continuación se muestran los nombres de las iglesias 
           ubicadas en cierta ciudad, abiertas entre ciertas horas (inclusive) 
-          junto a todos los nombres de los frescos que se encuentran en cada una de ellas.</h3>
+          junto a todos los nombres de los frescos que se encuentran en cada una de ellas.</h4>
 
   <form align="center" action="consultas/consulta5.php" method="post">
     Ingrese una hora de apertura (formato hh:mm:ss):
@@ -83,8 +84,8 @@
   <br>
   <br>
 
-  <h3 align="center"> Se despliega el nombre de cada museo, plaza o iglesia 
-          que tenga obras de todos los periodos del arte que existan en nuestro registro</h3>
+  <h4 align="center"> Se despliega el nombre de cada museo, plaza o iglesia 
+          que tenga obras de todos los periodos del arte que existan en nuestro registro</h4>
 
   <form align="center" action="consultas/consulta6.php" method="post">
     <br/><br/>
