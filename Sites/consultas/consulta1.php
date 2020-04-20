@@ -1,4 +1,7 @@
 <?php include('../templates/header.html');   ?>
+</head style="text-align:center">
+
+<h1>Distintas obras de arte</h1>
 
 <body>
 <?php
@@ -18,7 +21,7 @@
 	$nombres = $result -> fetchAll();
   ?>
 
-  <table>
+  <table border="1", align="center">
     <tr>
       <th>Nombre</th>
     </tr>
