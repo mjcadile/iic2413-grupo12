@@ -32,7 +32,7 @@
   
       <?php
         foreach ($nombres as $n) {
-          echo "<tr><td>$p[0]</td></tr>";
+          echo "<tr><td>$n[0]</td></tr>";
       }
       ?>
       
