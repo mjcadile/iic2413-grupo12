@@ -7,7 +7,7 @@ hr.new1 {
 </style>
 <body>
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" id="bg" alt="">
-    <div class="card">
+    <div class="card border-info mb-4">
         <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" alt="Card image cap">
         <div class="card-body">
             <h2 class="card-title">DCConsultas</h2>
@@ -17,7 +17,7 @@ hr.new1 {
 
 
 <!--Consulta1!-->
-    <div class="card border-info mb-3">
+    <div class="card text-center border-info mb-6">
         <div class="card-header">
             Consulta 1
         </div>
@@ -34,7 +34,7 @@ hr.new1 {
         </div>
     </div>
 <!--Consulta2!-->
-    <div class="card text-center border-info mb-3">
+    <div class="card text-center border-info mb-6">
         <div class="card-header">
             Consulta 2
         </div>
@@ -51,7 +51,7 @@ hr.new1 {
         </div>
     </div>
 <!--Consulta3!-->
-    <div class="card text-right border-info mb-3">
+    <div class="card text-center border-info mb-6">
         <div class="card-header">
             Consulta 3
         </div>
@@ -71,7 +71,7 @@ hr.new1 {
         </div>
     </div>
 <!--Consulta4!-->
-    <div class="card text-center border-info mb-3">
+    <div class="card text-center border-info mb-6">
             <div class="card-header">
                 Consulta 4
             </div>
@@ -88,7 +88,7 @@ hr.new1 {
             </div>
         </div>
 <!--Consulta5!-->
-    <div class="card border-info mb-3">
+    <div class="card text-center border-info mb-6">
             <div class="card-header">
                 Consulta 5
             </div>
@@ -119,7 +119,7 @@ hr.new1 {
             </div>
     </div>
 <!--Consulta6!-->
-    <div class="card text-center border-info mb-3">
+    <div class="card text-center border-info mb-6">
             <div class="card-header">
                 Consulta 6
             </div>
