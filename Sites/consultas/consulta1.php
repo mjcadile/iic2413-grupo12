@@ -2,7 +2,7 @@
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
-  <img src="https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg" id="bg" alt="">
+  <img src="https://d2jv9003bew7ag.cloudfront.net/uploads/MoCP-Chicago.jpg" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
