@@ -4,8 +4,8 @@
 <body>
 <img src="https://i.pinimg.com/564x/97/b4/36/97b43628eff3af035ea54ea218bd936a.jpg" id="bg" alt="">
 
-  <h1 align="center" style="font-size:50px;" style="color:white;">DCConsultas </h1>
-  <p class="lead" style="text-align:center;" style="color:white;">En esta página podrás encontrar información sobre obras de arte
+  <h1 align="center" style="font-size:50px;color:white;">DCConsultas </h1>
+  <p class="lead" style="text-align:center; color:white;">En esta página podrás encontrar información sobre obras de arte
   alrededor del mundo. <br>Hecho por José Baboun y Matías Cadile. <br/>Grupo12</p>
 
   <br>
