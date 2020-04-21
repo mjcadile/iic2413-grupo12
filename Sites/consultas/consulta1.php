@@ -1,11 +1,4 @@
 <?php include('../templates/header.html');   ?>
-<!--style>
-header {
-    background-color: blue;
-}
-h1 {text-align: center;}
-p {text-align: center;}
-</style!-->
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
@@ -29,7 +22,7 @@ p {text-align: center;}
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white bg-danger" scope="col">Nombres</th>
+                <th class="text-white bg-danger" scope="col">Nombre Obra</th>
               </tr>
             </thead>
             <tbody>
