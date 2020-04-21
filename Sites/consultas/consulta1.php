@@ -28,9 +28,9 @@ p {text-align: center;}
 	$result -> execute();
 	$nombres = $result -> fetchAll();
   ?>
-
-<table id="dtConsulta1" class="table tabel-striped table-bordered table-dark table-sm" cellspacing="0" 
-  width="100%" border="1", align="center">
+<div class="contanier">
+  <table id="dtConsulta1" class="table tabel-striped table-bordered table-dark table-sm" cellspacing="0" 
+    width="100%" border="1", align="center">
     <thead>
       <tr>
         <th class="th-sm">Nombres</th>
@@ -50,5 +50,6 @@ p {text-align: center;}
       </tr>
     </tfoot>
   </table>
+</div>
 
 <?php include('../templates/footer.html'); ?>
