@@ -16,20 +16,11 @@ body {
 h3 {
     font: 300 14px/1.5 "Oxygen", sans-serif;
     padding: 20px;
-    color: darkseagreen;
 }
 
 .table{
     margin: auto;
     width: 50% !important;
-}
-
-thead {
-    color: lightsalmon;
-}
-
-tbody {
-    color: slategray;
 }
 
 .table th {

@@ -23,19 +23,19 @@ p {text-align: center;}
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom text-white mb-8">Todos los nombres distintos de obras de arte</h2>
+      <h2 class="text-center rounded-bottom table-success text-white mb-8">Todos los nombres distintos de obras de arte</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white" scope="col">Nombres</th>
+                <th class="text-white table-danger" scope="col">Nombres</th>
               </tr>
             </thead>
             <tbody>
               <?php
                 foreach ($nombres as $n) {
-                  echo "<tr class='text-white'>
+                  echo "<tr class='table-dark text-white'>
                           <td>$n[0]</td>
                         </tr>";
                 }
