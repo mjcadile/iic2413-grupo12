@@ -2,11 +2,11 @@
 # http://codd.ing.puc.cl/~grupo12/index_copia.php? ?>
 
 <body>
-<img src="https://www.archdaily.mx/mx/02-9041/galeria-de-arte-patricia-ready-izquierdo-y-lehmann-eltonleniz/512726d7b3fc4b11a7000f05-patricia-ready-art-gallery-izquierdo-y-lehmann-elton-leniz-photo" id="bg" alt="">
+<img src="https://images.adsttc.com/media/images/5127/26d7/b3fc/4b11/a700/0f05/slideshow/1777904550_v05.jpg?1414349059" id="bg" alt="">
 
   <h1 align="center">DCConsultas </h1>
   <p class="lead" style="text-align:center;">En esta página podrás encontrar información sobre obras de arte
-  alrededor del mundo. Hecho por José Baboun y Matías Cadile, grupo12</p>
+  alrededor del mundo. <br>Hecho por José Baboun y Matías Cadile. <br/>Grupo12</p>
 
   <br>
 
