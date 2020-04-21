@@ -23,7 +23,7 @@ p {text-align: center;}
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h2 class="text-center rounded-pill bg-success text-white mb-5">Distintas obras de arte</h2>
+      <h2 class="text-center rounded-pill bg-success text-white mb-8">Todos los nombres distintos de obras de arte</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
