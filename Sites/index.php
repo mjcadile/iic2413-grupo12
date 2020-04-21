@@ -2,6 +2,8 @@
 # http://codd.ing.puc.cl/~grupo12/index_copia.php? ?>
 
 <body>
+<img src="https://www.archdaily.mx/mx/02-9041/galeria-de-arte-patricia-ready-izquierdo-y-lehmann-eltonleniz/512726d7b3fc4b11a7000f05-patricia-ready-art-gallery-izquierdo-y-lehmann-elton-leniz-photo" id="bg" alt="">
+
   <h1 align="center">DCConsultas </h1>
   <p class="lead" style="text-align:center;">En esta página podrás encontrar información sobre obras de arte
   alrededor del mundo. Hecho por José Baboun y Matías Cadile, grupo12</p>
