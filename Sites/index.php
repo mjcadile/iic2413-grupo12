@@ -1,15 +1,22 @@
 <?php include('templates/header.html');  
 # http://codd.ing.puc.cl/~grupo12/index_copia.php? ?>
-
+<style>
+/* Red border */
+hr.new1 {
+  border-top: 2px solid white;
+}
+</style>
 <body>
 <img src="http://www.pxleyes.com/images/tutorials/submissionsteps/fullsize/1658_step3_4b35a144b19b5.jpg" id="bg" alt="">
 
-  <h1 align="center" style="font-size:50px;color:white;">DCConsultas </h1>
+  <h1 align="center" style="font-size:50px;color:white;"> <b>DCConsultas <b></h1>
   <p class="lead" style="text-align:center; color:white;">En esta página podrás encontrar información sobre obras de arte
   alrededor del mundo. <br>Hecho por José Baboun y Matías Cadile. <br/>Grupo12</p>
 
   <br>
-  <hr>
+  <hr class="new1">
+  <br>
+  <br>
   <h4 align="center" style="color:white;"> Mostrar todos los nombres distintos de las obras de arte:</h4>
 
   <form align="center" action="consultas/consulta1.php" method="post">
@@ -35,7 +42,7 @@
   <h4 align="center" style="color:white;"> A continuación se muestra el nombre de todos los museos 
           de un país que tenga obras del renacimiento.</h4>
 
-  <form align="center" action="consultas/consulta3.php" method="post">
+  <form align="center" action="consultas/consulta3.php" method="post" style="color:white;">
     Ingrese el nombre del país que quiera consultar:
     <input type="text" class="form-control form-rounded" name="pais">
     <br/><br/>
