@@ -8,14 +8,8 @@ h3 {
 
 .table td, .table th {
     padding: 20px;
-}
-
-th {
-    width: fit-content;
-}
-
-td {
-    width: auto;
+    width: max-content;
+    text-align: center;
 }
 
 form {
