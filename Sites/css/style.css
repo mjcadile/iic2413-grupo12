@@ -34,20 +34,10 @@ form {
 
 .scrollable{
     height: 400px;
-    width: 50%;
+    width: auto;
     overflow: scroll;
 }
 
 .form-rounded {
     border-radius: 1rem;
-}
-
-.table-fixed tbody {
-    overflow-y: auto;
-}
-.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
-    display: block;
-}
-.table-fixed tbody td, .table-fixed thead > tr> th {
-    border-bottom-width: 0;
 }

@@ -26,7 +26,7 @@ p {text-align: center;}
       <h2 class="text-center rounded-pill bg-success text-white mb-5">Distintas obras de arte</h2>
       <div class="scrollable">
         <div class="table-responsive">
-          <table class="table table-bordered table-fixed table-hover table-striped text-center table-dark">
+          <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
                 <th class="bg-danger text-white" scope="col">Nombres</th>
