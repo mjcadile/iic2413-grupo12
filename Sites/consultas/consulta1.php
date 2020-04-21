@@ -1,14 +1,16 @@
 <?php include('../templates/header.html');   ?>
 </head >
 <style>
+header {
+    background-color: blue;
+}
 h1 {text-align: center;}
 p {text-align: center;}
 </style>
 
-<h1>Distintas obras de arte 2</h1>
+<h1>Distintas obras de arte </h1>
 
 <body>
-<h1 style="colour: blue; font-size:16px">Big Heading</h1>
 <div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');">
 <?php
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
