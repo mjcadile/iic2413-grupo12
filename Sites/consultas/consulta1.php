@@ -26,9 +26,9 @@ p {text-align: center;}
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h3 class="text-center bg-success text-white mb-2">Distintas obras de arte</h3>
+      <h1 class="text-center bg-success text-white mb-5">Distintas obras de arte</h1>
       <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped table-dark">
+        <table class="table table-bordered table-hover table-striped w-auto table-dark">
           <thead>
             <tr>
               <th class="bg-danger text-white" scope="col">Nombres</th>
