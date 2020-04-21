@@ -24,18 +24,24 @@ h3 {
     width: 50% !important;
 }
 
+.table thead {
+    color: lightsalmon;
+}
+
+.table tbody {
+    color: slategray;
+}
+
 .table th {
     padding: 20px;
     width: max-content;
     text-align: center;
-    color: lightsalmon;
 }
 
 .table td {
     padding: 20px;
     width: max-content;
     text-align: center;
-    color: slategray;
 }
 
 form {
