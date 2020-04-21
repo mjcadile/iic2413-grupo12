@@ -2,7 +2,7 @@
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
-  <img src="https://progameguides.com/wp-content/uploads/2020/01/new-horizons-desktop-wallpaper001.jpg" id="bg" alt="">
+  <img src="https://www.duna.cl/media/2018/06/museo-louvre-010816.original.jpg" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
