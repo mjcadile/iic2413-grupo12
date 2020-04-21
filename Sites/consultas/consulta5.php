@@ -19,7 +19,7 @@
  	    $query = "SELECT Iglesias.nombre, Frescos.nombre FROM 
          (SELECT Lugares.lid, Lugares.nombre FROM Iglesias, Lugares,Ciudades 
          WHERE Iglesias.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND 
-         Iglesias.horario_apertura <= '$h_apertura' AND Iglesias.horario_cierre >= '$h_cierre' 
+         Iglesias.horario_apertura <= '%$h_apertura%' AND Iglesias.horario_cierre >= '%$h_cierre%' 
          AND LOWER(Ciudades.nombre) LIKE LOWER('%$ciudad%')) AS Iglesias, (SELECT * FROM 
          Frescos, Obras WHERE Frescos.oid = Obras.oid) AS Frescos WHERE Frescos.lid = Iglesias.lid;";
    
