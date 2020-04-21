@@ -27,23 +27,25 @@ p {text-align: center;}
     ?>
     <div class="container mt-10">
       <h1 class="text-center bg-success text-white mb-5">Distintas obras de arte</h1>
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped w-auto table-dark">
-          <thead>
-            <tr>
-              <th class="bg-danger text-white" scope="col">Nombres</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-              foreach ($nombres as $n) {
-                echo "<tr class='bg-dark text-white'>
-                        <td>$n[0]</td>
-                      </tr>";
-              }
-            ?>
-          </tbody>
-        </table>
+      <div class="scrollable">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped text-center table-dark">
+            <thead>
+              <tr>
+                <th class="bg-danger text-white" scope="col">Nombres</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                foreach ($nombres as $n) {
+                  echo "<tr class='bg-dark text-white'>
+                          <td>$n[0]</td>
+                        </tr>";
+                }
+              ?>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <form action="../index_copia.php" method="get">

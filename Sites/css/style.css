@@ -6,6 +6,11 @@ h3 {
     font: 300 14px/1.5 "Oxygen", sans-serif;
 }
 
+.table{
+    margin: auto;
+    width: 50% !important;
+}
+
 .table td, .table th {
     padding: 20px;
     width: max-content;
@@ -14,4 +19,9 @@ h3 {
 
 form {
     text-align: center;
+}
+
+.scrollable{
+    height: 300px;
+    overflow: scroll;
 }
