@@ -6,13 +6,13 @@ hr.new1 {
 }
 </style>
 <body>
-
-    <div class="card" style="max-height: 18rem;">
-    <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" alt="Card image cap">
-    <div class="card-body">
-        <h2 class="card-title">DCConsultas</h2>
-        <p class="card-text">Proyecto realizado por José Baboun y Matías Cadile, IIC2413.</p>
-    </div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" id="bg" alt="">
+    <div class="card">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h2 class="card-title">DCConsultas</h2>
+            <p class="card-text">Proyecto realizado por José Baboun y Matías Cadile, IIC2413.</p>
+        </div>
     </div>
 
 
