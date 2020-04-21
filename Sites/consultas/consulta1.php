@@ -26,7 +26,7 @@ p {text-align: center;}
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h3 class="text-center mb-5">Distintas obras de arte</h3>
+      <h3 class="text-center mt-5 mb-5">Distintas obras de arte</h3>
       <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped table-dark">
           <thead>
@@ -38,8 +38,7 @@ p {text-align: center;}
             <?php
               foreach ($nombres as $n) {
                 echo "<tr class='bg-dark text-white'>
-                        <th scope='row'></th>
-                          <td>$n[0]</td>
+                        <td>$n[0]</td>
                       </tr>";
               }
             ?>
@@ -47,6 +46,9 @@ p {text-align: center;}
         </table>
       </div>
     </div>
+    <form action="../index_copia.php" method="get">
+      <input type="submit" class="btn btn-primary" value="Volver">
+    </form>
   </div>
 
   <br>
@@ -56,9 +58,7 @@ p {text-align: center;}
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="../js/actions.js"></script>
   <script src="js/actions.js"></script>
-  <form action="../index_copia.php" method="get">
-      <input type="submit" class="btn btn-primary" value="Volver">
-  </form>
+  
 </body>
 
 </html>
