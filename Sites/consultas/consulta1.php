@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <form action="../index_copia.php" method="get">
+    <form action="../index.php" method="get">
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
     </form>
   </div>
