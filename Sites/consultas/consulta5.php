@@ -19,7 +19,7 @@
  	    $query = "SELECT Iglesias.nombre, Frescos.nombre FROM 
          (SELECT Lugares.lid, Lugares.nombre FROM Iglesias, Lugares,Ciudades 
          WHERE Iglesias.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND 
-         Iglesias.horario_apertura <= '%$h_apertura%' AND Iglesias.horario_cierre >= '%$h_cierre%' 
+         Iglesias.horario_apertura <= '$h_apertura' AND Iglesias.horario_cierre >= '%$h_cierre%' 
          AND LOWER(Ciudades.nombre) LIKE LOWER('%$ciudad%')) AS Iglesias, (SELECT * FROM 
          Frescos, Obras WHERE Frescos.oid = Obras.oid) AS Frescos WHERE Frescos.lid = Iglesias.lid;";
    
@@ -29,7 +29,7 @@
 	    $tupla = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Iglesias abiertas entre <?php echo $h_apertura?> - <?php echo $h_cierre?> </h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Iglesias abiertas entre <?php echo $h_apertura?> y <?php echo $h_cierre?> </h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
