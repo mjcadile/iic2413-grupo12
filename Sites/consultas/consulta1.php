@@ -14,10 +14,6 @@ p {text-align: center;}
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
 
-      #Se obtiene el valor del input del usuario
-      #$altura = $_POST["altura"];
-      #$altura = intval($altura);
-
       #Se construye la consulta como un string
  	    $query = "SELECT DISTINCT Obras.nombre FROM Obras;";
    
@@ -28,16 +24,14 @@ p {text-align: center;}
     ?>
     <div class="container mt-10">
       <h2 class="text-center rounded-pill bg-success text-white mb-5">Distintas obras de arte</h2>
-      <div class="table-responsive">
-        
-        <table class="table table-bordered table-hover table-striped text-center table-dark">
-          <thead>
-            <tr>
-              <th class="bg-danger text-white" scope="col">Nombres</th>
-            </tr>
-          </thead>
-
-          <div class="scrollable">
+      <div class="scrollable">
+        <div class="table-responsive">
+          <table class="table table-bordered table-fixed table-hover table-striped text-center table-dark">
+            <thead>
+              <tr>
+                <th class="bg-danger text-white" scope="col">Nombres</th>
+              </tr>
+            </thead>
             <tbody>
               <?php
                 foreach ($nombres as $n) {
@@ -47,10 +41,8 @@ p {text-align: center;}
                 }
               ?>
             </tbody>
-          </div>
-
-        </table>
-
+          </table>
+        </div>
       </div>
     </div>
     <form action="../index_copia.php" method="get">
