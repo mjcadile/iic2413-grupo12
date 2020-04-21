@@ -2,7 +2,7 @@
 # http://codd.ing.puc.cl/~grupo12/index_copia.php? ?>
 
 <body>
-<img src="https://images.adsttc.com/media/images/5127/26d7/b3fc/4b11/a700/0f05/slideshow/1777904550_v05.jpg?1414349059" id="bg" alt="">
+<img src="https://i.pinimg.com/564x/97/b4/36/97b43628eff3af035ea54ea218bd936a.jpg" id="bg" alt="">
 
   <h1 align="center">DCConsultas </h1>
   <p class="lead" style="text-align:center;">En esta página podrás encontrar información sobre obras de arte
