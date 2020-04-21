@@ -35,7 +35,7 @@ p {text-align: center;}
             <tbody>
               <?php
                 foreach ($nombres as $n) {
-                  echo "<tr class='table-dark'>
+                  echo "<tr class='bg-dark'>
                           <td>$n[0]</td>
                         </tr>";
                 }
@@ -46,7 +46,7 @@ p {text-align: center;}
       </div>
     </div>
     <form action="../index_copia.php" method="get">
-      <input type="submit" class="btn btn-primary mb-5" value="Volver">
+      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
