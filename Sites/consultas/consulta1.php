@@ -27,7 +27,8 @@ p {text-align: center;}
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$nombres = $result -> fetchAll();
-  ?>
+?>
+
 <div class="contanier">
   <table id="dtConsulta1" class="table tabel-striped table-bordered table-dark table-sm" cellspacing="0" 
     width="100%" border="1", align="center">
