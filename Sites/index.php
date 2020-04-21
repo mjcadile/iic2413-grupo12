@@ -7,7 +7,7 @@ hr.new1 {
 }
 </style>
 <body>
-<img src="http://www.pxleyes.com/images/tutorials/submissionsteps/fullsize/1658_step3_4b35a144b19b5.jpg" id="bg" alt="">
+<img src="https://image.freepik.com/foto-gratis/fondo-pared-liso-azul-oscuro_53876-92976.jpg" id="bg" alt="">
 
   <h1 align="center" style="font-size:50px;color:white;"> <b>DCConsultas <b></h1>
   <p class="lead" style="text-align:center; color:white;">En esta página podrás encontrar información sobre obras de arte
