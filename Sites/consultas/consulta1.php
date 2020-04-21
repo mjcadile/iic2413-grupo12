@@ -8,7 +8,8 @@ p {text-align: center;}
 </style!-->
 
 <body>
-  <div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');">
+  <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
+  <img src="https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
@@ -28,13 +29,15 @@ p {text-align: center;}
     <div class="container mt-10">
       <h2 class="text-center rounded-pill bg-success text-white mb-5">Distintas obras de arte</h2>
       <div class="table-responsive">
-        <div class="scrollable">
-          <table class="table table-bordered table-hover table-striped text-center table-dark">
-            <thead>
-              <tr>
-                <th class="bg-danger text-white" scope="col">Nombres</th>
-              </tr>
-            </thead>
+        
+        <table class="table table-bordered table-hover table-striped text-center table-dark">
+          <thead>
+            <tr>
+              <th class="bg-danger text-white" scope="col">Nombres</th>
+            </tr>
+          </thead>
+
+          <div class="scrollable">
             <tbody>
               <?php
                 foreach ($nombres as $n) {
@@ -44,8 +47,10 @@ p {text-align: center;}
                 }
               ?>
             </tbody>
-          </table>
-        </div>
+          </div>
+
+        </table>
+
       </div>
     </div>
     <form action="../index_copia.php" method="get">
