@@ -8,42 +8,42 @@ p {text-align: center;}
 </style!-->
 
 <body>
-<div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');">
-<?php
-  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+  <div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');">
+  <?php
+    #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+    require("../config/conexion.php");
 
-  #Se obtiene el valor del input del usuario
-  #$altura = $_POST["altura"];
-  #$altura = intval($altura);
+    #Se obtiene el valor del input del usuario
+    #$altura = $_POST["altura"];
+    #$altura = intval($altura);
 
-  #Se construye la consulta como un string
- 	$query = "SELECT DISTINCT Obras.nombre FROM Obras;";
+    #Se construye la consulta como un string
+ 	  $query = "SELECT DISTINCT Obras.nombre FROM Obras;";
    
-  #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	$result = $db -> prepare($query);
-	$result -> execute();
-	$nombres = $result -> fetchAll();
-?>
+    #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
+	  $result = $db -> prepare($query);
+	  $result -> execute();
+	  $nombres = $result -> fetchAll();
+  ?>
 
-<div clas="container mt-10">
-  <h3 class="text-center mb-5">Distintas obras de arte</h3>
-  <div class="table-responsive">
-    <table id="dtConsulta1" class="table table-bordered table-hover table-striped" cellspacing="0" width="100%" border="1", align="center">
-      <thead>
-        <tr class="bg-danger text-white">
-          <th class="th-sm">Nombres</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php
-          foreach ($nombres as $n) {
-            echo "<tr class='bg-dark text-white'><td>$n[0]</td></tr>";
-          }
-        ?>
-      </tbody>
-    </table>
+  <div clas="container mt-10">
+    <h3 class="text-center mt-5 mb-5">Distintas obras de arte</h3>
+    <div class="table-responsive">
+      <table id="dtConsulta1" class="table table-bordered table-hover table-striped" cellspacing="0" width="100%" border="1", align="center">
+        <thead>
+          <tr class="bg-danger text-white">
+            <th class="th-sm">Nombres</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            foreach ($nombres as $n) {
+              echo "<tr class='bg-dark text-white'><td>$n[0]</td></tr>";
+            }
+          ?>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
 
 <?php include('../templates/footer.html'); ?>
