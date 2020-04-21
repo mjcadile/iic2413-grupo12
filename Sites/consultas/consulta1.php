@@ -1,14 +1,11 @@
 <?php include('../templates/header.html');   ?>
-</head >
-<style>
+<!--style>
 header {
     background-color: blue;
 }
 h1 {text-align: center;}
 p {text-align: center;}
-</style>
-
-<h1>Distintas obras de arte </h1>
+</style!-->
 
 <body>
 <div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');">
@@ -29,28 +26,24 @@ p {text-align: center;}
 	$nombres = $result -> fetchAll();
 ?>
 
-<div class="contanier">
-  <table id="dtConsulta1" class="table tabel-striped table-bordered table-dark table-sm" cellspacing="0" 
-    width="100%" border="1", align="center">
-    <thead>
-      <tr>
-        <th class="th-sm">Nombres</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-        foreach ($nombres as $n) {
-          echo "<tr><td>$n[0]</td></tr>";
-        }
-      ?>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>Nombres
-        </th>
-      </tr>
-    </tfoot>
-  </table>
+<div clas="container mt-10">
+  <h3 class="text-center mb-5">Distintas obras de arte</h3>
+  <div class="table-responsive">
+    <table id="dtConsulta1" class="table table-bordered table-hover table-striped" cellspacing="0" width="100%" border="1", align="center">
+      <thead>
+        <tr class="bg-danger text-white">
+          <th class="th-sm">Nombres</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          foreach ($nombres as $n) {
+            echo "<tr class='bg-dark text-white'><td>$n[0]</td></tr>";
+          }
+        ?>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <?php include('../templates/footer.html'); ?>

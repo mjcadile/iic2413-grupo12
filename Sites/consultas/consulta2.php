@@ -19,34 +19,20 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
   $nombres = $result -> fetchAll();
-?>
+  ?>
 
-<div class="container">
-    <div class="modal show">
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="panel panel-default">
-                        <div class="panel-body table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Nombres</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                  <?php
-                                    foreach ($nombres as $n) {
-                                      echo "<tr><td>$n[0]</td></tr>";
-                                    }
-                                  ?>
-                                </tbody>
-                                <?php include('../templates/footer.html'); ?>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+  <table>
+    <tr>
+      <th>Nombres</th>
+    </tr>
+  
+      <?php
+        foreach ($nombres as $n) {
+          echo "<tr><td>$n[0]</td></tr>";
+      }
+      ?>
+      
+  </table>
+
+<?php include('../templates/footer.html'); ?>
+
