@@ -19,23 +19,7 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
   $nombres = $result -> fetchAll();
-  ?>
-
-  <table>
-    <tr>
-      <th>Nombres</th>
-    </tr>
-  
-      <?php
-        foreach ($nombres as $n) {
-          echo "<tr><td>$n[0]</td></tr>";
-      }
-      ?>
-      
-  </table>
-
-<?php include('../templates/footer.html'); ?>
-
+?>
 
 <div class="container">
     <div class="modal show">
