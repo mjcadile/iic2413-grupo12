@@ -24,11 +24,11 @@ h3 {
     width: 50% !important;
 }
 
-.table thead {
+thead {
     color: lightsalmon;
 }
 
-.table tbody {
+tbody {
     color: slategray;
 }
 
