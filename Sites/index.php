@@ -6,9 +6,18 @@ hr.new1 {
 }
 </style>
 <body>
-<img src="https://image.freepik.com/foto-gratis/fondo-pared-liso-azul-oscuro_53876-92976.jpg" id="bg" alt="">
+
+    <div class="card" style="width: 30rem;">
+    <img class="card-img-top" src="https://image.freepik.com/foto-gratis/fondo-pared-liso-azul-oscuro_53876-92976.jpg" alt="Card image cap">
+    <div class="card-body">
+        <h2 class="card-title">DCConsultas</h2>
+        <p class="card-text">Proyecto realizado por José Baboun y Matías Cadile, IIC2413.</p>
+    </div>
+    </div>
+
+
 <!--Consulta1!-->
-    <div class="card">
+    <div class="card" style="width: 40rem;">
         <div class="card-header">
             Consulta 1
         </div>
@@ -25,7 +34,7 @@ hr.new1 {
         </div>
     </div>
 <!--Consulta2!-->
-    <div class="card">
+    <div class="card text-center" style="width: 40rem;">
         <div class="card-header">
             Consulta 2
         </div>
@@ -42,7 +51,7 @@ hr.new1 {
         </div>
     </div>
 <!--Consulta3!-->
-    <div class="card">
+    <div class="card text-right" style="width: 40rem;">
         <div class="card-header">
             Consulta 3
         </div>
@@ -62,7 +71,7 @@ hr.new1 {
         </div>
     </div>
 <!--Consulta4!-->
-    <div class="card">
+    <div class="card text-center" style="width: 40rem;">
             <div class="card-header">
                 Consulta 4
             </div>
@@ -79,7 +88,7 @@ hr.new1 {
             </div>
         </div>
 <!--Consulta5!-->
-    <div class="card">
+    <div class="card" style="width: 40rem;">
             <div class="card-header">
                 Consulta 5
             </div>
@@ -110,7 +119,7 @@ hr.new1 {
             </div>
     </div>
 <!--Consulta6!-->
-    <div class="card">
+    <div class="card text-center" style="width: 40rem;">
             <div class="card-header">
                 Consulta 6
             </div>
