@@ -25,3 +25,7 @@ form {
     height: 300px;
     overflow: scroll;
 }
+
+.form-rounded {
+    border-radius: 1rem;
+}

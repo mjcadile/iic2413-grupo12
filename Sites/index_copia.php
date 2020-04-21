@@ -35,7 +35,7 @@
 
   <form align="center" action="consultas/consulta3.php" method="post">
     Ingrese el nombre del país que quiera consultar:
-    <input type="text" name="pais">
+    <input type="text" class="form-control form-rounded" name="pais">
     <br/><br/>
     <input type="submit" class="btn btn-primary" value="Consultar">
   </form>
@@ -69,13 +69,13 @@
 
   <form align="center" action="consultas/consulta5.php" method="post">
     Ingrese una hora de apertura (formato hh:mm:ss):
-    <input type="text" name="h_apertura">
+    <input type="text" class="form-control form-rounded" name="h_apertura">
     <br/><br/>
     Ingrese una hora de cierre (formato hh:mm:ss):
-    <input type="text" name="h_cierre">
+    <input type="text" class="form-control form-rounded" name="h_cierre">
     <br/><br/>
     Ingrese una ciudad:
-    <input type="text" name="ciudad">
+    <input type="text" class="form-control form-rounded" name="ciudad">
     <br/><br/>
     <input type="submit" class="btn btn-primary" value="Consultar">
   </form>
