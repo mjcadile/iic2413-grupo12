@@ -26,7 +26,7 @@ p {text-align: center;}
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h3 class="text-center mt-5 mb-5">Distintas obras de arte</h3>
+      <h3 class="text-center bg-success text-white mb-2">Distintas obras de arte</h3>
       <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped table-dark">
           <thead>
@@ -47,12 +47,9 @@ p {text-align: center;}
       </div>
     </div>
     <form action="../index_copia.php" method="get">
-      <input type="submit" class="btn btn-primary" value="Volver">
+      <input type="submit" class="btn btn-primary mb-5" value="Volver">
     </form>
   </div>
-
-  <br>
-  <br>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
