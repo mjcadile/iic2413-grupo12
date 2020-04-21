@@ -2,6 +2,10 @@ body {
     font: 300 14px/1.5 "Oxygen", sans-serif;
 }
 
+h3 {
+    font: 300 14px/1.5 "Oxygen", sans-serif;
+}
+
 .table td, .table th {
     padding: 20px;
 }

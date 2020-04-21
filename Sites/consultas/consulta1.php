@@ -28,7 +28,7 @@ p {text-align: center;}
     <div class="container mt-10">
       <h3 class="text-center bg-success text-white mb-2">Distintas obras de arte</h3>
       <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped table-dark">
+        <table class="table table-sm table-bordered table-hover table-striped table-dark">
           <thead>
             <tr>
               <th class="bg-danger text-white" scope="col">Nombres</th>
