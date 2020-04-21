@@ -29,17 +29,26 @@ p {text-align: center;}
 	$nombres = $result -> fetchAll();
   ?>
 
-  <table border="1", align="center">
-    <tr>
-      <th>Nombres</th>
-    </tr>
-  
+<table id="dtConsulta1" class="table tabel-striped table-bordered table-dark table-sm" cellspacing="0" 
+  width="100%" border="1", align="center">
+    <thead>
+      <tr>
+        <th class="th-sm">Nombres</th>
+      </tr>
+    </thead>
+    <tbody>
       <?php
         foreach ($nombres as $n) {
           echo "<tr><td>$n[0]</td></tr>";
-      }
+        }
       ?>
-      
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Nombres
+        </th>
+      </tr>
+    </tfoot>
   </table>
 
 <?php include('../templates/footer.html'); ?>
