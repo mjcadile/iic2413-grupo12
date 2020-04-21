@@ -1,3 +1,18 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    font: 300 14px/1.5 "Oxygen", sans-serif;
+}
+
 #bg {
     position: fixed; 
     top: 0; 
@@ -8,10 +23,6 @@
     min-width: 100%;
     min-height: 100%;
   }
-
-body {
-    font: 300 14px/1.5 "Oxygen", sans-serif;
-}
 
 h3 {
     font: 300 14px/1.5 "Oxygen", sans-serif;

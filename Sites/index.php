@@ -7,7 +7,7 @@ hr.new1 {
 </style>
 <body>
 
-    <div class="card" style="width: 40rem;">
+    <div class="card">
     <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" alt="Card image cap">
     <div class="card-body">
         <h2 class="card-title">DCConsultas</h2>
