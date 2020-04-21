@@ -11,7 +11,7 @@ hr.new1 {
 
   <h1 align="center" style="font-size:50px;color:white;"> <b>DCConsultas <b></h1>
   <p class="lead" style="text-align:center; color:white;">En esta página podrás encontrar información sobre obras de arte
-  alrededor del mundo. <br>Hecho por José Baboun y Matías Cadile. <br/>Grupo12</p>
+  alrededor del mundo. <br>Hecho por José Baboun y Matías Cadile. <br/>Grupo 12</p>
 
   <br>
   <hr class="new1">
@@ -62,7 +62,7 @@ hr.new1 {
   #$dataCollected = $result -> fetchAll();
   ?>
 
-  <form align="center" action="consultas/consulta4.php" method="post">
+  <form align="center" action="consultas/consulta4.php" method="post" style="color:white;">
     <br><br>
     <input type="submit" class="btn btn-primary" value="Consultar">
   </form>
@@ -76,7 +76,7 @@ hr.new1 {
           ubicadas en cierta ciudad, abiertas entre ciertas horas (inclusive) 
           junto a todos los nombres de los frescos que se encuentran en cada una de ellas.</h4>
 
-  <form align="center" action="consultas/consulta5.php" method="post">
+  <form align="center" action="consultas/consulta5.php" method="post" style="color:white;">
     Ingrese una hora de apertura (formato hh:mm:ss):
     <input type="text" class="form-control form-rounded" name="h_apertura">
     <br/><br/>
@@ -96,7 +96,7 @@ hr.new1 {
   <h4 align="center" style="color:white;"> Se despliega el nombre de cada museo, plaza o iglesia 
           que tenga obras de todos los periodos del arte que existan en nuestro registro</h4>
 
-  <form align="center" action="consultas/consulta6.php" method="post">
+  <form align="center" action="consultas/consulta6.php" method="post" style="color:white;">
     <br/><br/>
     <input type="submit" class="btn btn-primary" value="Consultar">
   </form>
