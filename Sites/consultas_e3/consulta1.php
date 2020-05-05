@@ -22,7 +22,7 @@
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white bg-danger" scope="col">Nombre Artista</th>
+                <th <button type="button" class="btn btn-outline-primary">Primary</button> </th>
               </tr>
             </thead>
             <tbody>
