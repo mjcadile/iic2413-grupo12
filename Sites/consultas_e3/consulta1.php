@@ -22,17 +22,17 @@
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th <button type="button" class="btn btn-outline-primary">Primary</button> </th>
+                <th class="text-white bg-danger" scope="col">Nombre Artista</th>
               </tr>
             </thead>
             <tbody>
               
               <?php
-        
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td>
+                          <td> <button type="button" class="btn btn-outline-primary">$n[0]</button> </td>
                         </tr>";
+                }
                 }
               ?>
             </tbody>
