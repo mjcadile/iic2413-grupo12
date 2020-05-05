@@ -16,7 +16,7 @@
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos artistas</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los artistas</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -26,9 +26,10 @@
               </tr>
             </thead>
             <tbody>
+              
               <?php
                 foreach ($nombres as $n) {
-                  echo "<tr class='bg-dark'>
+                  echo "<a class="btn btn-primary" href="consultas_e3/consulta2.php" role="button">Link</a>
                           <td>$n[0]</td>
                         </tr>";
                 }
