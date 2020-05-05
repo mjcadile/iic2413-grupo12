@@ -8,7 +8,7 @@
       require("../config/conexion.php");
 
       #Se construye la consulta como un string
- 	    $query = "SELECT Artistas.nombre  FROM Artistas;";
+ 	    $query = "SELECT * FROM Artistas;";
    
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db -> prepare($query);
@@ -31,8 +31,9 @@
         
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td><a class="btn btn-primary" href="index2.php" role="button">n[0]</a>$</td>
-                        </tr>";
+                  while($row = mysqli_fetch_array($n)){
+                    echo "<tr><td>" . $row['ID'] . "</td><td>" . $row['Nombre'] . "</td><td><button id='" . $row['artistId'] . "'>Get External Content</button></td></tr>" ;
+                }";
                 }
               ?>
             </tbody>
