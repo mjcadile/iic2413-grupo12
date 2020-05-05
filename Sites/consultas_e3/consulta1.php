@@ -30,7 +30,7 @@
               <?php
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td> <button type="button" class="btn btn-outline-primary">$n[0]</button> </td>
+                          <td>$n[0]</td>
                         </tr>";
                 }
                 }
