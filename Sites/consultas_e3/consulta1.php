@@ -31,9 +31,8 @@
         
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                  while($row = mysqli_fetch_array($n)){
-                    echo "<tr><td>" . $row['ID'] . "</td><td>" . $row['Nombre'] . "</td><td><button id='" . $row['artistId'] . "'>Get External Content</button></td></tr>" ;
-                }";
+                          <td>$n[0]</td>
+                        </tr>";
                 }
               ?>
             </tbody>
