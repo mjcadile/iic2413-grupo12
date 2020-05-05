@@ -8,7 +8,7 @@
       require("../config/conexion.php");
 
       #Se construye la consulta como un string
- 	    $query = "SELECT *  FROM Artistas;";
+ 	    $query = "SELECT Artistas.nombre  FROM Artistas;";
    
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db -> prepare($query);
@@ -16,13 +16,13 @@
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los nombres distintos de obras de arte</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos artistas</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white bg-danger" scope="col">Nombre Obra</th>
+                <th class="text-white bg-danger" scope="col">Nombre Artista</th>
               </tr>
             </thead>
             <tbody>
