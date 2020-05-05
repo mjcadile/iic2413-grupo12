@@ -29,7 +29,7 @@
               
               <?php
                 foreach ($nombres as $n) {
-                  echo "<a class="btn btn-primary" href="consultas_e3/consulta2.php" role="button">Link</a>
+                  echo "<tr class='bg-dark'>
                           <td>$n[0]</td>
                         </tr>";
                 }
