@@ -31,7 +31,7 @@
         
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                  <td><a class="btn btn-primary" href="index2.php" role="button">n[0]</a>$</td>
+                          <td><a class="btn btn-primary" href="index2.php" role="button">n[0]</a>$</td>
                         </tr>";
                 }
               ?>
