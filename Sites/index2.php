@@ -25,7 +25,7 @@ hr.new1 {
             <h5 class="card-title">Artistas</h5>
             <p class="card-text">A continuación se muestran todos los nombres 
             distintos de ls artistas.</p>
-            <form align="center" action="consultas_e3/consulta1.php" method="post">
+            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Consultar">
             </form>
         </div>
@@ -61,7 +61,7 @@ hr.new1 {
             país que tengan obras del renacimiento.</p>
             <p class="card-text">Por favor ingrese el nombre de un país:</p>
             <form align="center" action="consultas_e3/consulta3.php" method="post">
-                <input type="text" class="form-control text-center form-rounded" name="pais">
+                <input type="text" class="form-control text-center form-rounded" name="pais" target="_blank">
                 <br></br>
                 <input type="submit" class="btn btn-primary" value="Consultar">
             </form>

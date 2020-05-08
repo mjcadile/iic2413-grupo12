@@ -10,10 +10,10 @@
       $seleccionado = $_POST["pais"];
       
       #Se construye la consulta como un string
- 	    $query = "SELECT * FROM Artistas WHERE Artistas.nombre = seleccionado";
+ 	    $query = "SELECT * FROM Artistas WHERE Artistas.aid = %$seleccionado%";
    
-      $query_obras = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino,
-      Obras.periodo FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid 
+      $query_obras = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo
+      FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid 
       AND Hecha_por.oid = Obras.oid";
 
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -43,7 +43,7 @@
               <?php
                 foreach ($resultados as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td>
                         </tr>";
                 }
               ?>
