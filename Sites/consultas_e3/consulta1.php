@@ -30,9 +30,7 @@
               <?php
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td><form action="https://google.com">
-                            <input type="submit" value="Go to Google" />
-                        </form> $n[0]</td>
+                          <td>$n[0] href='https://www.newyorker.com/" </td>
                         </tr>";
                 }
   
