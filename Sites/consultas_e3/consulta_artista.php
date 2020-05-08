@@ -66,7 +66,6 @@
                 <th class="text-white bg-danger" scope="col">Ano Inicio</th>
                 <th class="text-white bg-danger" scope="col">Ano de término</th>
                 <th class="text-white bg-danger" scope="col">Periodo</th>
-                <th class="text-white bg-danger" scope="col">Ano de término</th>
 
 
               </tr>
