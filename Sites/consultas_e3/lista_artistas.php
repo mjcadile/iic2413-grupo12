@@ -23,7 +23,7 @@
             <thead>
               <tr>
                 <th class="text-white bg-danger" scope="col">Nombre Artista</th>
-                <th color = 'blue' class="text-white bg-warning" scope="col">Consultar</th>
+                <th color = 'red' class="text-white bg-warning" scope="col">Consultar</th>
 
               </tr>
             </thead>
@@ -32,7 +32,8 @@
               <?php
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[1]</td><td><a class='btn btn-primary' href='consultas_e3/consulta_artista.php' role='button' action='consultas/consulta3.php' method='post' target='_blank'>
+                          <td>$n[1]</td><td><a class='btn btn-primary' href='consultas_e3/consulta_artistas.php' role='button' action='consultas/consulta3.php' method='post' target='_blank'>
+                          <input type = 'hidden' name = 'topic' value = 'n[1]' />
                           <input type= 'button' value = '$n[1]' >CONSULTAR</a>
                           </td>
                         </tr>";
@@ -53,13 +54,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="../js/actions.js"></script>
   <script src="js/actions.js"></script>
-  
-  <table>
-    <tr><td><button class="editbtn">edit</button></td></tr>
-    <tr><td><button class="editbtn">edit</button></td></tr>
-    <tr><td><button class="editbtn">edit</button></td></tr>
-    <tr><td><button class="editbtn">edit</button></td></tr>
-</table>
+
 
 </body>
 
