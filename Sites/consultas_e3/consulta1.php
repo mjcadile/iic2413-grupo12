@@ -50,6 +50,13 @@
   <script src="../js/actions.js"></script>
   <script src="js/actions.js"></script>
   
+  <table>
+    <tr><td><button class="editbtn">edit</button></td></tr>
+    <tr><td><button class="editbtn">edit</button></td></tr>
+    <tr><td><button class="editbtn">edit</button></td></tr>
+    <tr><td><button class="editbtn">edit</button></td></tr>
+</table>
+
 </body>
 
 </html>
