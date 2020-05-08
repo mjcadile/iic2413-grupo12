@@ -8,7 +8,6 @@
       require("../config/conexion.php");
     
       $seleccionado = $_POST["aid"];
-      <h1> $seleccionado </h1> 
       #Se construye la consulta como un string
  	    $query = "SELECT * FROM Artistas WHERE Artistas.aid = %$seleccionado%";
    
@@ -25,6 +24,8 @@
 	    $result_o -> execute();
 	    $obras = $result_o -> fetchAll();
     ?>
+    <h1> $seleccionado </h1> 
+
     <div class="container mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Museos de <?php echo $pais_original; ?> con obras del renacimiento</h2>
       <div class="scrollable">
