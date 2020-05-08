@@ -33,7 +33,7 @@
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td><td><a class='btn btn-primary' href='consultas_e3/consulta_artista.php' role='button' action='consultas/consulta3.php' method='post' target='_blank'>
-                          <value= '$n[1]' >CONSULTAR</a>
+                          <input type= 'button' value = '$n[1]' >CONSULTAR</a>
                           </td>
                         </tr>";
                 }
