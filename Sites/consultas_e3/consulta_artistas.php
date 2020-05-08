@@ -8,7 +8,7 @@
       require("../config/conexion.php");
     
       $seleccionado = $_POST["aid"];
-      
+      <h1> $seleccionado </h1> 
       #Se construye la consulta como un string
  	    $query = "SELECT * FROM Artistas WHERE Artistas.aid = %$seleccionado%";
    
