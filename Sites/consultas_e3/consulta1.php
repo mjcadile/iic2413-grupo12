@@ -23,6 +23,8 @@
             <thead>
               <tr>
                 <th class="text-white bg-danger" scope="col">Nombre Artista</th>
+                <th class="text-white bg-warning" scope="col">Consultar</th>
+
               </tr>
             </thead>
             <tbody>
@@ -30,7 +32,7 @@
               <?php
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0] href='https://www.newyorker.com/" </td>
+                          <td>$n[0]</td><td>$t[1]</td>
                         </tr>";
                 }
   
