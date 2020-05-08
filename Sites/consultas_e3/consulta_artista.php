@@ -12,7 +12,9 @@
       #Se construye la consulta como un string
  	    $query = "SELECT * FROM Artistas WHERE Artistas.nombre = seleccionado";
    
-      $query_obras = "SELECT * FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid AND Hecha_por.oid = Obras.oid";
+      $query_obras = "SELECT Obras.id, Obras.nombre, Obras.ano_inicio, Obras.ano_termino,
+      Obras.periodo FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid 
+      AND Hecha_por.oid = Obras.oid";
 
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db -> prepare($query);
