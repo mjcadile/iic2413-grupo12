@@ -7,7 +7,7 @@
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
     
-      $seleccionado = $_POST["pais"];
+      $seleccionado = $_POST["aid"];
       
       #Se construye la consulta como un string
  	    $query = "SELECT * FROM Artistas WHERE Artistas.aid = %$seleccionado%";

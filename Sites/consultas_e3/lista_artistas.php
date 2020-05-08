@@ -34,9 +34,9 @@
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td>
                           <td>
-                          <form action='consultas_e3/consulta_artistas.php'>
+                          <form action='consulta_artistas.php'>
                           <a class='btn btn-primary'  role='button' action='consultas_e3/consulta_artistas.php' method='post' target='_blank'>
-                          <input type = 'hidden' name = 'pais' value = '$n[1]' />
+                          <input type = 'hidden' name = 'aid' value = '$n[0]' />
                           <input type= 'submit' >CONSULTAR</a>
                           </form>
                           </td>
