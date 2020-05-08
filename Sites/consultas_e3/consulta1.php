@@ -23,7 +23,7 @@
             <thead>
               <tr>
                 <th class="text-white bg-danger" scope="col">Nombre Artista</th>
-                <th class="text-white bg-warning" scope="col">Consultar</th>
+                <th color = 'blue' class="text-white bg-warning" scope="col">Consultar</th>
 
               </tr>
             </thead>
@@ -32,7 +32,8 @@
               <?php
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[1]</td><td><a class='btn btn-primary' href='$n[1]' role='button'>CONSULTAR</a>
+                          <td>$n[1]</td><td><a class='btn btn-primary' href='consultas_e3/consulta_artista.php' role='button' action='consultas/consulta3.php' method='post'>
+                          <input type='text'>CONSULTAR</a>
                           </td>
                         </tr>";
                 }
