@@ -32,7 +32,7 @@
               <?php
                 foreach ($nombres as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td><td><button class='btn btn-primary' type='submit'>Button</button>
+                          <td>$n[0]</td><td><a class='btn btn-primary' href='https://www.newyorker.com/' role='button'>CONSULTAR</a>
                           </td>
                         </tr>";
                 }
