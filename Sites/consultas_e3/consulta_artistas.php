@@ -9,11 +9,12 @@
     
       $seleccionado = $_POST["aid"];
       #Se construye la consulta como un string
- 	    $query = "SELECT * FROM Artistas WHERE Artistas.aid = %$seleccionado%";
+       $query = "SELECT * FROM Artistas WHERE Artistas.aid = %$seleccionado%";
+       
    
       $query_obras = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo
       FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid 
-      AND Hecha_por.oid = Obras.oid";
+      AND Hecha_por.oid = Obras.oid AND Artistas.aid = %$seleccionado%";
 
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db -> prepare($query);
@@ -24,7 +25,6 @@
 	    $result_o -> execute();
 	    $obras = $result_o -> fetchAll();
     ?>
-    <h1> $seleccionado </h1> 
 
     <div class="container mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Museos de <?php echo $pais_original; ?> con obras del renacimiento</h2>
