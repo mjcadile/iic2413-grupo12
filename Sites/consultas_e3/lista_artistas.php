@@ -37,7 +37,7 @@
                           <form action='consulta_artistas.php'>
                           <a class='btn btn-primary'  role='button' action='consultas_e3/consulta_artistas.php' method='post' >
                           <input type = 'hidden' name = 'aid' value = '$n[0]' />
-                          <input type= 'submit' >CONSULTAR</a>
+                          <button class='btn btn-primary' type='submit'>CONSULTAR</button>
                           </form>
                           </td>
                         </tr>";
