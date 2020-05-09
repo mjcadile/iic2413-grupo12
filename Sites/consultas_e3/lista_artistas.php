@@ -19,7 +19,7 @@
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los artistas</h2>
       <div class="scrollable">
         <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped text-center table-dark">
+          <table class="table table-bordered table-hover table-striped text-right table-dark">
             <thead>
               <tr>
                 <th class="text-white bg-danger" scope="col">Nombre Artista</th>
