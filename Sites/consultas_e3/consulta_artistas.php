@@ -10,7 +10,7 @@
       $seleccionado = $_POST["aid"];
       #Se construye la consulta como un string
       $query = "SELECT * FROM Artistas WHERE Artistas.aid = '%$seleccionado%'";
-      print('seleccionadoo es {$seleccionado}');
+      print("seleccionadoo es $seleccionado");
 
    
       $query_obras = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo
