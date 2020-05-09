@@ -19,7 +19,7 @@
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los artistas</h2>
       <div class="scrollable">
         <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped text-right table-dark">
+          <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
                 <th class="text-white bg-danger" scope="col">Nombre Artista</th>
@@ -35,8 +35,7 @@
                           <td>$n[1]</td>
                           <td>
                           <form action='consulta_artistas.php'>
-                          <a class='btn btn-primary'  role='button' action='consultas_e3/consulta_artistas.php' method='post' >
-                          <input type = 'hidden' name = 'aid' value = '$n[0]' />
+                          <input type = 'hidden' name = 'aid' value = '$n[0]' action='consultas_e3/consulta_artistas.php' method='post'/>
                           <button class='btn btn-primary' type='submit'>CONSULTAR</button>
                           </form>
                           </td>
