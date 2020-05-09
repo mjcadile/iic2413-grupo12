@@ -35,8 +35,8 @@
                           <td>$n[1]</td>
                           <td>
                           <form action='consulta_artistas.php'>
-                          <input type = 'hidden' name = 'aid' value = $n[0]  method='post'/>
-                          <button class='btn btn-primary' type='submit'>CONSULTAR</button>
+                              <input type = 'hidden' name = 'aid' value = $n[0]  method='post'/>
+                              <button class='btn btn-primary' type='submit'>CONSULTAR</button>
                           </form>
                           </td>
                         </tr>";
