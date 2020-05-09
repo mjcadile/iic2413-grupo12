@@ -62,7 +62,7 @@
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white bg-danger" scope="col">ID</th>
+                <th class="text-white bg-danger" scope="col">ID  </th>
                 <th class="text-white bg-danger" scope="col">Nombre</th>
                 <th class="text-white bg-danger" scope="col">Ano Inicio</th>
                 <th class="text-white bg-danger" scope="col">Ano de término</th>
@@ -75,7 +75,7 @@
               <?php
                 foreach ($obras as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$seleccionado</td>
                         </tr>";
                 }
               ?>
