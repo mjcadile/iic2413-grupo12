@@ -15,7 +15,7 @@
    
       $query_obras = 'SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo
       FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid 
-      AND Hecha_por.oid = Obras.oid AND Artistas.aid = '2' ';
+      AND Hecha_por.oid = Obras.oid AND Artistas.aid = 2 ';
 
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db -> prepare($query);
