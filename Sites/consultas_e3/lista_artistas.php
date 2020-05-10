@@ -34,9 +34,9 @@
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td>
                           <td>
-                          <form action='consulta_artistas.php'>
-                              <input type = 'hidden' name = 'aid' value = $n[0]  method='post'/>
-                              <button class='btn btn-primary' type='submit'>CONSULTAR</button>
+                          <form action='consulta_artistas.php' method='post' >
+                              <input type = 'hidden' name = 'aid' value = $n[0] >
+                              <button class='btn btn-primary' type='submit' value='Consultar'>CONSULTAR</button>
                           </form>
                           </td>
                         </tr>";

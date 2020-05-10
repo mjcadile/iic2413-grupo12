@@ -10,6 +10,7 @@
       $seleccionado = $_POST["aid"];
       #Se construye la consulta como un string
       $query = "SELECT * FROM Artistas WHERE Artistas.aid = '%$seleccionado%'";
+     
       print("seleccionadoo es $seleccionado");
 
    
@@ -28,7 +29,7 @@
     ?>
 
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Museos de <?php echo $pais_original; ?> con obras del renacimiento</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -57,7 +58,7 @@
 
 
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Museos de <?php echo $pais_original; ?> con obras del renacimiento</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Obras del artista</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
