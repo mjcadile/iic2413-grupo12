@@ -11,8 +11,6 @@
       #Se construye la consulta como un string
       $query = "SELECT * FROM Artistas WHERE Artistas.aid = '%$seleccionado%'";
      
-      print("seleccionadoo es $seleccionado");
-
    
       $query_obras = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo
       FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid 
@@ -29,7 +27,7 @@
     ?>
 
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista con ID <?php echo $seleccionado; ?></h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
