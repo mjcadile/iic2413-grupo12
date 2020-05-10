@@ -10,12 +10,12 @@
       $seleccionado = $_POST["aid"];
       $seleccionado = number_format($seleccionado);
       #Se construye la consulta como un string
-      $query = "SELECT * FROM Artistas WHERE Artistas.aid = '$seleccionado%';
+      $query = 'SELECT * FROM Artistas WHERE Artistas.aid = '$seleccionado'';
      
    
       $query_obras = 'SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo
       FROM Artistas, Hecha_por, Obras WHERE Artistas.aid = Hecha_por.aid 
-      AND Hecha_por.oid = Obras.oid AND Artistas.aid = '$seleccionado'';
+      AND Hecha_por.oid = Obras.oid AND Artistas.aid = '$seleccionado' ';
 
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db -> prepare($query);
@@ -27,7 +27,7 @@
 	    $obras = $result_o -> fetchAll();
     ?>
 
-    <div class="container mt-10">
+    <div class= 'container mt-10'>
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista con ID <?php echo $seleccionado; ?></h2>
       <div class="scrollable">
         <div class="table-responsive">
