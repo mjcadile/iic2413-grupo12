@@ -28,7 +28,7 @@
     ?>
 
     <div class= 'container mt-10'>
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista  <?php echo $resultados[1]; ?></h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista con ID <?php echo $seleccionado; ?></h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -76,7 +76,7 @@
               <?php
                 foreach ($obras as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td>
                         </tr>";
                 }
               ?>
