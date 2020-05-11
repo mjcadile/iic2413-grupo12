@@ -19,9 +19,13 @@
       $obra = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo FROM Obras WHERE Obras.oid = '$seleccionado'";
    
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-      $result = $db -> prepare($query);
+      $result = $db -> prepare($artista_lugar);
 	    $result -> execute();
-	    $tupla = $result -> fetchAll();
+      $resultados_artista = $result -> fetchAll();
+      
+      $result = $db -> prepare($obra);
+	    $result -> execute();
+	    $resultados_obra = $result -> fetchAll();
     ?>
     <div class="container mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información de la obra</h2>
@@ -41,7 +45,7 @@
             </thead>
             <tbody>
               <?php
-                foreach ($obra as $n) {
+                foreach ($resultados_obra as $n) {
                   echo "<tr class='bg-dark'>
                           <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td> 
                         </tr>";
@@ -84,7 +88,7 @@
             </thead>
             <tbody>
               <?php
-                foreach ($obras as $n) {
+                foreach ($resultados_artista as $n) {
                   echo "<tr class='bg-dark'>
                           <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td>
                         </tr>";
