@@ -16,7 +16,7 @@
         AND Lugares.cid = Ciudades.cid AND Ciudades.pid = Paises.pid 
         AND Obras.oid = Hecha_por.oid AND Hecha_por.aid = Artistas.aid";
 
-      $obra = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo FROM Obras WHERE Obras.oid = '$seleccionado'"
+      $obra = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo FROM Obras WHERE Obras.oid = '$seleccionado'";
    
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
       $result = $db -> prepare($query);
