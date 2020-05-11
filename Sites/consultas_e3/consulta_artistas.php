@@ -68,6 +68,8 @@
                 <th class="text-white bg-danger" scope="col">Ano Inicio</th>
                 <th class="text-white bg-danger" scope="col">Ano de término</th>
                 <th class="text-white bg-danger" scope="col">Periodo</th>
+                <th class="text-white bg-danger" scope="col">Consultar</th>
+
 
 
               </tr>
@@ -76,7 +78,12 @@
               <?php
                 foreach ($obras as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td> <td>
+                          <form action='consulta_obras.php' method='post' >
+                              <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
+                              <input class='btn btn-primary' type='submit' value='CONSULTAR'>
+                          </form>
+                          </td>
                         </tr>";
                 }
               ?>
@@ -85,7 +92,7 @@
         </div>
       </div>
     </div>
-    <form action="../index.php" method="get">
+    <form action="../index2.php" method="get">
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
     </form>
   </div>
