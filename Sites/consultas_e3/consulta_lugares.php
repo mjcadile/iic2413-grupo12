@@ -66,13 +66,13 @@
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
-              <th class="text-white bg-danger" scope="col">Nombre</th>
-              <th class="text-white bg-danger" scope="col">Ciudad</th>
-              <th class="text-white bg-danger" scope="col">País</th>
               <?php
                 if ($resultados_iglesia != [""] or $resultados_iglesia != ("")) {
                   echo 
                   "<tr>
+                   <th class='text-white bg-danger' scope='col'>Nombre</th>
+                   <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                   <th class='text-white bg-danger' scope='col'>País</th>
                    <th class='text-white bg-danger' scope='col'>Horario Apertura</th>
                    <th class='text-white bg-danger' scope='col'>Horario Cierre</th>
                    </tr>";
@@ -80,6 +80,9 @@
                 elseif ($resultados_museo != [""] or $resultados_museo != ("")){
                   echo
                   "<tr>
+                   <th class='text-white bg-danger' scope='col'>Nombre</th>
+                   <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                   <th class='text-white bg-danger' scope='col'>País</th>
                    <th class='text-white bg-danger' scope='col'>Horario Apertura</th>
                    <th class='text-white bg-danger' scope='col'>Horario Cierre</th>
                    <th class='text-white bg-danger' scope='col'>Precio</th>
@@ -87,6 +90,12 @@
                    </tr>";
                  }
                  else {
+                  echo
+                  "<tr>
+                   <th class='text-white bg-danger' scope='col'>Nombre</th>
+                   <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                   <th class='text-white bg-danger' scope='col'>País</th>
+                   </tr>";
                  }
               ?>
             </thead>
