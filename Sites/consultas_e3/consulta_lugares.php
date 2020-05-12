@@ -101,35 +101,35 @@
               <tr class='bg-dark'>
               <?php
                 if (count($resultados_iglesia) != 0){
-                  $resultado_def_lugar = [];
+                  $resultados_def_lugar = [];
                   foreach ($resultados_ubicacion as $u) {
-                    array_push($resultado_def_lugar, $u[0], $u[1], $u[2]);
+                    array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
-                  foreach ($resultado_iglesia as $n) {
-                    array_push($resultado_def_lugar, n[0], n[1], n[2]);
+                  foreach ($resultados_iglesia as $n) {
+                    array_push($resultados_def_lugar, n[0], n[1], n[2]);
                   }
-                  echo "<td>$resultado_def_lugar[0]</td>
-                        <td>$resultado_def_lugar[1]</td>
-                        <td>$resultado_def_lugar[2]</td>
-                        <td>$resultado_def_lugar[3]</td>
-                        <td>$resultado_def_lugar[4]</td>
-                        <td>$resultado_def_lugar[5]</td>";
+                  echo "<td>$resultados_def_lugar[0]</td>
+                        <td>$resultados_def_lugar[1]</td>
+                        <td>$resultados_def_lugar[2]</td>
+                        <td>$resultados_def_lugar[3]</td>
+                        <td>$resultados_def_lugar[4]</td>
+                        <td>$resultados_def_lugar[5]</td>";
                 }
                 elseif (count($resultados_museo) != 0) {
-                  $resultado_def_lugar = [];
+                  $resultados_def_lugar = [];
                   foreach ($resultados_ubicacion as $u) {
-                    array_push($resultado_def_lugar, $u[0], $u[1], $u[2]);
+                    array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
-                  foreach ($resultado_museo as $n) {
-                    array_push($resultado_def_lugar, n[0], n[1], n[2], n[3]);
+                  foreach ($resultados_museo as $n) {
+                    array_push($resultados_def_lugar, n[0], n[1], n[2], n[3]);
                   }
-                      echo "<td>$resultado_def_lugar[0]</td>
-                            <td>$resultado_def_lugar[1]</td>
-                            <td>$resultado_def_lugar[2]</td>
-                            <td>$resultado_def_lugar[3]</td>
-                            <td>$resultado_def_lugar[4]</td>
-                            <td>$resultado_def_lugar[5]</td>
-                            <td>$resultado_def_lugar[6]</td>
+                      echo "<td>$resultados_def_lugar[0]</td>
+                            <td>$resultados_def_lugar[1]</td>
+                            <td>$resultados_def_lugar[2]</td>
+                            <td>$resultados_def_lugar[3]</td>
+                            <td>$resultados_def_lugar[4]</td>
+                            <td>$resultados_def_lugar[5]</td>
+                            <td>$resultados_def_lugar[6]</td>
                             <td>
                               <form action='../index2.php' method='get'>
                                 <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
@@ -137,13 +137,13 @@
                             </td>";
                 }
                 elseif (count($resultados_plaza) != 0) {
-                  $resultado_def_lugar = [];
+                  $resultados_def_lugar = [];
                   foreach ($resultados_ubicacion as $u) {
-                    array_push($resultado_def_lugar, $u[0], $u[1], $u[2]);
+                    array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
-                  echo "<td>$resultado_def_lugar[0]</td>
-                        <td>$resultado_def_lugar[1]</td>
-                        <td>$resultado_def_lugar[2]</td>";
+                  echo "<td>$resultados_def_lugar[0]</td>
+                        <td>$resultados_def_lugar[1]</td>
+                        <td>$resultados_def_lugar[2]</td>";
                 }
               ?>
               </tr>
