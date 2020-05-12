@@ -11,13 +11,13 @@
       $seleccionado = number_format($seleccionado);
 
       #Se construye la consulta como un string
- 	    $artista_lugar = "SELECT Artistas.nombre, Lugares.nombre, Ciudades.nombre, Paises.nombre FROM Artistas, Lugares, Ciudades, Paises, Obras, Hecha_por
+ 	    $artista_lugar = "SELECT Artistas.nombre, Lugares.nombre, Ciudades.nombre, Paises.nombre, Lugares.lid FROM Artistas, Lugares, Ciudades, Paises, Obras, Hecha_por
         WHERE Obras.oid = '$seleccionado' AND Obras.lid = Lugares.lid 
         AND Lugares.cid = Ciudades.cid AND Ciudades.pid = Paises.pid 
         AND Obras.oid = Hecha_por.oid AND Hecha_por.aid = Artistas.aid";
 
       $obra = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino, Obras.periodo FROM Obras WHERE Obras.oid = '$seleccionado'";
-   
+
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
       $result = $db -> prepare($artista_lugar);
 	    $result -> execute();
@@ -71,6 +71,7 @@
                 <th class="text-white bg-danger" scope="col">Lugar</th>
                 <th class="text-white bg-danger" scope="col">Ciudad</th>
                 <th class="text-white bg-danger" scope="col">País</th>
+                <th class="text-white bg-danger" scope="col">Más Información</th>
 
 
               </tr>
@@ -79,7 +80,12 @@
               <?php
                 foreach ($resultados_artista as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>
+                            <form action='consulta_lugares.php' method='post' >
+                              <input type = 'hidden' name = 'lid' id = 'lid' value = $n[4] >
+                              <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
+                            </form>
+                          </td>
                         </tr>";
                 }
               ?>
@@ -88,8 +94,11 @@
         </div>
       </div>
     </div>
+    <form action="lista_artistas.php" method="get">
+      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver al listado de artistas">
+    </form>
     <form action="../index2.php" method="get">
-      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
+      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú principal">
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

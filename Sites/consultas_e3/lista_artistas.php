@@ -15,7 +15,7 @@
 	    $result -> execute();
 	    $nombres = $result -> fetchAll();
     ?>
-    <div class="container mt-10">
+    <div class="container-fluid mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los artistas</h2>
       <div class="scrollable">
         <div class="table-responsive">
@@ -49,7 +49,7 @@
       </div>
     </div>
     <form action="../index2.php" method="get">
-      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
+      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú Principal">
     </form>
   </div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
