@@ -105,11 +105,13 @@
                 if (count($resultados_iglesia) != 0){
                   foreach ($resultados_ubicacion as $n) {
                     foreach ($resultados_iglesia as $m) {
-                      echo "<td>$n[0]</td>
-                            <td>$n[1]</td>
-                            <td>$n[2]</td>
-                            <td>$m[1]</td>
-                            <td>$m[2]</td>";
+                      echo "<tr>
+                              <td>$n[0]</td>
+                              <td>$n[1]</td>
+                              <td>$n[2]</td>
+                              <td>$m[1]</td>
+                              <td>$m[2]</td>
+                            </tr>";
                       break;  
                     }
                     break;
@@ -118,17 +120,19 @@
                 elseif (count($resultados_museo) != 0) {
                   foreach ($resultados_ubicacion as $n) {
                     foreach ($resultados_museo as $m) {
-                      echo "<td>$ubi[0]</td>
-                            <td>$ubi[1]</td>
-                            <td>$ubi[2]</td>
-                            <td>$mus[1]</td>
-                            <td>$mus[2]</td>
-                            <td>$mus[3]</td>
-                            <td>
-                              <form action='../index2.php' method='get'>
-                                <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
-                              </form>
-                            </td>";
+                      echo "<tr>
+                              <td>$ubi[0]</td>
+                              <td>$ubi[1]</td>
+                              <td>$ubi[2]</td>
+                              <td>$mus[1]</td>
+                              <td>$mus[2]</td>
+                              <td>$mus[3]</td>
+                              <td>
+                                <form action='../index2.php' method='get'>
+                                  <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
+                                </form>
+                              </td>
+                            </tr>";
                       break;
                     }
                     break;
@@ -137,9 +141,11 @@
                 else {
                   foreach ($resultados_ubicacion as $n) {
                     foreach ($resultados_plaza as $m) {
-                      echo "<td>$m[0]</td>
-                            <td>$n[1]</td>
-                            <td>$n[2]</td>";
+                      echo "<tr>
+                              <td>$m[0]</td>
+                              <td>$n[1]</td>
+                              <td>$n[2]</td>
+                            </tr>";
                       break;
                     }
                     break;
