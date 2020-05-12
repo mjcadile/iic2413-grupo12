@@ -110,9 +110,9 @@
                             <td>$n[2]</td>
                             <td>$m[1]</td>
                             <td>$m[2]</td>";
-                      break
+                      break;  
                     }
-                    break
+                    break;
                   }
                 }
                 elseif (count($resultados_museo) != 0) {
@@ -129,9 +129,9 @@
                                 <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
                               </form>
                             </td>";
-                      break
+                      break;
                     }
-                    break
+                    break;
                   } 
                 }
                 else {
@@ -140,9 +140,9 @@
                       echo "<td>$m[0]</td>
                             <td>$n[1]</td>
                             <td>$n[2]</td>";
-                      break
+                      break;
                     }
-                    break
+                    break;
                   }
                 }
               ?>
