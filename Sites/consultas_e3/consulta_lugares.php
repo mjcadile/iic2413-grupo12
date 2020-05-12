@@ -103,19 +103,35 @@
               <tr class='bg-dark'>
               <?php
                 if (count($resultados_iglesia) != 0){
-                  echo "<td>$resultados_ubicacion[0]</td>
-                        <td>$resultados_ubicacion[1]</td>
-                        <td>$resultados_ubicacion[2]</td>
-                        <td>$resultados_iglesia[1]</td>
-                        <td>$resultados_iglesia[2]</td>";
+                  $ubi = []
+                  foreach ($resultados_ubicacion as $n) {
+                    $ubi = $n
+                  }
+                  $igl = []
+                  foreach ($resultados_iglesia as $n){
+                    $igl = $n
+                  }
+                  echo "<td>$ubi[0]</td>
+                        <td>$ubi[1]</td>
+                        <td>$ubi[2]</td>
+                        <td>$igl[1]</td>
+                        <td>$igl[2]</td>";
                 }
                 elseif (count($resultados_museo) != 0) {
-                  echo "<td>$resultados_ubicacion[0]</td>
-                        <td>$resultados_ubicacion[1]</td>
-                        <td>$resultados_ubicacion[2]</td>
-                        <td>$resultados_museo[1]</td>
-                        <td>$resultados_museo[2]</td>
-                        <td>$resultados_museo[3]</td>
+                  $ubi = []
+                  foreach ($resultados_ubicacion as $n) {
+                    $ubi = $n
+                  }
+                  $mus = []
+                  foreach ($resultados_museo as $n){
+                    $mus = $n
+                  }
+                  echo "<td>$ubi[0]</td>
+                        <td>$ubi[1]</td>
+                        <td>$ubi[2]</td>
+                        <td>$mus[1]</td>
+                        <td>$mus[2]</td>
+                        <td>$mus[3]</td>
                         <td>
                           <form action='../index2.php' method='get'>
                             <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
@@ -123,9 +139,17 @@
                         </td>";
                 }
                 else {
-                  echo "<td>$resultados_plaza[0]</td>
-                        <td>$resultados_ubicacion[1]</td>
-                        <td>$resultados_ubicacion[2]</td>";
+                  $ubi = []
+                  foreach ($resultados_ubicacion as $n) {
+                    $ubi = $n
+                  }
+                  $pla = []
+                  foreach ($resultados_plaza as $n){
+                    $pla = $n
+                  }
+                  echo "<td>$pla[0]</td>
+                        <td>$ubi[1]</td>
+                        <td>$ubi[2]</td>";
                 }
               ?>
               </tr>
