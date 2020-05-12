@@ -110,7 +110,7 @@
                       </form>
                     </td>"; 
                   }
-                  foreach ($resultados_museo $n) {
+                  foreach ($resultados_museo as $n) {
                     echo "<td>$n[3]</td><td>$n[4]</td><td>$n[5]</td>"; 
                   }
                 }
