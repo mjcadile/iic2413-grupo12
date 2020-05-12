@@ -60,7 +60,7 @@
       $resultados_artistas = $result -> fetchAll();
   
     ?>
-    <div class="container mt-10">
+    <div class="container-fluid mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información del lugar</h2>
       <div class="scrollable">
         <div class="table-responsive">
@@ -104,23 +104,28 @@
               <?php
                 if ($resultados_iglesia != [""] or $resultados_iglesia != ("")){
                   foreach ($resultados_ubicacion as $n) {
-                    echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td>"; 
-                  }
-                  foreach ($resultados_iglesia as $n) {
-                    echo "<td>$n[3]</td><td>$n[4]</td>"; 
+                    foreach ($resultados_iglesia as $k) {
+                      echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$k[1]</td><td>$k[2]</td>"; 
+                    }
                   }
                 }
                 elseif ($resultados_museo != [""] or $resultados_museo != ("")) {
                   foreach ($resultados_ubicacion as $n) {
-                    echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td>
-                    <td>
-                      <form action='../index2.php' method='get'>
-                        <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
-                      </form>
-                    </td>"; 
+                    foreach ($resultados_museo as $k) {
+                      echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$k[1]</td><td>$k[2]</td><td>$k[3]</td>
+                        <td>
+                          <form action='../index2.php' method='get'>
+                            <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
+                          </form>
+                        </td>"; 
+                    }
                   }
-                  foreach ($resultados_museo as $n) {
-                    echo "<td>$n[3]</td><td>$n[4]</td><td>$n[5]</td>"; 
+                }
+                else {
+                  foreach ($resultados_ubicacion as $n) {
+                    foreach ($resultados_plaza as $k) {
+                      echo "<td>$k[0]</td><td>$n[1]</td><td>$n[2]</td>"; 
+                    }
                   }
                 }
               ?>
