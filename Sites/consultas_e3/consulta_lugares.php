@@ -70,14 +70,14 @@
               <th class="text-white bg-danger" scope="col">Ciudad</th>
               <th class="text-white bg-danger" scope="col">País</th>
               <?php
-                if ($resultados_iglesia != [""]) or ($resultados_iglesia != ("")) {
+                if ($resultados_iglesia != [""] or $resultados_iglesia != ("")) {
                   echo 
                   "<tr>
                    <th class="text-white bg-danger" scope="col">Horario Apertura</th>
                    <th class="text-white bg-danger" scope="col">Horario Cierre</th>
                    </tr>";
                 }
-                elseif ($resultados_museo != [""]) or ($resultados_museo != ("")){
+                elseif ($resultados_museo != [""] or $resultados_museo != ("")){
                   echo
                   "<tr>
                    <th class="text-white bg-danger" scope="col">Horario Apertura</th>
@@ -93,7 +93,7 @@
             <tbody>
               <tr class='bg-dark'>
               <?php
-                if ($resultados_iglesia != [""]) or ($resultados_iglesia != ("")){
+                if ($resultados_iglesia != [""] or $resultados_iglesia != ("")){
                   foreach ($resultados_ubicacion as $n) {
                     echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td>"; 
                   }
@@ -101,7 +101,7 @@
                     echo "<td>$n[3]</td><td>$n[4]</td>"; 
                   }
                 }
-                elseif ($resultados_museo != [""]) or ($resultados_museo != ("")) {
+                elseif ($resultados_museo != [""] or $resultados_museo != ("")) {
                   foreach ($resultados_ubicacion as $n) {
                     echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td>
                     <td>
