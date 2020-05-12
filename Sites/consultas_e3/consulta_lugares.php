@@ -31,7 +31,7 @@
 
        $artistas = "SELECT Artistas.aid, Artistas.nombre FROM Artistas INNER JOIN Hecha_por ON
        Artistas.aid = Hecha_por.aid INNER JOIN Obras ON Hecha_por.oid = Obras.oid
-       INNER JOIN Lugares ON Obras.lid = Lugares.lid AND Lugares.lid = '$seleccionado'"
+       INNER JOIN Lugares ON Obras.lid = Lugares.lid AND Lugares.lid = '$seleccionado'";
 
 
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
@@ -75,7 +75,7 @@
                   "<tr>
                    <th class="text-white bg-danger" scope="col">Horario Apertura</th>
                    <th class="text-white bg-danger" scope="col">Horario Cierre</th>
-                   </tr>"
+                   </tr>";
                 }
                 elseif ($resultados_museo != [""]) or ($resultados_museo != ("")){
                   echo
@@ -84,7 +84,7 @@
                    <th class="text-white bg-danger" scope="col">Horario Cierre</th>
                    <th class="text-white bg-danger" scope="col">Precio</th>
                    <th class="text-white bg-danger" scope="col">Tickets</th>
-                   </tr>"
+                   </tr>";
                  }
                  else {
                  }
@@ -108,8 +108,7 @@
                       <form action="../index2.php" method="get">
                         <input type="submit" class="btn btn-primary mt-8 mb-5" value="Comprar ticket">
                       </form>
-                    </td>
-                    "; 
+                    </td>"; 
                   }
                   foreach ($resultados_museo $n) {
                     echo "<td>$n[3]</td><td>$n[4]</td><td>$n[5]</td>"; 
