@@ -13,21 +13,21 @@
       #Se construye la consulta como un string
        $iglesia =  "SELECT Lugares.nombre, 
        Iglesias.horario_apertura, Iglesias.horario_cierre FROM Lugares 
-       INNER JOIN Iglesias ON Iglesias.lid = '$seleccionado";
+       INNER JOIN Iglesias ON Iglesias.lid = '$seleccionado'";
 
        $museo = "SELECT Lugares.nombre, Museos.horario_apertura, 
        Museos.horario_cierre, Museos.precio FROM Lugares INNER JOIN 
-       Museos ON Museos.lid = '$seleccionado";
+       Museos ON Museos.lid = '$seleccionado'";
        
        $plaza = "SELECT Lugares.nombre FROM Lugares INNER JOIN Plazas 
-       ON Plazas.lid = '$seleccionado";
+       ON Plazas.lid = '$seleccionado'";
 
        $ubicacion = "SELECT Lugares.nombre, Ciudades.nombre, Paises.nombre 
        FROM Lugares, Ciudades, Paises WHERE Lugares.lid = '$seleccionado' 
        AND Lugares.cid = Ciudades.cid AND Ciudades.pid = Paises.pid";
        
        $obras = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino FROM Obras
-       WHERE Obras.lid = '$seleccionado";
+       WHERE Obras.lid = '$seleccionado'";
 
        $artistas = "SELECT Artistas.aid, Artistas.nombre FROM Artistas INNER JOIN Hecha_por ON
        Artistas.aid = Hecha_por.aid INNER JOIN Obras ON Hecha_por.oid = Obras.oid
