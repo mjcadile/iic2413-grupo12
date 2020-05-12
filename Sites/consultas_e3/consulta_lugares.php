@@ -12,24 +12,22 @@
 
       #Se construye la consulta como un string
        $iglesia =  "SELECT Lugares.nombre, 
-       Iglesias.horario_apertura, Iglesias.horario_cierre FROM Lugares 
-       INNER JOIN Iglesias ON Iglesias.lid = '$seleccionado'";
+       Iglesias.horario_apertura, Iglesias.horario_cierre FROM Lugares, Iglesias
+        WHERE Iglesias.lid = '$seleccionado'";
 
        $museo = "SELECT Lugares.nombre, Museos.horario_apertura, 
-       Museos.horario_cierre, Museos.precio FROM Lugares INNER JOIN 
-       Museos ON Museos.lid = '$seleccionado'";
+       Museos.horario_cierre, Museos.precio FROM Lugares, Museos WHERE Museos.lid = '$seleccionado'";
        
-       $plaza = "SELECT Lugares.nombre FROM Lugares INNER JOIN Plazas 
-       ON Plazas.lid = '$seleccionado'";
+       $plaza = "SELECT Lugares.nombre FROM Lugares, Plazas WHERE Plazas.lid = '$seleccionado'";
 
        $ubicacion = "SELECT Lugares.nombre, Ciudades.nombre, Paises.nombre 
        FROM Lugares, Ciudades, Paises WHERE Lugares.lid = '$seleccionado' 
        AND Lugares.cid = Ciudades.cid AND Ciudades.pid = Paises.pid";
        
-       $obras = "SELECT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino FROM Obras
+       $obras = "SELECT DISTINCT Obras.oid, Obras.nombre, Obras.ano_inicio, Obras.ano_termino FROM Obras
        WHERE Obras.lid = '$seleccionado'";
 
-       $artistas = "SELECT Artistas.aid, Artistas.nombre FROM Artistas INNER JOIN Hecha_por ON
+       $artistas = "SELECT DISTINCT Artistas.aid, Artistas.nombre FROM Artistas INNER JOIN Hecha_por ON
        Artistas.aid = Hecha_por.aid INNER JOIN Obras ON Hecha_por.oid = Obras.oid
        INNER JOIN Lugares ON Obras.lid = Lugares.lid AND Lugares.lid = '$seleccionado'";
 
@@ -103,53 +101,49 @@
               <tr class='bg-dark'>
               <?php
                 if (count($resultados_iglesia) != 0){
-                  foreach ($resultados_ubicacion as $n) {
-                    foreach ($resultados_iglesia as $m) {
-                      echo "<tr>
-                              <td>$n[0]</td>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$m[1]</td>
-                              <td>$m[2]</td>
-                            </tr>";
-                      break;  
-                    }
-                    break;
+                  $resultado_def_lugar = [];
+                  foreach ($resultados_ubicacion as $u) {
+                    array_push($resultado_def_lugar, $u[0], $u[1], $u[2]);
                   }
+                  foreach ($resultado_iglesia as $n) {
+                    array_push($resultado_def_lugar, n[0], n[1], n[2]);
+                  }
+                  echo "<td>$resultado_def_lugar[0]</td>
+                        <td>$resultado_def_lugar[1]</td>
+                        <td>$resultado_def_lugar[2]</td>
+                        <td>$resultado_def_lugar[3]</td>
+                        <td>$resultado_def_lugar[4]</td>
+                        <td>$resultado_def_lugar[5]</td>";
                 }
                 elseif (count($resultados_museo) != 0) {
-                  foreach ($resultados_ubicacion as $n) {
-                    foreach ($resultados_museo as $m) {
-                      echo "<tr>
-                              <td>$ubi[0]</td>
-                              <td>$ubi[1]</td>
-                              <td>$ubi[2]</td>
-                              <td>$mus[1]</td>
-                              <td>$mus[2]</td>
-                              <td>$mus[3]</td>
-                              <td>
-                                <form action='../index2.php' method='get'>
-                                  <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
-                                </form>
-                              </td>
-                            </tr>";
-                      break;
-                    }
-                    break;
-                  } 
-                }
-                else {
-                  foreach ($resultados_ubicacion as $n) {
-                    foreach ($resultados_plaza as $m) {
-                      echo "<tr>
-                              <td>$m[0]</td>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                            </tr>";
-                      break;
-                    }
-                    break;
+                  $resultado_def_lugar = [];
+                  foreach ($resultados_ubicacion as $u) {
+                    array_push($resultado_def_lugar, $u[0], $u[1], $u[2]);
                   }
+                  foreach ($resultado_museo as $n) {
+                    array_push($resultado_def_lugar, n[0], n[1], n[2], n[3]);
+                  }
+                      echo "<td>$resultado_def_lugar[0]</td>
+                            <td>$resultado_def_lugar[1]</td>
+                            <td>$resultado_def_lugar[2]</td>
+                            <td>$resultado_def_lugar[3]</td>
+                            <td>$resultado_def_lugar[4]</td>
+                            <td>$resultado_def_lugar[5]</td>
+                            <td>$resultado_def_lugar[6]</td>
+                            <td>
+                              <form action='../index2.php' method='get'>
+                                <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
+                              </form>
+                            </td>";
+                }
+                elseif (count($resultados_plaza) != 0) {
+                  $resultado_def_lugar = [];
+                  foreach ($resultados_ubicacion as $u) {
+                    array_push($resultado_def_lugar, $u[0], $u[1], $u[2]);
+                  }
+                  echo "<td>$resultado_def_lugar[0]</td>
+                        <td>$resultado_def_lugar[1]</td>
+                        <td>$resultado_def_lugar[2]</td>";
                 }
               ?>
               </tr>
