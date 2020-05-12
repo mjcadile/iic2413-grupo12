@@ -67,7 +67,7 @@
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <?php
-                if ($resultados_iglesia != [""] or $resultados_iglesia != ("")) {
+                if (count($resultados_iglesia) != 0) {
                   echo 
                   "<tr>
                    <th class='text-white bg-danger' scope='col'>Nombre</th>
@@ -77,7 +77,7 @@
                    <th class='text-white bg-danger' scope='col'>Horario Cierre</th>
                    </tr>";
                 }
-                elseif ($resultados_museo != [""] or $resultados_museo != ("")){
+                elseif (count($resultados_museo) != 0){
                   echo
                   "<tr>
                    <th class='text-white bg-danger' scope='col'>Nombre</th>
@@ -102,31 +102,30 @@
             <tbody>
               <tr class='bg-dark'>
               <?php
-                if ($resultados_iglesia != [""] or $resultados_iglesia != ("")){
-                  foreach ($resultados_ubicacion as $n) {
-                    foreach ($resultados_iglesia as $k) {
-                      echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$k[1]</td><td>$k[2]</td>"; 
-                    }
-                  }
+                if (count($resultados_iglesia) != 0){
+                  echo "<td>$resultados_ubicacion[0]</td>
+                        <td>$resultados_ubicacion[1]</td>
+                        <td>$resultados_ubicacion[2]</td>
+                        <td>$resultados_iglesia[1]</td>
+                        <td>$resultados_iglesia[2]</td>";
                 }
-                elseif ($resultados_museo != [""] or $resultados_museo != ("")) {
-                  foreach ($resultados_ubicacion as $n) {
-                    foreach ($resultados_museo as $k) {
-                      echo "<td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$k[1]</td><td>$k[2]</td><td>$k[3]</td>
+                elseif (count($resultados_museo) != 0) {
+                  echo "<td>$resultados_ubicacion[0]</td>
+                        <td>$resultados_ubicacion[1]</td>
+                        <td>$resultados_ubicacion[2]</td>
+                        <td>$resultados_museo[1]</td>
+                        <td>$resultados_museo[2]</td>
+                        <td>$resultados_museo[3]</td>
                         <td>
                           <form action='../index2.php' method='get'>
                             <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
                           </form>
-                        </td>"; 
-                    }
-                  }
+                        </td>";
                 }
                 else {
-                  foreach ($resultados_ubicacion as $n) {
-                    foreach ($resultados_plaza as $k) {
-                      echo "<td>$k[0]</td><td>$n[1]</td><td>$n[2]</td>"; 
-                    }
-                  }
+                  echo "<td>$resultados_plaza[0]</td>
+                        <td>$resultados_ubicacion[1]</td>
+                        <td>$resultados_ubicacion[2]</td>";
                 }
               ?>
               </tr>
@@ -155,7 +154,7 @@
               foreach ($resultados_obras as $n) {
                 echo "<tr class='bg-dark'>
                         <td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>
-                          <form action='../index2.php' method='post' >
+                          <form action='consulta_obras.php' method='post' >
                             <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                             <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
                           </form>
