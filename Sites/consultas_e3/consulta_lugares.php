@@ -106,7 +106,7 @@
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
                   foreach ($resultados_iglesia as $n) {
-                    array_push($resultados_def_lugar, n[0], n[1], n[2]);
+                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2]);
                   }
                   echo "<td>$resultados_def_lugar[0]</td>
                         <td>$resultados_def_lugar[1]</td>
@@ -121,7 +121,7 @@
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
                   foreach ($resultados_museo as $n) {
-                    array_push($resultados_def_lugar, n[0], n[1], n[2], n[3]);
+                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2], $n[3]);
                   }
                       echo "<td>$resultados_def_lugar[0]</td>
                             <td>$resultados_def_lugar[1]</td>
