@@ -103,53 +103,47 @@
               <tr class='bg-dark'>
               <?php
                 if (count($resultados_iglesia) != 0){
-                  $ubi = []
                   foreach ($resultados_ubicacion as $n) {
-                    $ubi = $n
+                    foreach ($resultados_iglesia as $m) {
+                      echo "<td>$n[0]</td>
+                            <td>$n[1]</td>
+                            <td>$n[2]</td>
+                            <td>$m[1]</td>
+                            <td>$m[2]</td>";
+                      break
+                    }
+                    break
                   }
-                  $igl = []
-                  foreach ($resultados_iglesia as $n){
-                    $igl = $n
-                  }
-                  echo "<td>$ubi[0]</td>
-                        <td>$ubi[1]</td>
-                        <td>$ubi[2]</td>
-                        <td>$igl[1]</td>
-                        <td>$igl[2]</td>";
                 }
                 elseif (count($resultados_museo) != 0) {
-                  $ubi = []
                   foreach ($resultados_ubicacion as $n) {
-                    $ubi = $n
-                  }
-                  $mus = []
-                  foreach ($resultados_museo as $n){
-                    $mus = $n
-                  }
-                  echo "<td>$ubi[0]</td>
-                        <td>$ubi[1]</td>
-                        <td>$ubi[2]</td>
-                        <td>$mus[1]</td>
-                        <td>$mus[2]</td>
-                        <td>$mus[3]</td>
-                        <td>
-                          <form action='../index2.php' method='get'>
-                            <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
-                          </form>
-                        </td>";
+                    foreach ($resultados_museo as $m) {
+                      echo "<td>$ubi[0]</td>
+                            <td>$ubi[1]</td>
+                            <td>$ubi[2]</td>
+                            <td>$mus[1]</td>
+                            <td>$mus[2]</td>
+                            <td>$mus[3]</td>
+                            <td>
+                              <form action='../index2.php' method='get'>
+                                <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
+                              </form>
+                            </td>";
+                      break
+                    }
+                    break
+                  } 
                 }
                 else {
-                  $ubi = []
                   foreach ($resultados_ubicacion as $n) {
-                    $ubi = $n
+                    foreach ($resultados_plaza as $m) {
+                      echo "<td>$m[0]</td>
+                            <td>$n[1]</td>
+                            <td>$n[2]</td>";
+                      break
+                    }
+                    break
                   }
-                  $pla = []
-                  foreach ($resultados_plaza as $n){
-                    $pla = $n
-                  }
-                  echo "<td>$pla[0]</td>
-                        <td>$ubi[1]</td>
-                        <td>$ubi[2]</td>";
                 }
               ?>
               </tr>
