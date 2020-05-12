@@ -7,6 +7,8 @@
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
 
+      $nombre_lugar = $_POST["nombre_lugar"]
+
       $seleccionado = $_POST["lid"];
       $seleccionado = number_format($seleccionado);
 
@@ -58,7 +60,7 @@
   
     ?>
     <div class="container-fluid mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información del lugar</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información sobre <?php$nombre_lugar?> </h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -152,7 +154,7 @@
     
 
   <div class="container-fluid mt-10">
-    <h2 class="text-center rounded-bottom bg-info text-white mb-8">Obras en este lugar</h2>
+    <h2 class="text-center rounded-bottom bg-info text-white mb-8">Obras en <?php$nombre_lugar?></h2>
     <div class="scrollable">
       <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -184,7 +186,7 @@
   </div>
 
   <div class="container-fluid mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Artistas con obras en este lugar</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Artistas con obras en <?php$nombre_lugar?></h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">

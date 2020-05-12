@@ -83,6 +83,7 @@
                           <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>
                             <form action='consulta_lugares.php' method='post' >
                               <input type = 'hidden' name = 'lid' id = 'lid' value = $n[4] >
+                              <input type = 'hidden' name = 'nombre_lugar' id = 'nombre_lugar' value = $n[1] >
                               <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
                             </form>
                           </td>
