@@ -11,11 +11,10 @@
       $seleccionado = number_format($seleccionado);
 
       #Se construye la consulta como un string
-       $iglesia =  "SELECT Lugares.nombre, 
-       Iglesias.horario_apertura, Iglesias.horario_cierre FROM Lugares, Iglesias
+       $iglesia =  "SELECT Iglesias.horario_apertura, Iglesias.horario_cierre FROM Lugares, Iglesias
         WHERE Iglesias.lid = '$seleccionado'";
 
-       $museo = "SELECT Lugares.nombre, Museos.horario_apertura, 
+       $museo = "SELECT Museos.horario_apertura, 
        Museos.horario_cierre, Museos.precio FROM Lugares, Museos WHERE Museos.lid = '$seleccionado'";
        
        $plaza = "SELECT Lugares.nombre FROM Lugares, Plazas WHERE Plazas.lid = '$seleccionado'";
@@ -106,14 +105,13 @@
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
                   foreach ($resultados_iglesia as $n) {
-                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2]);
+                    array_push($resultados_def_lugar, $n[0], $n[1]);
                   }
                   echo "<td>$resultados_def_lugar[0]</td>
                         <td>$resultados_def_lugar[1]</td>
                         <td>$resultados_def_lugar[2]</td>
                         <td>$resultados_def_lugar[3]</td>
-                        <td>$resultados_def_lugar[4]</td>
-                        <td>$resultados_def_lugar[5]</td>";
+                        <td>$resultados_def_lugar[4]</td>";
                 }
                 elseif (count($resultados_museo) != 0) {
                   $resultados_def_lugar = [];
@@ -121,7 +119,7 @@
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
                   foreach ($resultados_museo as $n) {
-                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2], $n[3]);
+                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2]);
                   }
                       echo "<td>$resultados_def_lugar[0]</td>
                             <td>$resultados_def_lugar[1]</td>
@@ -129,7 +127,6 @@
                             <td>$resultados_def_lugar[3]</td>
                             <td>$resultados_def_lugar[4]</td>
                             <td>$resultados_def_lugar[5]</td>
-                            <td>$resultados_def_lugar[6]</td>
                             <td>
                               <form action='../index2.php' method='get'>
                                 <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
