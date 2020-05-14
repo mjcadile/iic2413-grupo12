@@ -130,7 +130,7 @@
                             <td>$resultados_def_lugar[4]</td>
                             <td>$resultados_def_lugar[5]</td>
                             <td>
-                              <form action='../index2.php' method='get'>
+                              <form action='../index.php' method='get'>
                                 <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
                               </form>
                             </td>";
