@@ -24,7 +24,7 @@ hr.new1 {
         <div class="card-body">
             <h5 class="card-title">Artistas</h5>
             <p class="card-text">A continuación se muestran todos los nombres 
-            distintos de ls artistas.</p>
+            distintos de los artistas.</p>
             <form align="center" action="consultas_e3/lista_artistas.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Consultar">
             </form>
