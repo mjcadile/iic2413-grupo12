@@ -98,7 +98,7 @@
     <form action="lista_artistas.php" method="get">
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver al listado de artistas">
     </form>
-    <form action="../index2.php" method="get">
+    <form action="../index.php" method="get">
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú principal">
     </form>
   </div>
