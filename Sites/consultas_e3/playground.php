@@ -1,6 +1,7 @@
 <?php include('../templates/header.html');   
-
   require 'path/to/google_search_results';
+  require 'path/to/restclient';
+
   $query = [
       "engine" => "google",
       "ijn" => "0",
