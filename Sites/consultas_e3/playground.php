@@ -1,4 +1,5 @@
 <?php include('../templates/header.html');   
+  set_include_path('path/to/google_search_results');
   require 'path/to/google_search_results';
   require 'path/to/restclient';
 
