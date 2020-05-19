@@ -42,7 +42,7 @@ hr.new1 {
             <h5 class="card-title">Plazas con esculturas de Gian Lorenzo Bernini</h5>
             <p class="card-text">A continuación se muestran todas las plazas con al menos 
             una escultura de Gian Lorenzo Bernini.</p>
-            <form align="center" action="consultas_e3/consulta2.php" method="post">
+            <form align="center" action="consultas_e3/playground.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Consultar">
             </form>
         </div>

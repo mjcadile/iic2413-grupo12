@@ -1,7 +1,25 @@
 <?php include('../templates/header.html');   ?>
 
+  require 'path/to/google_search_results';
+  $query = [
+      "engine" => "google",
+      "ijn" => "0",
+      "q" => "museo del louvre",
+      "google_domain" => "google.com",
+      "tbm" => "isch",
+      "api_key" => "AIzaSyAT7rmXtANwQfI7SV9Xjd-v8zX3AoNZX2I"
+  ];
+
+  $client = new GoogleSearchResults();
+  $results = $client->json($query);
+
+  echo $results
+  
+
+
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
+  
   <img src="http://www.museivaticani.va/content/dam/museivaticani/immagini/collezioni/musei/pinacoteca/17_01_angelo_destra_dettaglio.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
