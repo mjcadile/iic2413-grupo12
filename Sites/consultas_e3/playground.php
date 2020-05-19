@@ -1,4 +1,4 @@
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header.html');   
 
   require 'path/to/google_search_results';
   $query = [
@@ -15,7 +15,7 @@
 
   echo $results
   
-
+  ?>
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
