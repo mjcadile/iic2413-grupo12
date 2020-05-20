@@ -11,7 +11,7 @@
       "tbm" => "isch",
       "api_key" => "AIzaSyAT7rmXtANwQfI7SV9Xjd-v8zX3AoNZX2I"
   ];
-
+  $api_key = 'AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs'
   $client = new GoogleSearchResults();
   $results = $client->json($query);
 
