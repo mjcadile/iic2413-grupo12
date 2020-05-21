@@ -2,7 +2,6 @@
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
-  <img src="https://okdiario.com/img/2017/09/18/renacimiento-e1505728926887.jpg" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
@@ -37,7 +36,7 @@
       $image = $manage["items"][0]["link"];
 
       ?>
-      <img src= <?php echo $image ?> id="bg" alt="">
+    <img src= <?php echo $image ?> id="bg" alt="">
       
 
     <div class= 'container mt-10'>
