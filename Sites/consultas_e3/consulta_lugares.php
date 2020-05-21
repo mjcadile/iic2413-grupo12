@@ -7,7 +7,7 @@
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
 
-      $nombre_lugar = $_POST["nombre_lugar"];
+      $nombre_lugar = $_POST["nombre"];
 
       $seleccionado = $_POST["lid"];
       $seleccionado = number_format($seleccionado);
