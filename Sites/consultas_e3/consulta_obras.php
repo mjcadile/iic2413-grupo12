@@ -2,12 +2,12 @@
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
-  <img src="https://cdn3.m.admexico.mx/uploads/images/thumbs/mx/ad/1/s/2019/32/arte_5914_1200x630.jpg" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
 
       $seleccionado = $_POST["oid"];
+      $nombre_obra = $_POST["nombre"];
       $seleccionado = number_format($seleccionado);
 
       #Se construye la consulta como un string
@@ -25,8 +25,22 @@
       
       $result = $db -> prepare($obra);
 	    $result -> execute();
-	    $resultados_obra = $result -> fetchAll();
-    ?>
+      $resultados_obra = $result -> fetchAll();
+      
+      $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=large&q=";
+      $q = "{$nombre_obra}";
+      $q = str_replace(" ", "+", $q);
+      $url = $base . $q;
+
+      $response = file_get_contents($url);
+      $manage = json_decode($response, true);
+      print_r ($image);
+      $image = $manage["items"][1]["link"];
+
+      ?>
+  <img src= <?php echo $image ?> id="bg" alt="">
+
+
     <div class="container mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información de la obra</h2>
       <div class="scrollable">
@@ -83,7 +97,7 @@
                           <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>
                             <form action='consulta_lugares.php' method='post' >
                               <input type = 'hidden' name = 'lid' id = 'lid' value = $n[4] >
-                              <input type = 'hidden' name = 'nombre_lugar' id = 'nombre_lugar' value = $n[1] >
+                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                               <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
                             </form>
                           </td>

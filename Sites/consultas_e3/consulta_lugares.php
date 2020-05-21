@@ -62,7 +62,7 @@
 
   #Aquí pondremos la imagen de fondo para el lugar
 
-  $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=xxlarge&q=";
+  $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=large&q=";
   $q = "{$nombre_lugar}";
   $url = $base . $q;
 
@@ -187,6 +187,7 @@
                 echo "<tr class='bg-dark'>
                         <td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>
                           <form action='consulta_obras.php' method='post' >
+                            <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                             <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                             <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
                           </form>
@@ -217,6 +218,7 @@
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td><td>
                             <form action='consulta_artistas.php' method='post' >
+                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                               <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
                               <input class='btn btn-primary' type='submit' value='Sobre este artista'>
                             </form>
