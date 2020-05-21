@@ -7,7 +7,7 @@
       require("../config/conexion.php");
     
       $seleccionado = $_POST["aid"];
-      $nombre_artista = $_POST["nombre_artista"];
+      $nombre_artista = $_POST["nombre"];
       $seleccionado = number_format($seleccionado);
       #Se construye la consulta como un string
       $query = "SELECT * FROM Artistas WHERE Artistas.aid = '$seleccionado'";
