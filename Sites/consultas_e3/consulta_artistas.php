@@ -36,7 +36,7 @@
       $image = $manage["items"][0]["link"];
 
       ?>
-    <img src= <?php echo $image ?> id="bg" alt="">
+  <img src= <?php echo $image ?> id="bg" alt="">
       
 
     <div class= 'container mt-10'>
