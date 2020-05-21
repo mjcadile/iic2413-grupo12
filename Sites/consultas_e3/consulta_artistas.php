@@ -40,7 +40,7 @@
       
 
     <div class= 'container mt-10'>
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista con ID <?php echo $seleccionado; ?></h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista  <?php echo $nombre_artista; ?></h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
