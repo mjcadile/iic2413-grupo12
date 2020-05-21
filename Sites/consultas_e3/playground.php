@@ -8,6 +8,8 @@ $manage = json_decode($response, true);
 
 
 #echo $response;
+$image = $manage["items"][0]["link"];
+
 print_r ($manage["items"][0]["link"]);
 
 
@@ -16,7 +18,7 @@ print_r ($manage["items"][0]["link"]);
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
   
-  <img src="http://www.museivaticani.va/content/dam/museivaticani/immagini/collezioni/musei/pinacoteca/17_01_angelo_destra_dettaglio.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" id="bg" alt="">
+  <img src= "{$image}" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
