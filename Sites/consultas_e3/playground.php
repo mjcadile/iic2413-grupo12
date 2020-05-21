@@ -5,7 +5,7 @@ $api_key = 'AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs';
 
 $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=large&q=";
 $q = "museo del prado";
-$url = urlencode("{$base}{$q}");
+$url = $base . $q;
 
 $response = file_get_contents($url);
 
