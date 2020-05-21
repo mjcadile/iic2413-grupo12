@@ -1,8 +1,15 @@
 <?php include('../templates/header.html');   
   
 $api_key = 'AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs';
-  
-$response = file_get_contents("https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&q=museo+del+louvre&searchType=image&imgSize=large");
+
+
+$base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=large&q=";
+$q = "museo del prado";
+$url = "{$base}{$q}";
+
+$response = file_get_contents($url);
+
+#$response = file_get_contents("https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=large&q=");
 
 $manage = json_decode($response, true);
 
