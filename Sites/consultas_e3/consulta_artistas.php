@@ -34,7 +34,7 @@
       $response = file_get_contents($url);
       $manage = json_decode($response, true);
       print_r ($image);
-      $image = $manage["items"][0]["link"];
+      $image = $manage["items"][1]["link"];
 
       ?>
   <img src= <?php echo $image ?> id="bg" alt="">
