@@ -28,6 +28,7 @@
       
       $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=xxlarge&q=";
       $q = "{$nombre_artista}";
+      $q = str_replace(" ", "+", $q);
       $url = $base . $q;
 
       $response = file_get_contents($url);
