@@ -3,7 +3,6 @@
 <body>
 
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
-  <img src="https://cdn3.m.admexico.mx/uploads/images/thumbs/mx/ad/1/s/2019/32/arte_5914_1200x630.jpg" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
@@ -73,6 +72,8 @@
   $image = $manage["items"][0]["link"];
 
     ?>
+   <img src= <?php echo $image ?> id="bg" alt="">
+
     <div class="container-fluid mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información sobre <?php echo $nombre_lugar; ?> </h2>
       <div class="scrollable">
