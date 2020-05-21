@@ -62,7 +62,7 @@
 
   #Aquí pondremos la imagen de fondo para el lugar
 
-  $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=xlarge&q=";
+  $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=xxlarge&q=";
   $q = "{$nombre_lugar}";
   $url = $base . $q;
 

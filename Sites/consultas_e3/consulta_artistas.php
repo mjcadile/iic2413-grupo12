@@ -8,6 +8,7 @@
       require("../config/conexion.php");
     
       $seleccionado = $_POST["aid"];
+      $nombre_artista = $_POST["nombre_artista"];
       $seleccionado = number_format($seleccionado);
       #Se construye la consulta como un string
       $query = "SELECT * FROM Artistas WHERE Artistas.aid = '$seleccionado'";
@@ -24,8 +25,20 @@
       
       $result_o = $db -> prepare($query_obras);
 	    $result_o -> execute();
-	    $obras = $result_o -> fetchAll();
-    ?>
+      $obras = $result_o -> fetchAll();
+      
+      $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=xxlarge&q=";
+      $q = "{$nombre_artista}";
+      $url = $base . $q;
+
+      $response = file_get_contents($url);
+      $manage = json_decode($response, true);
+      print_r ($image);
+      $image = $manage["items"][0]["link"];
+
+      ?>
+      <img src= <?php echo $image ?> id="bg" alt="">
+      
 
     <div class= 'container mt-10'>
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista con ID <?php echo $seleccionado; ?></h2>
