@@ -1,8 +1,7 @@
 <?php include('../templates/header.html');   
-  set_include_path('path/to/google_search_results');
-  require 'path/to/google_search_results';
-  require 'path/to/restclient';
+  $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=huge&q=";
 
+  $q = "museo del prado";
   $query = [
       "engine" => "google",
       "ijn" => "0",
@@ -11,14 +10,19 @@
       "tbm" => "isch",
       "api_key" => "AIzaSyAT7rmXtANwQfI7SV9Xjd-v8zX3AoNZX2I"
   ];
-  $api_key = 'AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs'
-  $client = new GoogleSearchResults();
-  $results = $client->json($query);
-
-  echo $results
+  $api_key = 'AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs';
   
-  ?>
- 
+$response = file_get_contents("https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&q=museo+del+louvre&searchType=image&imgSize=huge");
+
+$manage = json_decode($response, true);
+
+
+#echo $response;
+print_r ($manage["items"][0]["link"]);
+
+  
+?>
+
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
   
