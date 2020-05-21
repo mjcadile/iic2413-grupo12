@@ -18,7 +18,7 @@ print_r ($manage["items"][0]["link"]);
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
   
-  <img src= <?php $image ?> id="bg" alt="">
+  <img src= '<?php $image ?>' id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
