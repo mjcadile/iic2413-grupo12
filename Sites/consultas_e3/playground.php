@@ -3,21 +3,20 @@
 $api_key = 'AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs';
 
 
-$base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=large&q=";
+$base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=xlarge&q=";
 $q = "museo+del+prado";
 $url = $base . $q;
 
 $response = file_get_contents($url);
+$manage = json_decode($response, true);
+print_r ($image);
+$image = $manage["items"][0]["link"];
 
 #$response = file_get_contents("https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=large&q=");
 
-$manage = json_decode($response, true);
-
 
 #echo $response;
-$image = $manage["items"][0]["link"];
 
-print_r ($image);
 
 
 ?>

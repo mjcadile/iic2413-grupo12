@@ -1,6 +1,7 @@
 <?php include('../templates/header.html');   ?>
 
 <body>
+
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
   <img src="https://cdn3.m.admexico.mx/uploads/images/thumbs/mx/ad/1/s/2019/32/arte_5914_1200x630.jpg" id="bg" alt="">
     <?php
@@ -58,6 +59,19 @@
 	    $result -> execute();
       $resultados_artistas = $result -> fetchAll();
   
+
+
+  #Aquí pondremos la imagen de fondo para el lugar
+
+  $base = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDgUQYUdFbUysJn5NrrxwRl8CTuo57pxAs&cx=003942152785230116418:kpfrdxsnbkh&searchType=image&imgSize=xlarge&q=";
+  $q = "{$nombre_lugar}";
+  $url = $base . $q;
+
+  $response = file_get_contents($url);
+  $manage = json_decode($response, true);
+  print_r ($image);
+  $image = $manage["items"][0]["link"];
+
     ?>
     <div class="container-fluid mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información sobre <?php echo $nombre_lugar; ?> </h2>
