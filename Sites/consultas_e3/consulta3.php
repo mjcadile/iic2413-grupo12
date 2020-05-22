@@ -7,39 +7,76 @@
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
     
-      $pais = $_POST["pais"];
-      $searchVal = array("á", "é", "í", "ó", "ú", 'Á', "É", "Í", "Ó", "Ú");
-      $replaceVal = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U");
-      $pais = str_replace($searchVal, $replaceVal, $pais);
-      $pais_original = $pais;
-      $pais= strtolower($pais);
+      $busqueda = $_POST["pais"];
 
       #Se construye la consulta como un string
- 	    $query = "SELECT DISTINCT Museos.nombre FROM (SELECT Lugares.nombre, Lugares.cid FROM 
-         Museos, Obras, Lugares WHERE Obras.periodo = 'Renacimiento' AND Obras.lid = Museos.lid AND 
-         Lugares.lid = Museos.lid) as Museos,  Ciudades, Paises WHERE  Museos.cid = Ciudades.cid AND 
-         Ciudades.pid = Paises.pid AND LOWER(Paises.nombre) LIKE LOWER('%$pais%');";
-   
+ 	    $query_obras = "SELECT DISTINCT Obras.nombre, Ciudades.nombre, Paises.nombre
+        FROM Obras WHERE  Obras.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND
+         Ciudades.pid = Paises.pid AND LOWER(Obras.nombre) LIKE LOWER('%$busqueda%');";
+
+      $query_artistas = "SELECT DISTINCT Artistas.nombre, Artistas.nacimiento, Artistas.descripcion
+      FROM Artistas WHERE   LOWER(Artistas.nombre) LIKE LOWER('%$busqueda%');";
+        
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	    $result = $db -> prepare($query);
+	    $result = $db -> prepare($query_obras);
 	    $result -> execute();
-	    $nombres = $result -> fetchAll();
+      $obras = $result -> fetchAll();
+      
+      $result = $db -> prepare($query_artistas);
+	    $result -> execute();
+	    $artistas = $result -> fetchAll();
     ?>
     <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Museos de <?php echo $pais_original; ?> con obras del renacimiento</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Resultados de obras</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white bg-danger" scope="col">Nombre Museo</th>
+                <th class="text-white bg-danger" scope="col">Obra</th>
+                <th class="text-white bg-danger" scope="col">Ciudad</th>
+                <th class="text-white bg-danger" scope="col">País</th>
+                <th class="text-white bg-danger" scope="col">Consultar</th>
+
               </tr>
             </thead>
             <tbody>
               <?php
-                foreach ($nombres as $n) {
+                foreach ($obras as $n) {
                   echo "<tr class='bg-dark'>
-                          <td>$n[0]</td>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td>
+                        </tr>";
+                }
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <form action="../index.php" method="get">
+      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
+    </form>
+  </div>
+
+
+  <div class="container mt-10">
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Resultados de artistas; ?> con obras del renacimiento</h2>
+      <div class="scrollable">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped text-center table-dark">
+            <thead>
+              <tr>
+                <th class="text-white bg-danger" scope="col">Nombre</th>
+                <th class="text-white bg-danger" scope="col">Nacimiento</th>
+                <th class="text-white bg-danger" scope="col">Descripción</th>
+                <th class="text-white bg-danger" scope="col">Consultar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                foreach ($artistas as $n) {
+                  echo "<tr class='bg-dark'>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td>
                         </tr>";
                 }
               ?>
