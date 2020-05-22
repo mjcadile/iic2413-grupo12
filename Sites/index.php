@@ -26,15 +26,12 @@ hr.new1 {
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Consultas
+          Dropdown link
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Consulta 1</a>
-          <a class="dropdown-item" href="#">Consulta 2</a>
-          <a class="dropdown-item" href="#">Consulta 3</a>
-          <a class="dropdown-item" href="#">Consulta 4</a>
-          <a class="dropdown-item" href="#">Consulta 5</a>
-          <a class="dropdown-item" href="#">Consulta 6</a>
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
     </ul>
