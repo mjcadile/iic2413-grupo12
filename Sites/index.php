@@ -53,12 +53,10 @@ hr.new1 {
 <!--Consulta3!-->
     <div class="card text-center border-info mb-3">
         <div class="card-header">
-            Consulta 3
+            Buscador
         </div>
         <div class="card-body">
-            <h5 class="card-title">Museos con obras del renacimiento</h5>
-            <p class="card-text">A continuación se muestran los museos de un 
-            país que tengan obras del renacimiento.</p>
+            <p class="card-text">A continuación puede usar esta casilla para buscar.</p>
             <p class="card-text">Por favor ingrese el nombre de un país:</p>
             <form align="center" action="consultas_e3/consulta3.php" method="post">
                 <input type="text" class="form-control text-center form-rounded" name="pais" target="_blank">
