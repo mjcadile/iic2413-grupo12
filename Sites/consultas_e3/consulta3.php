@@ -11,11 +11,15 @@
 
       #Se construye la consulta como un string
  	    $query_obras = "SELECT DISTINCT Obras.nombre, Ciudades.nombre, Paises.nombre
-        FROM Obras WHERE  Obras.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND
+        FROM Obras, Lugares, Ciudades, Paises WHERE  Obras.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND
          Ciudades.pid = Paises.pid AND LOWER(Obras.nombre) LIKE LOWER('%$busqueda%');";
 
       $query_artistas = "SELECT DISTINCT Artistas.nombre, Artistas.nacimiento, Artistas.descripcion
       FROM Artistas WHERE   LOWER(Artistas.nombre) LIKE LOWER('%$busqueda%');";
+
+      $query_lugares = "SELECT DISTINCT Lugares.nombre, Ciudades.nombre, Paises.nombre
+      FROM Lugares, Ciudades, Paises WHERE  Lugares.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND
+      Ciudades.pid = Paises.pid AND LOWER(Lugares.nombre) LIKE LOWER('%$busqueda%');";
         
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db -> prepare($query_obras);
@@ -24,7 +28,11 @@
       
       $result = $db -> prepare($query_artistas);
 	    $result -> execute();
-	    $artistas = $result -> fetchAll();
+      $artistas = $result -> fetchAll();
+      
+      $result = $db -> prepare($query_lugares);
+	    $result -> execute();
+	    $lugares = $result -> fetchAll();
     ?>
     <div class="container mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Resultados de obras</h2>
@@ -60,7 +68,7 @@
 
 
   <div class="container mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Resultados de artistas; ?> con obras del renacimiento</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Resultados de artistas</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -89,6 +97,42 @@
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
     </form>
   </div>
+
+
+  <div class="container mt-10">
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Resultados de lugares</h2>
+      <div class="scrollable">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped text-center table-dark">
+            <thead>
+              <tr>
+                <th class="text-white bg-danger" scope="col">nombre</th>
+                <th class="text-white bg-danger" scope="col">Ciudad</th>
+                <th class="text-white bg-danger" scope="col">País</th>
+                <th class="text-white bg-danger" scope="col">Consultar</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                foreach ($obras as $n) {
+                  echo "<tr class='bg-dark'>
+                          <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td>
+                        </tr>";
+                }
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <form action="../index.php" method="get">
+      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Volver">
+    </form>
+  </div>
+
+
+
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
