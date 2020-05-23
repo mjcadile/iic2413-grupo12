@@ -45,16 +45,53 @@ hr.new1 {
         </nav>
     </div>
 <body>
-    <div class="card mb-3">
-        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.viajeselcorteingles.es%2Fblog%2Fdestinos%2Ftras-los-pasos-de-leonardo-da-vinci%2F&psig=AOvVaw3eLtOdFD4beB-sGbDEK04n&ust=1590303101896000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMj7vPayyekCFQAAAAAdAAAAABAD" 
-        class="card-img-top" alt="da Vinci">
-        <div class="card-body">
-            <h5 class="card-title">Todos los artistas</h5>
-            <p class="card-text">Haz click aquí para conocer el listado de todos los artistas.</p>
-            <p class="card-text"><small class="text-muted">Last updated now</small></p>
+    <div class="card-deck">
+        <div class="card">
+            <img src="https://cdn3.m.admexico.mx/uploads/images/thumbs/mx/ad/1/s/2019/16/inventos_de_da_vinci_7589_600x.jpg" 
+            class="card-img-top" alt="imagen de da Vinci">
+            <div class="card-body">
+            <h5 class="card-title">Artistas</h5>
+            <p class="card-text">Aquí puedes encontrar el listado completo de los artistas. Podrás acceder a información detallada de cada uno de ellos.
+                Haz click aquí.</p>
             <form align="center" action="consultas_e3/lista_artistas.php" method="post">
-                <input type="submit" class="btn btn-primary" value="Ir a la página">
+                <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">Last updated now</small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://dam.ngenespanol.com/wp-content/uploads/2019/07/El-Grito-Munch.png" class="card-img-top" alt="imagen obra El Grito">
+            <div class="card-body">
+            <h5 class="card-title">Obras</h5>
+            <p class="card-text">Haz click aquí para conocer el listado completo de obras: pinturas, frescos y esculturas.
+                Además, podrás conocer información detallada de cada una de estas.
+            </p>
+            <!--AGREGAR CONSULTA DE LISTADO DE OBRAS-->
+            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
+                <input type="submit" class="btn btn-primary" value="Consultar">
+            </form>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">Last updated now</small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://okdiario.com/img/2019/09/15/obras-mas-importantes-de-miguel-angel.jpg" class="card-img-top" alt="capilla sixtina">
+            <div class="card-body">
+            <h5 class="card-title">Lugares</h5>
+            <p class="card-text">Aqí podrás encontrar un listado completo de todos los lugares donde encontrar obras de arte, además 
+                de conocer qué obras se pueden encontrar en cada uno de estos lugares.
+            </p>
+            <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
+            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
+                <input type="submit" class="btn btn-primary" value="Consultar">
+            </form>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
