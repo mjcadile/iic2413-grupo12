@@ -29,7 +29,7 @@ hr.new1 {
                     Consultas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Consulta 1</a>
+                    <a class="dropdown-item" href="consultas_e3/lista_artistas.php">Consulta 1</a>
                     <a class="dropdown-item" href="#">Consulta 2</a>
                     <a class="dropdown-item" href="#">Consulta 3</a>
                     <a class="dropdown-item" href="#">Consulta 4</a>
