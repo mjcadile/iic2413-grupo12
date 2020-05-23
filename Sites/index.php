@@ -27,6 +27,10 @@ hr.new1 {
                     <li class="nav-item">
                         <a class="nav-link" href="consultas_e2.php">Consultas E2</a>
                     </li>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                 <!--li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Consultas
@@ -47,8 +51,8 @@ hr.new1 {
 <body>
     <div class="card-deck">
         <div class="card">
-            <img src="https://cdn3.m.admexico.mx/uploads/images/thumbs/mx/ad/1/s/2019/16/inventos_de_da_vinci_7589_600x.jpg" 
-            class="card-img-top" alt="imagen de da Vinci">
+            <img src="https://cdn2.excelsior.com.mx/media/styles/large/public/pictures/2020/03/16/2325247.jpg" 
+            class="card-img-top" alt="imagen de Van Gogh">
             <div class="card-body">
             <h5 class="card-title">Artistas</h5>
             <p class="card-text">Aquí puedes encontrar el listado completo de los artistas. Podrás acceder a información detallada de cada uno de ellos.
@@ -70,7 +74,7 @@ hr.new1 {
             </p>
             <!--AGREGAR CONSULTA DE LISTADO DE OBRAS-->
             <form align="center" action="consultas_e3/lista_artistas.php" method="post">
-                <input type="submit" class="btn btn-primary" value="Consultar">
+                <input type="submit" class="btn btn-primary" value="ver más">
             </form>
             </div>
             <div class="card-footer">
@@ -86,7 +90,7 @@ hr.new1 {
             </p>
             <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
             <form align="center" action="consultas_e3/lista_artistas.php" method="post">
-                <input type="submit" class="btn btn-primary" value="Consultar">
+                <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
             </div>
             <div class="card-footer">
