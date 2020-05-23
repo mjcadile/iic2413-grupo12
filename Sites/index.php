@@ -5,16 +5,17 @@ hr.new1 {
   border-top: 2px solid white;
 }
 </style>
-<body>
+
+<!--Título y Navbar-->
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" id="bg" alt="">
     <div class="card border-info mb-4">
         <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" alt="Card image cap">
         <div class="card-body">
-            <h2 class="card-title">DCConsultas</h2>
+            <h2 class="card-title">Splinter S.A</h2>
             <p class="card-text">Proyecto realizado por José Baboun y Matías Cadile, IIC2413.</p>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Bienvenidos</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,20 +26,23 @@ hr.new1 {
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown link
+                    Consultas
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#">Consulta 1</a>
+                    <a class="dropdown-item" href="#">Consulta 2</a>
+                    <a class="dropdown-item" href="#">Consulta 3</a>
+                    <a class="dropdown-item" href="#">Consulta 4</a>
+                    <a class="dropdown-item" href="#">Consulta 5</a>
+                    <a class="dropdown-item" href="#">Consulta 6</a>
                     </div>
                 </li>
                 </ul>
             </div>
         </nav>
     </div>
-
-<!--Consulta1!-->
+<body>
+    <!--Consulta1!-->
     <div class="card text-center border-info mb-3">
         <div class="card-header">
             Consulta 1
@@ -55,7 +59,7 @@ hr.new1 {
             Actualizado: 21/4/2020
         </div>
     </div>
-<!--Consulta2!-->
+    <!--Consulta2!-->
     <div class="card text-center border-info mb-3">
         <div class="card-header">
             Consulta 2
@@ -72,7 +76,7 @@ hr.new1 {
             Actualizado: 21/4/2020
         </div>
     </div>
-<!--Consulta3!-->
+    <!--Consulta3!-->
     <div class="card text-center border-info mb-3">
         <div class="card-header">
             Buscador
@@ -90,70 +94,70 @@ hr.new1 {
             Actualizado: 21/4/2020
         </div>
     </div>
-<!--Consulta4!-->
+    <!--Consulta4!-->
     <div class="card text-center border-info mb-3">
-            <div class="card-header">
-                Consulta 4
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Artistas y sus participaciones</h5>
-                <p class="card-text">A continuación se muestra el nombre 
-                y cantidad de participaciones en obras de cada artista.</p>
-                <form align="center" action="consultas_e3/consulta4.php" method="post">
-                    <input type="submit" class="btn btn-primary" value="Consultar">
-                </form>
-            </div>
-            <div class="card-footer text-muted">
-                Actualizado: 21/4/2020
-            </div>
+        <div class="card-header">
+            Consulta 4
         </div>
-<!--Consulta5!-->
-    <div class="card text-center border-info mb-3">
-            <div class="card-header">
-                Consulta 5
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Iglesias y frescos</h5>
-                <p class="card-text">A continuación se muestran las iglesias junto a los frescos disponibles
-                en cada una de ellas, según un horario de apertura, de cierre, y una ciudad.</p>
-                <form align="center" action="consultas_e3/consulta5.php" method="post">                
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <p>Ingrese un horario de apertura (formato hh:mm:ss):</p>
-                            <input type="text" class="form-control form-rounded" name="h_apertura">
-                        </li>
-                        <li class="list-group-item">
-                            <p>Ingrese un horario de cierre (formato hh:mm:ss):</p>
-                            <input type="text" class="form-control form-rounded" name="h_cierre">
-                        </li>
-                        <li class="list-group-item">
-                            <p>Ingrese una ciudad:</p>
-                            <input type="text" class="form-control form-rounded" name="ciudad">
-                        </li>
-                    </ul>
-                    <input type="submit" class="btn btn-primary" value="Consultar">
-                </form>
-            </div>
-            <div class="card-footer text-muted">
-                Actualizado: 21/4/2020
-            </div>
+        <div class="card-body">
+            <h5 class="card-title">Artistas y sus participaciones</h5>
+            <p class="card-text">A continuación se muestra el nombre 
+            y cantidad de participaciones en obras de cada artista.</p>
+            <form align="center" action="consultas_e3/consulta4.php" method="post">
+                <input type="submit" class="btn btn-primary" value="Consultar">
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            Actualizado: 21/4/2020
+        </div>
     </div>
-<!--Consulta6!-->
+    <!--Consulta5!-->
     <div class="card text-center border-info mb-3">
-            <div class="card-header">
-                Consulta 6
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Lugares con obras de todo período</h5>
-                <p class="card-text">A continuación se muestran museos, plazas e iglesias 
-                que contengan obras de todo período del arte.</p>
-                <form align="center" action="consultas_e3/consulta6.php" method="post">
-                    <input type="submit" class="btn btn-primary" value="Consultar">
-                </form>
-            </div>
-            <div class="card-footer text-muted">
-                Actualizado: 21/4/2020
-            </div>
+        <div class="card-header">
+            Consulta 5
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Iglesias y frescos</h5>
+            <p class="card-text">A continuación se muestran las iglesias junto a los frescos disponibles
+            en cada una de ellas, según un horario de apertura, de cierre, y una ciudad.</p>
+            <form align="center" action="consultas_e3/consulta5.php" method="post">                
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <p>Ingrese un horario de apertura (formato hh:mm:ss):</p>
+                        <input type="text" class="form-control form-rounded" name="h_apertura">
+                    </li>
+                    <li class="list-group-item">
+                        <p>Ingrese un horario de cierre (formato hh:mm:ss):</p>
+                        <input type="text" class="form-control form-rounded" name="h_cierre">
+                    </li>
+                    <li class="list-group-item">
+                        <p>Ingrese una ciudad:</p>
+                        <input type="text" class="form-control form-rounded" name="ciudad">
+                    </li>
+                </ul>
+                <input type="submit" class="btn btn-primary" value="Consultar">
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            Actualizado: 21/4/2020
+        </div>
+    </div>
+    <!--Consulta6!-->
+    <div class="card text-center border-info mb-3">
+        <div class="card-header">
+            Consulta 6
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Lugares con obras de todo período</h5>
+            <p class="card-text">A continuación se muestran museos, plazas e iglesias 
+            que contengan obras de todo período del arte.</p>
+            <form align="center" action="consultas_e3/consulta6.php" method="post">
+                <input type="submit" class="btn btn-primary" value="Consultar">
+            </form>
+        </div>
+        <div class="card-footer text-muted">
+            Actualizado: 21/4/2020
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
