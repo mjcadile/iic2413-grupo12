@@ -26,10 +26,6 @@ hr.new1 {
                     <li class="nav-item">
                         <a class="nav-link" href="consultas_e2.php">Consultas E2</a>
                     </li>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </ul>
                 <ul class="navbar-nav">
                     <form class="form-inline my-2 my-lg-0">
@@ -47,6 +43,12 @@ hr.new1 {
                 </ul>
             </div>
         </nav>
+    </div>
+    <div class="d-flex justify-content-center h-100">
+        <div class="searchbar">
+          <input class="search_input" type="text" name="" placeholder="Search...">
+          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        </div>
     </div>
 <body>
     <div class="card-deck">
