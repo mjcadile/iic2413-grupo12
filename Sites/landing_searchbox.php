@@ -8,7 +8,7 @@
       require("../config/conexion.php");
 
       #Se guarda lo que viene de index.php
-       $palabra = $_POST["searchbox"]
+      $palabra = $_POST["searchbox"];
 
        # $_POST["opcion_1"] --> artistas
        # $_POST["opcion_2"] --> obras
