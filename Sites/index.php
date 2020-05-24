@@ -51,16 +51,14 @@ hr.new1 {
         </div>
     </div-->
     <div class="container">
-    <br/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-	<div class="container h-100">
-      <div class="d-flex justify-content-center h-100">
-        <div class="searchbar">
-          <input class="search_input" type="text" name="" placeholder="Search...">
-          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-        </div>
-      </div>
+        <!-- Search form -->
+        <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan active-cyan-2 mt-2">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                aria-label="Search">
+        </form>
     </div>
+    <br>
 <body>
     <div class="card-deck">
         <div class="card">
