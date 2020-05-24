@@ -1,4 +1,4 @@
-<?php include('templates/header.html');   ?>
+<?php include('templates/header_sin_searchbox.html');   ?>
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
@@ -376,7 +376,7 @@
                 <div class='modal-body'>
                     <p>Revisa que al menos una checkbox esté marcada.</p>
                     <p>De lo contrario, se puede deber a un error en la página.</p>
-                    <form action='../index.php' method='get'>
+                    <form action='index.php' method='get'>
                       <input type='submit' class='btn btn-primary mt-8 mb-5' value='Volver al menú'>
                     </form>
                 </div>

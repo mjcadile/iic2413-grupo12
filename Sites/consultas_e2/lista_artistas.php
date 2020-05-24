@@ -1,4 +1,4 @@
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header_sin_searchbox.html');   ?>
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
