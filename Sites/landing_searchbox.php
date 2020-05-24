@@ -20,7 +20,7 @@
        Ciudades.pid = Paises.pid AND LOWER(Obras.nombre) LIKE LOWER('%$busqueda%');";
 
       $query_artistas = "SELECT DISTINCT Artistas.aid, Artistas.nombre
-      FROM Artistas WHERE   LOWER(Artistas.nombre) LIKE LOWER('%$busqueda%');";
+      FROM Artistas WHERE LOWER(Artistas.nombre) LIKE LOWER('%$busqueda%');";
 
       $query_lugares = "SELECT DISTINCT Lugares.lid, Lugares.nombre, Ciudades.nombre, Paises.nombre
       FROM Lugares, Ciudades, Paises WHERE  Lugares.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND

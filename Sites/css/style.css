@@ -106,3 +106,14 @@ a:hover{
 .bottom .copyright p, .bottom .copyright a:hover{
     color: #6c6d83;
 }
+
+
+
+.search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
