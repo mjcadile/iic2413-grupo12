@@ -1,4 +1,4 @@
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header_sin_searchbox.html');   ?>
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
@@ -50,8 +50,8 @@
               <tr>
                 <th class="text-white bg-danger" scope="col" >ID </th>
                 <th class="text-white bg-danger" scope="col">Nombre</th>
-                <th class="text-white bg-danger" scope="col">Ano Inicio</th>
-                <th class="text-white bg-danger" scope="col">Ano de término</th>
+                <th class="text-white bg-danger" scope="col">Año de inicio</th>
+                <th class="text-white bg-danger" scope="col">Año de término</th>
                 <th class="text-white bg-danger" scope="col">Periodo</th>
 
 
@@ -116,12 +116,4 @@
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú principal">
     </form>
   </div>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="../js/actions.js"></script>
-  <script src="js/actions.js"></script>
-  
-</body>
-
-</html>
+  <?php include('templates/footer.html');?>
