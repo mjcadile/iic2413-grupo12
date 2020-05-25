@@ -11,7 +11,7 @@
  	    $query = "SELECT * FROM Artistas;";
    
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	    $result = $db -> prepare($query);
+	    $result = $db_12 -> prepare($query);
 	    $result -> execute();
 	    $nombres = $result -> fetchAll();
     ?>
