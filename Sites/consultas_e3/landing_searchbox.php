@@ -27,15 +27,15 @@
       Ciudades.pid = Paises.pid AND LOWER(Lugares.nombre) LIKE LOWER('%$busqueda%');";
         
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-      $result = $db -> prepare($query_obras);
+      $result = $db_12 -> prepare($query_obras);
       $result -> execute();
       $obras = $result -> fetchAll();
       
-      $result = $db -> prepare($query_artistas);
+      $result = $db_12 -> prepare($query_artistas);
       $result -> execute();
       $artistas = $result -> fetchAll();
       
-      $result = $db -> prepare($query_lugares);
+      $result = $db_12 -> prepare($query_lugares);
       $result -> execute();
       $lugares = $result -> fetchAll();
 
@@ -94,7 +94,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_lugares.php' method='post' >
+                              <form action='consultas_e3/consulta_lugares.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
@@ -118,7 +118,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_obras.php' method='post' >
+                              <form action='consultas_e3/consulta_obras.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
@@ -140,7 +140,7 @@
                       echo "<tr class='bg-dark'>
                               <td>$n[1]</td>
                               <td>
-                              <form action='consultas_e2/consulta_artistas.php' method='post' >
+                              <form action='consultas_e3/consulta_artistas.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre este artista'>
@@ -164,7 +164,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_lugares.php' method='post' >
+                              <form action='consultas_e3/consulta_lugares.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
@@ -186,7 +186,7 @@
                         echo "<tr class='bg-dark'>
                                 <td>$n[1]</td>
                                 <td>
-                                <form action='consultas_e2/consulta_artistas.php' method='post' >
+                                <form action='consultas_e3/consulta_artistas.php' method='post' >
                                     <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                     <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
                                     <input class='btn btn-primary' type='submit' value='Sobre este artista'>
@@ -211,7 +211,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_lugares.php' method='post' >
+                              <form action='consultas_e3/consulta_lugares.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
@@ -235,7 +235,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_obras.php' method='post' >
+                              <form action='consultas_e3/consulta_obras.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
@@ -257,7 +257,7 @@
                       echo "<tr class='bg-dark'>
                               <td>$n[1]</td>
                               <td>
-                              <form action='consultas_e2/consulta_artistas.php' method='post' >
+                              <form action='consultas_e3/consulta_artistas.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre este artista'>
@@ -281,7 +281,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_obras.php' method='post' >
+                              <form action='consultas_e3/consulta_obras.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
@@ -304,7 +304,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_lugares.php' method='post' >
+                              <form action='consultas_e3/consulta_lugares.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
@@ -328,7 +328,7 @@
                               <td>$n[2]</td>
                               <td>$n[3]</td>
                               <td>
-                              <form action='consultas_e2/consulta_obras.php' method='post' >
+                              <form action='consultas_e3/consulta_obras.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
@@ -350,7 +350,7 @@
                       echo "<tr class='bg-dark'>
                               <td>$n[1]</td>
                               <td>
-                              <form action='consultas_e2/consulta_artistas.php' method='post' >
+                              <form action='consultas_e3/consulta_artistas.php' method='post' >
                                   <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                   <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
                                   <input class='btn btn-primary' type='submit' value='Sobre este artista'>
@@ -376,7 +376,7 @@
                 <div class='modal-body'>
                     <p>Revisa que al menos una checkbox esté marcada.</p>
                     <p>De lo contrario, se puede deber a un error en la página.</p>
-                    <form action='index.php' method='get'>
+                    <form action='../index.php' method='get'>
                       <input type='submit' class='btn btn-primary mt-8 mb-5' value='Volver al menú'>
                     </form>
                 </div>

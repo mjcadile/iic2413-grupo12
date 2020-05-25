@@ -12,7 +12,7 @@ session_start();
             <h5 class="card-title">Artistas</h5>
             <p class="card-text">Aquí puedes encontrar el listado completo de los artistas. Podrás acceder a información detallada de cada uno de ellos.
                 Haz click aquí.</p>
-            <form align="center" action="consultas_e2/lista_artistas.php" method="post">
+            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
             </div>
@@ -28,7 +28,7 @@ session_start();
                 Además, podrás conocer información detallada de cada una de estas.
             </p>
             <!--AGREGAR CONSULTA DE LISTADO DE OBRAS-->
-            <form align="center" action="consultas_e2/lista_artistas.php" method="post">
+            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
                 <input type="submit" class="btn btn-primary" value="ver más">
             </form>
             </div>
@@ -44,7 +44,7 @@ session_start();
                 de conocer qué obras se pueden encontrar en cada uno de estos lugares.
             </p>
             <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
-            <form align="center" action="consultas_e2/lista_artistas.php" method="post">
+            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
             </div>
