@@ -56,7 +56,7 @@ session_start();
             $verificador = TRUE;
             $asiento = $i;
         }
-        $i += 1;
+        $i++;
     }
 
     if (isset($asiento)){
