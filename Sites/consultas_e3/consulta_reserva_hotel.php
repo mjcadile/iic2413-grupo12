@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
         $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
         $_SESSION['user'] != "error contraseña"){
-          include('../templates/header_sin_searchbox_login.html');;
+          include('../templates/header_sin_searchbox_login.html');
 }else{
     include('../templates/header_sin_searchbox.html');
 }?>
@@ -54,7 +54,11 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                 <th class="text-white bg-danger" scope="col">Precio</th>
                 <th class="text-white bg-danger" scope="col">Fecha de entrada</th>
                 <th class="text-white bg-danger" scope="col">Fecha de salida</th>
-                <th class="text-white bg-danger" scope="col">Comprar</th>
+                <?php if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+                  $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+                  $_SESSION['user'] != "error contraseña"){
+                    echo "<th class='text-white bg-danger' scope='col'>Comprar</th>";
+                }?>
 
 
               </tr>
@@ -62,27 +66,47 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             <tbody>
               <?php
                 foreach ($resultados as $h) {
-                  echo "<tr class='bg-dark'>
-                          <td>$h[2]</td><td>$h[3]</td><td>$h[4]</td><td>$h[5]</td>
-                          <td>
-                          <form action='reservar_hotel.php' method='post' >
-                              <input type='date' id='start' name='start'
-                              value='$fecha_actual'
-                              min='$fecha_actual' max='2025-12-31'>
-                          </td>
-                          <td>
-                              <input type='date' id='finish' name='finish'
-                              value='$fecha_actual'
-                              min='$fecha_actual' max='2025-12-31'>
-                          </td>
-                          <td>
-                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $h[2] >
-                              <input type = 'hidden' name = 'hid' id = hid value = $h[1] >
-                              <input class='btn btn-primary' type='submit' value='RESERVAR'>
-                          </form>
-                          </td>
-                        </tr>"; #Aca deberia poder poner un boton que deje reservar el hotel.
-                }
+                  if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+                  $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+                  $_SESSION['user'] != "error contraseña"){
+                      echo "<tr class='bg-dark'>
+                              <td>$h[2]</td><td>$h[3]</td><td>$h[4]</td><td>$h[5]</td>
+                              <td>
+                              <form action='reservar_hotel.php' method='post' >
+                                  <input type='date' id='start' name='start'
+                                  value='$fecha_actual'
+                                  min='$fecha_actual' max='2025-12-31'>
+                              </td>
+                              <td>
+                                  <input type='date' id='finish' name='finish'
+                                  value='$fecha_actual'
+                                  min='$fecha_actual' max='2025-12-31'>
+                              </td>
+                              <td>
+                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $h[2] >
+                                  <input type = 'hidden' name = 'hid' id = hid value = $h[1] >
+                                  <input class='btn btn-primary' type='submit' value='RESERVAR'>
+                              </form>
+                              </td>
+                            </tr>"; #Aca deberia poder poner un boton que deje reservar el hotel.
+                  }else{
+                      echo "<tr class='bg-dark'>
+                              <td>$h[2]</td><td>$h[3]</td><td>$h[4]</td><td>$h[5]</td>
+                              <td>
+                              <form action='reservar_hotel.php' method='post' >
+                                  <input type='date' id='start' name='start'
+                                  value='$fecha_actual'
+                                  min='$fecha_actual' max='2025-12-31'>
+                              </td>
+                              <td>
+                                  <input type='date' id='finish' name='finish'
+                                  value='$fecha_actual'
+                                  min='$fecha_actual' max='2025-12-31'>
+                              </form>
+                              </td>
+                            </tr>";
+                  }
+              }
               ?>
             </tbody>
           </table>
