@@ -8,6 +8,7 @@
     
       $seleccionado = $_POST["aid"];
       $nombre_artista = $_POST["nombre"];
+      print_r ($nombre_artista);
       $seleccionado = number_format($seleccionado);
       #Se construye la consulta como un string
       $query = "SELECT * FROM Artistas WHERE Artistas.aid = '$seleccionado'";
