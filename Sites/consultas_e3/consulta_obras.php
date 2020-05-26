@@ -93,11 +93,12 @@
             <tbody>
               <?php
                 foreach ($resultados_artista as $n) {
+                  $nombre = str_replace(' ', '+', $n[1]);
                   echo "<tr class='bg-dark'>
                           <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>
                             <form action='consulta_lugares.php' method='post' >
                               <input type = 'hidden' name = 'lid' id = 'lid' value = $n[4] >
-                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
+                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
                               <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
                             </form>
                           </td>

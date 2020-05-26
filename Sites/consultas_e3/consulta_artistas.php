@@ -42,7 +42,7 @@
       
 
     <div class= 'container mt-10'>
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista  <?php echo $nombre_artista; ?></h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del artista  </h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -91,10 +91,11 @@
             <tbody>
               <?php
                 foreach ($obras as $n) {
+                  $nombre = str_replace(' ', '+', $n[1]);
                   echo "<tr class='bg-dark'>
                           <td>$n[0]</td><td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td> <td>
                           <form action='consulta_obras.php' method='post' >
-                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
+                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
                               <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                               <input class='btn btn-primary' type='submit' value='CONSULTAR'>
                           </form>
