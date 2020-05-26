@@ -54,7 +54,7 @@ session_start();
         }
     }
 
-    if (! array($asiento)){
+    if (isset($asiento)){
         $query = "INSERT INTO Tickets VALUES('$numero', '$did', '$uid', '$asiento',
                 '$fecha_actual', '$fecha_viaje');";
         $agregar = $db_19 -> prepare($query);
