@@ -45,19 +45,30 @@ session_start();
               <tr>
                 <th class="text-white bg-danger" scope="col">Museo</th>
                 <th class="text-white bg-danger" scope="col">Fecha de compra</th>
+                <th class="text-white bg-danger" scope="col">Horaio de apertura</th>
+                <th class="text-white bg-danger" scope="col">Horario de cierre</th>
 
               </tr>
             </thead>
             <tbody>
               
-              <?php
-                foreach ($entradas_museos as $e) {
-                  echo "<tr class='bg-dark'>
-                          <td>$e[0]</td>
+            <?php
+                  foreach ($entradas_museos as $e) {
+                      $query_lugar = "SELECT nombre, horario_apretura, horario_cierre FROM Lugares 
+                          WHERE Lugares.lid = '$e[0]';";
+                      $result_lugar = $db_12 -> prepare($query_lugar);
+                      $result_lugar -> execute();
+                      $lugares = $result_lugar -> fetchAll();
+                      foreach ($lugares as $l){
+                        echo "<tr class='bg-dark'>
+                          <td>$l[0]</td>
                           <td>$e[1]</td>
+                          <td>$l[1]</td>
+                          <td>$l[2]</td>
                         </tr>";
+                      }
+                  
                 }
-  
               ?>
             </tbody>
           </table>
