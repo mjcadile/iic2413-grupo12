@@ -52,7 +52,7 @@ session_start();
                 $esta_en = TRUE;
             }
         }
-        if ($esta_en == TRUE){
+        if ($esta_en == FALSE){
             $verificador = TRUE;
             $asiento = $i;
         }
