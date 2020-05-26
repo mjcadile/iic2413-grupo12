@@ -44,14 +44,19 @@ session_start();
     $asientos = $resultado -> fetchAll();
 
     $verificador = FALSE;
+    $esta_en = FALSE
     $i = 1;
     while ($i < $capacidad && $verificador == FALSE){
-        if (in_array($i, $asientos)){
-            $i += 1;
-        }else{
+        foreach ($asientos as $a){
+            if ($i == intval($a[0])){
+                $esta_en = TRUE;
+            }
+        }
+        if ($esta_en == TRUE){
             $verificador = TRUE;
             $asiento = $i;
         }
+        $i++
     }
 
     if (isset($asiento)){
