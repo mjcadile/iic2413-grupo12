@@ -1,7 +1,16 @@
 <?php
 session_start();
 ?>
-<?php include('templates/header.html');?>
+
+<?php 
+if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+        $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+        $_SESSION['user'] != "error contraseña"){
+    include('templates/header_login.html');
+}else{
+    include('templates/header.html');
+}?>
+
 
 <body>
     <div class="card-deck mb-3">
