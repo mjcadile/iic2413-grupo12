@@ -35,8 +35,8 @@
                           <td>$n[1]</td>
                           <td>
                           <form action='consulta_artistas.php' method='post' >
-                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                              <input type = 'hidden' name = 'aid' id = aid value = str_replace(' ', '%', $n[0]) >
+                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = str_replace(' ', '%', $n[1]) >
+                              <input type = 'hidden' name = 'aid' id = aid value = $n[0] >
                               <input class='btn btn-primary' type='submit' value='CONSULTAR'>
                           </form>
                           </td>
