@@ -1,7 +1,13 @@
 <?php
 session_start();
-?>
-<?php include('../templates/header_sin_searchbox.html');   ?>
+ 
+if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+        $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+        $_SESSION['user'] != "error contraseña"){
+          include('../templates/header_sin_searchbox_login.html');;
+}else{
+    include('../templates/header_sin_searchbox.html');
+}?>
 
 <body>
   <img src="https://cdn.pixabay.com/photo/2014/11/02/10/41/aircraft-513641_1280.jpg" id="bg" alt="">
