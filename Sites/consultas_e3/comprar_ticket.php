@@ -4,13 +4,13 @@ session_start();
 <?php
     require("../config/conexion.php");
     
-    $fecha_actual = strtotime(date("Y-m-d", time()));
+    $fecha_actual = date("Y-m-d", time());
 
     $did = $_POST["did"];
     $did = number_format($did);
 
     $fecha_viaje = $_POST["fecha"];
-    $fecha_viaje = strtotime($fecha_viaje);
+    $fecha_viaje = date($fecha_viaje);
     
     # Aca saco el uid
     $username = $_SESSION['user'];
