@@ -47,7 +47,7 @@ session_start();
     $i = 1;
     while ($i < $capacidad && $verificador == FALSE){
         if (in_array($i, $asientos)){
-            $i++;
+            $i += 1;
         }else{
             $verificador = TRUE;
             $asiento = $i;
