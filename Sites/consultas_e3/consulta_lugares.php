@@ -75,7 +75,7 @@
    <img src= <?php echo $image ?> id="bg" alt="">
 
     <div class="container-fluid mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información sobre <?php echo $nombre_lugar; ?> </h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Información del lugar </h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -170,7 +170,7 @@
     
 
   <div class="container-fluid mt-10">
-    <h2 class="text-center rounded-bottom bg-info text-white mb-8">Obras en <?php echo $nombre_lugar;?></h2>
+    <h2 class="text-center rounded-bottom bg-info text-white mb-8">Obras </h2>
     <div class="scrollable">
       <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -185,10 +185,11 @@
           <tbody>
             <?php
               foreach ($resultados_obras as $n) {
+                $nombre = str_replace(' ', '+', $n[1]);
                 echo "<tr class='bg-dark'>
                         <td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>
                           <form action='consulta_obras.php' method='post' >
-                            <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
+                            <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
                             <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                             <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
                           </form>
@@ -203,7 +204,7 @@
   </div>
 
   <div class="container-fluid mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Artistas con obras en <?php echo$nombre_lugar;?></h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Artistas con obras en el lugar</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
