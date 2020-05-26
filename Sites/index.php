@@ -49,11 +49,43 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             <img src="https://okdiario.com/img/2019/09/15/obras-mas-importantes-de-miguel-angel.jpg" class="card-img-top" alt="capilla sixtina">
             <div class="card-body">
             <h5 class="card-title">Lugares</h5>
-            <p class="card-text">Aqí podrás encontrar un listado completo de todos los lugares donde encontrar obras de arte, además 
+            <p class="card-text">Aquí podrás encontrar un listado completo de todos los lugares donde encontrar obras de arte, además 
                 de conocer qué obras se pueden encontrar en cada uno de estos lugares.
             </p>
             <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
             <form align="center" action="consultas_e3/lista_artistas.php" method="post">
+                <input type="submit" class="btn btn-primary" value="Ver más">
+            </form>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://okdiario.com/img/2019/09/15/obras-mas-importantes-de-miguel-angel.jpg" class="card-img-top" alt="capilla sixtina">
+            <div class="card-body">
+            <h5 class="card-title">Hoteles</h5>
+            <p class="card-text">Aquí puedes encontrar el listado completo de los hoteles. Ademas podras reservar en el hotel que desees.
+                Haz click aquí.
+            </p>
+            <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
+            <form align="center" action="consultas_e3/lista_hoteles.php" method="post">
+                <input type="submit" class="btn btn-primary" value="Ver más">
+            </form>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://okdiario.com/img/2019/09/15/obras-mas-importantes-de-miguel-angel.jpg" class="card-img-top" alt="capilla sixtina">
+            <div class="card-body">
+            <h5 class="card-title">Viajar</h5>
+            <p class="card-text">Aquí puedes comprar tus tickets de viajes.
+                Haz click aquí.
+            </p>
+            <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
+            <form align="center" action="consultas_e3/lista_origenes.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
             </div>
