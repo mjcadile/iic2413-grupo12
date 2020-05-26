@@ -64,26 +64,45 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                 <th class="text-white bg-danger" scope="col">Medio de transporte</th>
                 <th class="text-white bg-danger" scope="col">Precio</th>
                 <th class="text-white bg-danger" scope="col">Fecha de viaje</th>
-                <th class="text-white bg-danger" scope="col">Compra de Ticket</th>
+                <?php if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+                  $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+                  $_SESSION['user'] != "error contraseña"){
+                    echo "<th class='text-white bg-danger' scope='col'>Compra de Ticket</th>";
+                }?>
               </tr>
             </thead>
             <tbody>
               <?php
                 foreach ($resultados as $n) {
-                  echo "<tr class='bg-dark'>
-                          <td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td><td>$n[5]</td><td>$n[6]</td>
-                          <td>
-                          <form action='comprar_ticket.php' method='post' >
-                              <input type='date' id='fecha' name='fecha'
-                              value='$fecha_actual'
-                              min='$fecha_actual' max='2025-12-31'>
-                              </td>
+                  if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+                  $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+                  $_SESSION['user'] != "error contraseña"){
+                      echo "<tr class='bg-dark'>
+                              <td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td><td>$n[5]</td><td>$n[6]</td>
                               <td>
-                              <input type = 'hidden' name = 'did' id = did value = $n[0] >
-                              <input class='btn btn-primary' type='submit' value='COMPRAR'>
-                          </form>
-                          </td>
-                        </tr>";
+                              <form action='comprar_ticket.php' method='post' >
+                                  <input type='date' id='fecha' name='fecha'
+                                  value='$fecha_actual'
+                                  min='$fecha_actual' max='2025-12-31'>
+                                  </td>
+                                  <td>
+                                  <input type = 'hidden' name = 'did' id = did value = $n[0] >
+                                  <input class='btn btn-primary' type='submit' value='COMPRAR'>
+                              </form>
+                              </td>
+                            </tr>";
+                  }else{
+                    echo "<tr class='bg-dark'>
+                              <td>$n[1]</td><td>$n[2]</td><td>$n[3]</td><td>$n[4]</td><td>$n[5]</td><td>$n[6]</td>
+                              <td>
+                              <form action='comprar_ticket.php' method='post' >
+                                  <input type='date' id='fecha' name='fecha'
+                                  value='$fecha_actual'
+                                  min='$fecha_actual' max='2025-12-31'>
+                              </form>
+                              </td>
+                            </tr>";
+                  }
                 }
               ?>
             </tbody>
