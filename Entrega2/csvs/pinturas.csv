@@ -7,14 +7,12 @@ oid;tecnica
 8;Pintura al Oleo
 9;Oleo sobre lienzo
 11;Oleo sobre lienzo
-23;Panel
-25;Tempera sobre panel
-26;Oleo sobre lienzo
-29;Oleo sobre tabla
-31;Oleo y temple sobre tabla
-32;Pintura al oleo sobre tabla de alamo
-39;Temple y oleo sobre madera
-40;Oleo sobre lienzo
-41;Oleo sobre tabla
-42;Temple sobre tabla
-43;Temple sobre lienzo
+22;Panel
+24;Tempera sobre panel
+25;Oleo sobre lienzo
+28;Pintura al oleo sobre tabla de alamo
+35;Temple y oleo sobre madera
+36;Oleo sobre lienzo
+37;Oleo sobre tabla
+38;Temple sobre tabla
+39;Temple sobre lienzo
