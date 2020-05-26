@@ -1,4 +1,4 @@
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header_sin_searchbox.html');   ?>
 
 <body>
   <img src="https://www.turismoenchile.cl/images/blog/15057073462.jpg" id="bg" alt="">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php include('../templates/header.html');   ?>
+<?php include('../templates/header_sin_searchbox.html');   ?>
 
 <body>
   <img src="https://cdn.pixabay.com/photo/2014/11/02/10/41/aircraft-513641_1280.jpg" id="bg" alt="">
