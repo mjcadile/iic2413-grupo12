@@ -53,5 +53,7 @@
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú Principal">
     </form>
   </div>
-  <?php include("templates/footer.html");?>
+   <?php #include("templates/footer.html");?>
+
+  
 
