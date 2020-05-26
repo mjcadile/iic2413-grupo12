@@ -54,7 +54,7 @@ if (!empty($username) && !empty($nombre) && !empty($correo) && !empty($direccion
     }elseif ($_SESSION['user'] == "error username"){
         header('Status: 301 Moved Permanently', false, 301);
         header('Location: sign_up.php');
-    exit();
+        exit();
     }else{
         $query_uid = "SELECT MAX(uid) FROM Usuarios;";
         $resultado = $db_19 -> prepare($query_uid);

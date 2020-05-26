@@ -13,7 +13,8 @@ session_start();
       $username = $_SESSION["user"];
 
       #Aca agregar 1° consulta sobre los museos
- 	    $query_museos = "ACA ESCRIBIR CONSULTA;";
+ 	    $query_museos = "SELECT lid, fecha_compra FROM Usuarios, Entradas 
+       WHERE Usuarios.uid = Reservas.uid AND Usuarios.username = '$username';";
       $result_museos = $db_19 -> prepare($query_museos);
       $result_museos -> execute();
       $entradas_museos = $result_museos -> fetchAll();
@@ -47,7 +48,6 @@ session_start();
                 <th class="text-white bg-danger" scope="col">Fecha de compra</th>
                 <th class="text-white bg-danger" scope="col">Horaio de apertura</th>
                 <th class="text-white bg-danger" scope="col">Horario de cierre</th>
-
               </tr>
             </thead>
             <tbody>
@@ -67,7 +67,6 @@ session_start();
                           <td>$l[2]</td>
                         </tr>";
                       }
-                  
                 }
               ?>
             </tbody>
