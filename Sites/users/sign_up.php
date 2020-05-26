@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<?php include('../templates/header_sin_searchbox.html');   ?>
+<?php include('../templates/header_sin_nada.html');   ?>
 
 <body>
 
