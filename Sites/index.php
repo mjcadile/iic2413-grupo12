@@ -62,13 +62,12 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             </div>
         </div>
         <div class="card">
-            <img src="https://okdiario.com/img/2019/09/15/obras-mas-importantes-de-miguel-angel.jpg" class="card-img-top" alt="capilla sixtina">
+            <img src="https://www.turismoenchile.cl/images/blog/15057073463.jpg" class="card-img-top" alt="hotel">
             <div class="card-body">
             <h5 class="card-title">Hoteles</h5>
             <p class="card-text">Aquí puedes encontrar el listado completo de los hoteles. Ademas podras reservar en el hotel que desees.
                 Haz click aquí.
             </p>
-            <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
             <form align="center" action="consultas_e3/lista_hoteles.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
@@ -78,7 +77,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             </div>
         </div>
         <div class="card">
-            <img src="https://okdiario.com/img/2019/09/15/obras-mas-importantes-de-miguel-angel.jpg" class="card-img-top" alt="capilla sixtina">
+            <img src="https://data.whicdn.com/images/181253905/original.jpg" class="card-img-top" alt="viaje avion">
             <div class="card-body">
             <h5 class="card-title">Viajar</h5>
             <p class="card-text">Aquí puedes comprar tus tickets de viajes.
