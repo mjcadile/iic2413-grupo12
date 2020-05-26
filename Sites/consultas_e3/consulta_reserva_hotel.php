@@ -13,7 +13,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 
     <?php
       require("../config/conexion.php");
-    
+      $fecha_actual = date("Y-m-d", time());
       $seleccionado = $_POST["hid"];
       $nombre_hotel = $_POST["nombre"];
       $seleccionado = number_format($seleccionado);
@@ -67,12 +67,12 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                           <td>
                           <form action='reservar_hotel.php' method='post' >
                               <input type='date' id='start' name='start'
-                              value='2020-05-24'
+                              value='$fecha_actual'
                               min='2018-01-01' max='2025-12-31'>
                           </td>
                           <td>
                               <input type='date' id='finish' name='finish'
-                              value='2020-05-24'
+                              value='$fecha_actual'
                               min='2018-01-01' max='2025-12-31'>
                           </td>
                           <td>

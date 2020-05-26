@@ -14,7 +14,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 
     <?php
       require("../config/conexion.php");
-      $fecha_actual = strtotime(date("Y-m-d", time()));
+      $fecha_actual = date("Y-m-d", time());
 
       $oid = $_POST["oid"];
       $destino = $_POST["destino"];
