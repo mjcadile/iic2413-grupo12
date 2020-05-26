@@ -68,12 +68,12 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                           <form action='reservar_hotel.php' method='post' >
                               <input type='date' id='start' name='start'
                               value='$fecha_actual'
-                              min='2018-01-01' max='2025-12-31'>
+                              min='$fecha_actual' max='2025-12-31'>
                           </td>
                           <td>
                               <input type='date' id='finish' name='finish'
                               value='$fecha_actual'
-                              min='2018-01-01' max='2025-12-31'>
+                              min='$fecha_actual' max='2025-12-31'>
                           </td>
                           <td>
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $h[2] >

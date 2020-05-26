@@ -76,7 +76,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                           <form action='comprar_ticket.php' method='post' >
                               <input type='date' id='fecha' name='fecha'
                               value='$fecha_actual'
-                              min='2018-01-01' max='2025-12-31'>
+                              min='$fecha_actual' max='2025-12-31'>
                               </td>
                               <td>
                               <input type = 'hidden' name = 'did' id = did value = $n[0] >
