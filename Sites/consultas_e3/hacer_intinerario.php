@@ -43,7 +43,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             }
             if (isset(i[2])){
               echo $i[2]."</br>";
-            })
+            }
             
 
 
