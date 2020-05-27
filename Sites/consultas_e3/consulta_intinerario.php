@@ -35,14 +35,14 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
               <p class='card-text'> Ciudad </p>
                   <select name='selecciona la ciudad'>
                   <?php foreach ($ciudades as $c){
-                      echo "<option value='$c[0]'>$c[0]</option>"              
+                      echo "<option value='$c[0]'>$c[0]</option>";             
                   }?>
                   </select>
               <?php echo "
                 <p class='card-text'> Fecha </p>
                     <input type='date' id='fecha' name='fecha'
                           value='$fecha_actual'
-                          min='$fecha_actual' max='2025-12-31'>"?>
+                          min='$fecha_actual' max='2025-12-31'>";?>
       </div>
 
     <div class="container-fluid mt-10">
