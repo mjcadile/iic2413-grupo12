@@ -14,7 +14,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
     <?php
       require("../config/conexion.php");
       $fecha_actual = date("Y-m-d", time());
-      if isset($_POST["hid"]){
+      if (isset($_POST["hid"])){
         $seleccionado = $_POST["hid"];
         $nombre_hotel = $_POST["nombre"];
       }else{
