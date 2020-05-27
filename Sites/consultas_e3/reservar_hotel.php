@@ -36,5 +36,10 @@
         header('Location: ../index.php');
         header("Connection: close");
         exit();
+    }else{
+        header('Status: 301 Moved Permanently', false, 301);
+        header('Location: consulta_reserva_hotel.php');
+        header("Connection: close");
+        exit();
     }
 ?>
