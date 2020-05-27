@@ -6,8 +6,8 @@ session_start();
     
     $fecha_actual = date("Y-m-d", time());
 
-    $did = $_POST["did"];
-    $did = number_format($did);
+    $lid = $_POST["lid"];
+    $lid = number_format($lid);
 
     $fecha_viaje = $_POST["fecha"];
     $fecha_viaje = date($fecha_viaje);

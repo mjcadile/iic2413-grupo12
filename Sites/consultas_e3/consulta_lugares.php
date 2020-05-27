@@ -1,9 +1,11 @@
 <?php include('../templates/header_sin_searchbox.html');   ?>
 
+
 <body>
 
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
     <?php
+      session_start()
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
 
@@ -13,13 +15,13 @@
       $seleccionado = number_format($seleccionado);
 
       #Se construye la consulta como un string
-       $iglesia =  "SELECT Iglesias.horario_apertura, Iglesias.horario_cierre FROM Lugares, Iglesias
+       $iglesia =  "SELECT Iglesias.lid, Iglesias.horario_apertura, Iglesias.horario_cierre FROM Lugares, Iglesias
         WHERE Iglesias.lid = '$seleccionado'";
 
-       $museo = "SELECT Museos.horario_apertura, 
+       $museo = "SELECT Museos.lid, Museos.horario_apertura, 
        Museos.horario_cierre, Museos.precio FROM Lugares, Museos WHERE Museos.lid = '$seleccionado'";
        
-       $plaza = "SELECT Lugares.nombre FROM Lugares, Plazas WHERE Plazas.lid = '$seleccionado'";
+       $plaza = "SELECT Plazas.lid, Lugares.nombre FROM Lugares, Plazas WHERE Plazas.lid = '$seleccionado'";
 
        $ubicacion = "SELECT Lugares.nombre, Ciudades.nombre, Paises.nombre 
        FROM Lugares, Ciudades, Paises WHERE Lugares.lid = '$seleccionado' 
@@ -92,16 +94,32 @@
                    </tr>";
                 }
                 elseif (count($resultados_museo) != 0){
-                  echo
-                  "<tr>
-                   <th class='text-white bg-danger' scope='col'>Nombre</th>
-                   <th class='text-white bg-danger' scope='col'>Ciudad</th>
-                   <th class='text-white bg-danger' scope='col'>País</th>
-                   <th class='text-white bg-danger' scope='col'>Horario Apertura</th>
-                   <th class='text-white bg-danger' scope='col'>Horario Cierre</th>
-                   <th class='text-white bg-danger' scope='col'>Precio</th>
-                   <th class='text-white bg-danger' scope='col'>Tickets</th>
-                   </tr>";
+                  if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+                  $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+                  $_SESSION['user'] != "error contraseña") {
+                    echo
+                      "<tr>
+                      <th class='text-white bg-danger' scope='col'>Nombre</th>
+                      <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                      <th class='text-white bg-danger' scope='col'>País</th>
+                      <th class='text-white bg-danger' scope='col'>Horario Apertura</th>
+                      <th class='text-white bg-danger' scope='col'>Horario Cierre</th>
+                      <th class='text-white bg-danger' scope='col'>Precio</th>
+                      <th class='text-white bg-danger' scope='col'>Tickets</th>
+                      </tr>";
+                  }
+                  else {
+                    echo
+                      "<tr>
+                      <th class='text-white bg-danger' scope='col'>Nombre</th>
+                      <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                      <th class='text-white bg-danger' scope='col'>País</th>
+                      <th class='text-white bg-danger' scope='col'>Horario Apertura</th>
+                      <th class='text-white bg-danger' scope='col'>Horario Cierre</th>
+                      <th class='text-white bg-danger' scope='col'>Precio</th>
+                      </tr>";
+                  }
+                  
                  }
                  else {
                   echo
@@ -122,14 +140,14 @@
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
                   foreach ($resultados_iglesia as $n) {
-                    array_push($resultados_def_lugar, $n[0], $n[1]);
+                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2]);
                   }
                   echo "
                         <td>$resultados_def_lugar[0]</td>
                         <td>$resultados_def_lugar[1]</td>
                         <td>$resultados_def_lugar[2]</td>
-                        <td>$resultados_def_lugar[3]</td>
-                        <td>$resultados_def_lugar[4]</td>";
+                        <td>$resultados_def_lugar[4]</td>
+                        <td>$resultados_def_lugar[5]</td>";
                 }
                 elseif (count($resultados_museo) != 0) {
                   $resultados_def_lugar = [];
@@ -137,24 +155,41 @@
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
                   foreach ($resultados_museo as $n) {
-                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2]);
+                    array_push($resultados_def_lugar, $n[0], $n[1], $n[2], $n[3]);
                   }
-                      echo "<td>$resultados_def_lugar[0]</td>
+                  if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
+                  $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
+                  $_SESSION['user'] != "error contraseña") {
+                    echo "<td>$resultados_def_lugar[0]</td>
                             <td>$resultados_def_lugar[1]</td>
                             <td>$resultados_def_lugar[2]</td>
-                            <td>$resultados_def_lugar[3]</td>
                             <td>$resultados_def_lugar[4]</td>
                             <td>$resultados_def_lugar[5]</td>
+                            <td>$resultados_def_lugar[6]</td>
                             <td>
-                              <form action='../index.php' method='get'>
+                              <form action='controller_compra_museo.php' method='post'>
+                                <input type = 'hidden' name = 'lid' id = lid value = $resultados_def_lugar[3]>
                                 <input type='submit' class='btn btn-primary mt-8 mb-5' value='Comprar ticket'>
                               </form>
                             </td>";
+                  }
+                  else {
+                    echo "<td>$resultados_def_lugar[0]</td>
+                            <td>$resultados_def_lugar[1]</td>
+                            <td>$resultados_def_lugar[2]</td>
+                            <td>$resultados_def_lugar[4]</td>
+                            <td>$resultados_def_lugar[5]</td>
+                            <td>$resultados_def_lugar[6]</td>";
+                  }
+                      
                 }
                 elseif (count($resultados_plaza) != 0) {
                   $resultados_def_lugar = [];
                   foreach ($resultados_ubicacion as $u) {
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
+                  }
+                  foreach ($resultados_plaza as $n) {
+                    array_push($resultados_def_lugar, $n[0])
                   }
                   echo "<td>$resultados_def_lugar[0]</td>
                         <td>$resultados_def_lugar[1]</td>

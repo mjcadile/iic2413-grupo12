@@ -385,4 +385,4 @@
     </div>";
       }
     ?>
-  <?php include('templates/footer.html');?>
+  <?php include('../templates/footer.html');?>
