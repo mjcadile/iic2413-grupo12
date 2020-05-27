@@ -1,4 +1,5 @@
 <?php 
+session_start();
 if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
         $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
         $_SESSION['user'] != "error contraseña"){
