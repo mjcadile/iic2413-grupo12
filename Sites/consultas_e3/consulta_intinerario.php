@@ -47,7 +47,7 @@
               
               <?php
                 foreach ($nombres as $n) {
-                  $nombre = str_replace(' ', '+', $n[1]);
+                  $nombre = $n[1];
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td>˛
                           <td>
