@@ -26,7 +26,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       $query_ciudades = "SELECT nombre_ciudad FROM Ciudades;";
       $result_ciudades = $db_19 -> prepare($query_ciudades);
       $result_ciudades -> execute();
-      $ciudades = $result_ciudades -> featchAll();
+      $ciudades = $result_ciudades -> fetchAll();
     ?>
 
       <div class="card text-center border-info mb-3">
