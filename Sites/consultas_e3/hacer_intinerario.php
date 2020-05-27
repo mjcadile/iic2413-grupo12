@@ -24,14 +24,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             echo $selected."</br>";
           }
 
-          $sql = "SELECT itinerario('$cid',24)";
-          $res = prepare($db_19, "my_query", $sql);
-          $res = execute($db_19, "my_query");
-
-
-          #$query = "SELECT itinerario('$cid', '24');";
-          #$result = $db_19 -> prepare($query);
-          #$result -> execute();
+  
+          $query = "SELECT itinerario('$cid', 24);";
+          $result = $db_19 -> prepare($query);
+          $result -> execute();
 
 
           $query_int = "SELECT * FROM Itinerario;";
