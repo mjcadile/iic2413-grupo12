@@ -46,7 +46,7 @@ session_start();
               <tr>
                 <th class="text-white bg-danger" scope="col">Museo</th>
                 <th class="text-white bg-danger" scope="col">Fecha de compra</th>
-                <th class="text-white bg-danger" scope="col">Horaio de apertura</th>
+                <th class="text-white bg-danger" scope="col">Horario de apertura</th>
                 <th class="text-white bg-danger" scope="col">Horario de cierre</th>
               </tr>
             </thead>
