@@ -191,7 +191,7 @@ foreach ($usuario as $us) {
                           <td>$t[4]</td> 
                         </tr>";
                 }
-  
+                
               ?>
             </tbody>
           </table>
