@@ -2,7 +2,7 @@
 
 <?php
 # eid - uid - lid - fechacompra
-
+require("../config/conexion.php");
 $fecha_actual = date("Y-m-d", time());
 
 $lid = $_POST["lid"];
