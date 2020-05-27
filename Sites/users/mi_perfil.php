@@ -22,7 +22,7 @@ foreach ($usuario as $us) {
     hr.new1 {
       border-top: 2px solid white;
     }
-    </style>
+</style>
     
     <!--Título y Navbar-->
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" id="bg" alt="">
@@ -60,7 +60,7 @@ foreach ($usuario as $us) {
             </nav>
         </div>
         <br>
-
+</head>
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
