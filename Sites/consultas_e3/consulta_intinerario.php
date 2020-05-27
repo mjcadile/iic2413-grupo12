@@ -33,7 +33,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           <form align="center" action="hacer_intinerario.php" method="post">
               <h5 class="text-center rounded-bottom bg-info text-white mb-8">Escoge la ciudad y la fecha de la consulta.</h5>
               <p class='card-text'> Ciudad </p>
-                  <select name='Ciudad'>
+                  <select name='ciudad'>
                       <option value='0'>Seleciona la ciudad de origen</option>
                       <?php foreach ($ciudades as $c){
                           echo "<option value='$c[0]'>$c[0]</option>";             
