@@ -6,7 +6,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
         $_SESSION['user'] != "error contraseña"){
           include('../templates/header_sin_searchbox_login.html');
 }else{
-    include('../templates/header_sin_imagen.html');
+    include('../templates/header_sin_searchbox.html');
 }?>
 
 <body>
