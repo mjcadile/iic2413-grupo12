@@ -10,7 +10,7 @@ $lid = number_format($lid);
 
 # Aca saco el uid
 $username = $_SESSION['user'];
-$query_uid = "SELECT uid FROM Usuarios WHERE Usuarios.username = '$username';";
+$query_uid = "SELECT Usuarios.uid FROM Usuarios WHERE Usuarios.username = '$username';";
 $resultado = $db_19 -> prepare($query_uid);
 $resultado -> execute();
 $uid_usuario = $resultado -> fetchAll();
