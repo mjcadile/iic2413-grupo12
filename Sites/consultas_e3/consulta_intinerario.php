@@ -19,7 +19,7 @@
     ?>
 
       <div class="card text-center border-info mb-3">
-          <form align="center" action="registrarse.php" method="post">
+          <form align="center" action="hacer_intinerario.php" method="post">
               <h5 class="text-center rounded-bottom bg-info text-white mb-8">Escoge la ciudad y la fecha de la consulta.</h5>
               <?php echo "
                 <p class='card-text'> Ciudad </p>
@@ -51,7 +51,7 @@
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td>˛
                           <td>
-                          <form action='consulta_artistas.php' method='post' >
+                          <form action='hacer_intinerario.php' method='post' >
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
                               <input type = 'hidden' name = 'aid' id = aid value = $n[0] >
                               <input type='checkbox'>
@@ -63,7 +63,7 @@
               ?>
             </tbody>
           </table>
-          <form action="../index.php" method="get">
+          <form action="hacer_intinerario.php" method="get">
               <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
           </form>
         </div>
