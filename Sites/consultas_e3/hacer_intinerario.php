@@ -8,6 +8,8 @@
       <img src="https://d2jv9003bew7ag.cloudfront.net/uploads/MoCP-Chicago.jpg" id="bg" alt="">
           <?php
           $fecha_viaje = $_POST["fecha"];
+          $ciudad = $_POST["ciudad"]
+          echo $ciudad."</br>";
           echo $fecha_viaje."</br>";
           foreach($_POST['check_list'] as $selected){
             echo $selected."</br>";
