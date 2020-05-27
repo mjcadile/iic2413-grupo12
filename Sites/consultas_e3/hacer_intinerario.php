@@ -7,11 +7,11 @@
   <img src="https://d2jv9003bew7ag.cloudfront.net/uploads/MoCP-Chicago.jpg" id="bg" alt="">
     <?php
       $fecha_viaje = $_POST["fecha"];
-      $aid = $_POST["aid"]
-      $nombres_artistas = $_POST["nombre"] 
-      echo "$fecha_viaje"
-      echo "$aid"
-      echo "$nombres_artistas"
+      $aid = $_POST["aid"];
+      $nombres_artistas = $_POST["nombre"] ;
+      echo "$fecha_viaje";
+      echo "$aid";
+      echo "$nombres_artistas";
     ?>
 
 
