@@ -9,8 +9,6 @@
           <?php
           $fecha_viaje = $_POST["fecha"];
           echo $fecha_viaje."</br>";
-          echo $aid."</br>";
-          echo $nombres_artistas."</br>";
           foreach($_POST['check_list'] as $selected){
             echo $selected."</br>";
           }

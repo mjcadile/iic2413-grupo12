@@ -59,7 +59,9 @@
               ?>
             </tbody>
           </table>
-              <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
+              <div class="card text-center border-info mb-3">
+                  <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
+              </div>
           </form>
         </div>
       </div>
