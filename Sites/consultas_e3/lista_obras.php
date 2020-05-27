@@ -8,7 +8,7 @@
       require("../config/conexion.php");
 
       #Se construye la consulta como un string
- 	    $query = "SELECT * FROM Artistas;";
+ 	    $query = "SELECT * FROM Obras;";
    
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db_12 -> prepare($query);
@@ -16,13 +16,13 @@
 	    $nombres = $result -> fetchAll();
     ?>
     <div class="container-fluid mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los artistas</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todas las Obras</h2>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white bg-danger" scope="col">Nombre Artista</th>
+                <th class="text-white bg-danger" scope="col">Nombre Obra</th>
                 <th color = 'red' class="text-white bg-warning" scope="col">Consultar</th>
 
               </tr>
@@ -31,13 +31,14 @@
               
               <?php
                 foreach ($nombres as $n) {
-                  $nombre = str_replace(' ', '+', $n[1]);
+                  $nombre = $n[1]
+                  #$nombre = str_replace(' ', '+', $n[1]);
                   echo "<tr class='bg-dark'>
-                          <td>$n[1]</td>˛
+                          <td>$nombre</td>˛
                           <td>
-                          <form action='consulta_artistas.php' method='post' >
+                          <form action='consulta_obras.php' method='post' >
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
-                              <input type = 'hidden' name = 'aid' id = aid value = $n[0] >
+                              <input type = 'hidden' name = 'oid' id = oid value = $n[0] >
                               <input class='btn btn-primary' type='submit' value='Conocer más'>
                           </form>
                           </td>
@@ -55,6 +56,3 @@
     </form>
   </div>
    <?php include("../templates/footer.html");?>
-
-  
-

@@ -34,8 +34,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             <p class="card-text">Haz click aquí para conocer el listado completo de obras: pinturas, frescos y esculturas.
                 Además, podrás conocer información detallada de cada una de estas.
             </p>
-            <!--AGREGAR CONSULTA DE LISTADO DE OBRAS-->
-            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
+            <form align="center" action="consultas_e3/lista_obras.php" method="post">
                 <input type="submit" class="btn btn-primary" value="ver más">
             </form>
             </div>
@@ -50,8 +49,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             <p class="card-text">Aquí podrás encontrar un listado completo de todos los lugares donde encontrar obras de arte, además 
                 de conocer qué obras se pueden encontrar en cada uno de estos lugares.
             </p>
-            <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
-            <form align="center" action="consultas_e3/lista_artistas.php" method="post">
+            <form align="center" action="consultas_e3/lista_lugares.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
             </div>
@@ -81,7 +79,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             <p class="card-text">Aquí puedes comprar tus tickets de viajes.
                 Haz click aquí.
             </p>
-            <!--AGREGAR CONSULTA DE LISTADO DE LUGARES-->
             <form align="center" action="consultas_e3/lista_origenes.php" method="post">
                 <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
