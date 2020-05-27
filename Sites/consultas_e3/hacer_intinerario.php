@@ -9,10 +9,9 @@
       $fecha_viaje = $_POST["fecha"];
       $aid = $_POST["aid"]
       $nombres_artistas = $_POST["nombre"] 
-      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	    $result = $db_12 -> prepare($query);
-	    $result -> execute();
-	    $nombres = $result -> fetchAll();
+      echo "$fecha_viaje"
+      echo "$aid"
+      echo "$nombres_artistas"
     ?>
 
 
