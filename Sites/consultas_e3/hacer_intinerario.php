@@ -17,17 +17,16 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           <?php
           $fecha_viaje = $_POST["fecha"];
           $cid = $_POST["ciudad"];
-          $cid = number_format(intval($cid));
-          echo $ciudad."</br>";
+          $cid = intval($cid);
+          echo $cid."</br>";
           echo $fecha_viaje."</br>";
           foreach($_POST['check_list'] as $selected){
             echo $selected."</br>";
           }
 
-          $query = "SELECT itinerario($cid, 24);";
+          $query = "SELECT itinerario('$cid', '24');";
           $result = $db_19 -> prepare($query);
           $result -> execute();
-          $intine = $result -> fetchAll();
 
           $query_int = "SELECT * FROM Itinerario;";
           $result_int = $db_19 -> prepare($query_int);
@@ -44,9 +43,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             if (isset(i[2])){
               echo $i[2]."</br>";
             }
-            
-
-
           }
           
         ?>
