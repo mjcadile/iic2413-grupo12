@@ -14,8 +14,14 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
     <?php
       require("../config/conexion.php");
       $fecha_actual = date("Y-m-d", time());
-      $seleccionado = $_POST["hid"];
-      $nombre_hotel = $_POST["nombre"];
+      if isset($_POST["hid"];){
+        $seleccionado = $_POST["hid"];
+        $nombre_hotel = $_POST["nombre"];
+      }else{
+        $seleccionado = $_SESSION["reserva"];
+        $nombre_hotel = $_SESSION["reserva_nombre"];
+      }
+      
       $seleccionado = number_format($seleccionado);
       #Se construye la consulta como un string
       $query = "SELECT * FROM Hoteles WHERE Hoteles.hid = '$seleccionado'";

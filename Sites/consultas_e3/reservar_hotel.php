@@ -37,6 +37,7 @@
         header("Connection: close");
         exit();
     }else{
+        $_SESSION["reserva"] = $hid
         header('Status: 301 Moved Permanently', false, 301);
         header('Location: consulta_reserva_hotel.php');
         header("Connection: close");
