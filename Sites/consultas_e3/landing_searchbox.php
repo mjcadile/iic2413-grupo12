@@ -1,11 +1,11 @@
-<?php include('templates/header_sin_searchbox.html');   ?>
+<?php include('../templates/header_sin_searchbox.html');   ?>
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
   <img src="" id="bg" alt="">
     <?php
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-      require("config/conexion.php");
+      require("../config/conexion.php");
 
       #Se guarda lo que viene de index.php
       $palabra = $_POST["searchbox"];
