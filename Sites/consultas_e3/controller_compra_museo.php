@@ -16,7 +16,7 @@ $resultado -> execute();
 $uid_usuario = $resultado -> fetchAll();
 foreach ($uid_usuario as $u){
     $uid = number_format(intval($u[0]));
-
+}
 # Numero de Entrada
 $query_max = "SELECT MAX(eid) FROM Entradas;";
 $resultado = $db_19 -> prepare($query_max);
@@ -24,7 +24,7 @@ $resultado -> execute();
 $numero_max = $resultado -> fetchAll();
 foreach ($numero_max as $r){
     $eid = number_format(intval($r[0]) + 1);
-
+}
 $query = "INSERT INTO Entradas VALUES('$eid', '$uid', '$lid', '$fecha_actual');";
 $agregar = $db_19 -> prepare($query);
 $agregar -> execute();
