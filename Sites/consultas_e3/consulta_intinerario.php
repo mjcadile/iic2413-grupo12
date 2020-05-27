@@ -54,7 +54,7 @@
                           <form action='hacer_intinerario.php' method='post' >
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
                               <input type = 'hidden' name = 'aid' id = aid value = $n[0] >
-                              <input type='checkbox' name='check_list[]' value='PHP'><$nombre>PHP</$nombre><br/>
+                              <input type='checkbox' name='check_list[]' value='PHP'><label>$nombre</label><br/>
                           </form>
                           </td>
                         </tr>";
