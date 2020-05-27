@@ -13,6 +13,9 @@
           echo "$fecha_viaje";
           echo "$aid";
           echo "$nombres_artistas";
+          foreach($_POST['check_list'] as $selected){
+            echo $selected."</br>";
+          }
         ?>
     </div>
 <body>
