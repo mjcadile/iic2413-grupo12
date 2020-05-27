@@ -189,7 +189,7 @@
                     array_push($resultados_def_lugar, $u[0], $u[1], $u[2]);
                   }
                   foreach ($resultados_plaza as $n) {
-                    array_push($resultados_def_lugar, $n[0])
+                    array_push($resultados_def_lugar, $n[0]);
                   }
                   echo "<td>$resultados_def_lugar[0]</td>
                         <td>$resultados_def_lugar[1]</td>
