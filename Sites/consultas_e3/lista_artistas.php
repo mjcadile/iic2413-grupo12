@@ -33,7 +33,7 @@
                 foreach ($nombres as $n) {
                   $nombre = str_replace(' ', '+', $n[1]);
                   echo "<tr class='bg-dark'>
-                          <td>$n[1]</td>˛
+                          <td>$n[1]</td>
                           <td>
                           <form action='consulta_artistas.php' method='post' >
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >

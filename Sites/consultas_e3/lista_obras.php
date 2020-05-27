@@ -31,10 +31,10 @@
               
               <?php
                 foreach ($nombres as $n) {
-                  $nombre = $n[1]
+                  $nombre = $n[1];
                   #$nombre = str_replace(' ', '+', $n[1]);
                   echo "<tr class='bg-dark'>
-                          <td>$nombre</td>˛
+                          <td>$nombre</td>
                           <td>
                           <form action='consulta_obras.php' method='post' >
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >

@@ -35,7 +35,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                 Además, podrás conocer información detallada de cada una de estas.
             </p>
             <form align="center" action="consultas_e3/lista_obras.php" method="post">
-                <input type="submit" class="btn btn-primary" value="ver más">
+                <input type="submit" class="btn btn-primary" value="Ver más">
             </form>
             </div>
             <div class="card-footer">
