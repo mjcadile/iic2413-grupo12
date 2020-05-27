@@ -56,6 +56,7 @@ session_start();
             $verificador = TRUE;
             $asiento = $i;
         }
+        $esta_en = TRUE
         $i++;
     }
 
