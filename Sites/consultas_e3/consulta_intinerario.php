@@ -51,8 +51,6 @@
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td>˛
                           <td>
-                              <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
-                              <input type = 'hidden' name = 'aid' id = aid value = $n[0] >
                               <input type='checkbox' name='check_list[]' value='$nombre'><br/>
                           </td>
                         </tr>";
