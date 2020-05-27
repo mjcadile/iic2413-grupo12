@@ -25,8 +25,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           }
 
           $sql = "SELECT itinerario('$cid',24)";
-          $res = pg_prepare($db_19, "my_query", $sql);
-          $res = pg_execute($db_19, "my_query");
+          $res = prepare($db_19, "my_query", $sql);
+          $res = execute($db_19, "my_query");
 
 
           #$query = "SELECT itinerario('$cid', '24');";
