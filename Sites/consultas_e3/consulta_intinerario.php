@@ -28,7 +28,7 @@
                     <input type='date' id='fecha' name='fecha'
                           value='$fecha_actual'
                           min='$fecha_actual' max='2025-12-31'>"?>
-          </form>
+
       </div>
 
     <div class="container-fluid mt-10">
@@ -51,11 +51,9 @@
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td>˛
                           <td>
-                          <form action='hacer_intinerario.php' method='post' >
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
                               <input type = 'hidden' name = 'aid' id = aid value = $n[0] >
                               <input type='checkbox' name='check_list[]' value='$nombre'><br/>
-                          </form>
                           </td>
                         </tr>";
                 }
@@ -63,7 +61,6 @@
               ?>
             </tbody>
           </table>
-          <form action="hacer_intinerario.php" method="get">
               <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
           </form>
         </div>
