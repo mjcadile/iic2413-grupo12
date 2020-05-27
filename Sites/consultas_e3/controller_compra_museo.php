@@ -1,6 +1,7 @@
+<?php session_start(); ?>
+
 <?php
 # eid - uid - lid - fechacompra
-session_start();
 
 $fecha_actual = date("Y-m-d", time());
 
@@ -28,25 +29,4 @@ $query = "INSERT INTO Entradas VALUES('$eid', '$uid', '$lid', '$fecha_actual');"
 $agregar = $db_19 -> prepare($query);
 $agregar -> execute();
 $resultado = $agregar -> fetchAll();
-
-echo 
-  "<div id='myModal' class='modal fade'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-                    <h4 class='modal-title'>¡Compra exitosa!</h4>
-                </div>
-                <div class='modal-body'>
-                    <p>Haz click aquí para ver todos tus tickets:</p>
-                    <form action='../users/mi_perfil.php' method='get'>
-                      <input type='submit' class='btn btn-primary mt-8 mb-5' value='Mi perfil'>
-                    </form>
-                    <form action='../index.php' method='get'>
-                      <input type='submit' class='btn btn-primary mt-8 mb-5' value='Volver al menú'>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>";
 ?>
