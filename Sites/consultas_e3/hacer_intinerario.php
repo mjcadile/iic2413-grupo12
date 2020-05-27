@@ -35,9 +35,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $intinerario = $result_int -> fetchAll();
 
           foreach($intinerario as $i){
-            echo $i[0]."</br>";
-            echo $i[1]."</br>";
-            echo $i[2]."</br>";
+            echo $i."</br>";
+
 
           }
           
