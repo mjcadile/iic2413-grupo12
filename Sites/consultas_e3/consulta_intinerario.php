@@ -19,14 +19,16 @@
     ?>
 
       <div class="card text-center border-info mb-3">
-          <h5 class='card-title'> Escoge la ciudad y la fecha de la consulta. </h5>
-          <?php echo "
-            <p class='card-text'> Ciudad </p>
-                <input type='text' name='ciudad'>
-            <p class='card-text'> Fecha </p>
-                <input type='date' id='fecha' name='fecha'
-                      value='$fecha_actual'
-                      min='$fecha_actual' max='2025-12-31'>"?>
+          <form align="center" action="registrarse.php" method="post">
+              <h5 class='card-title'> Escoge la ciudad y la fecha de la consulta. </h5>
+              <?php echo "
+                <p class='card-text'> Ciudad </p>
+                    <input type='text' name='ciudad'>
+                <p class='card-text'> Fecha </p>
+                    <input type='date' id='fecha' name='fecha'
+                          value='$fecha_actual'
+                          min='$fecha_actual' max='2025-12-31'>"?>
+          </form>
       </div>
 
     <div class="container-fluid mt-10">
