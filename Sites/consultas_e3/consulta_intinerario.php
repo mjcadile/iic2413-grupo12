@@ -55,8 +55,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
               <tr>
-                <th class="text-white bg-danger" scope="col">Nombre Artista</th>
-                <th color = 'red' class="text-white bg-warning" scope="col">Consultar</th>
+                <th class="text-white bg-danger" scope="col">Selecciona los Artistas</th>
 
               </tr>
             </thead>
@@ -66,9 +65,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                 foreach ($nombres as $n) {
                   $nombre = $n[1];
                   echo "<tr class='bg-dark'>
-                          <td>$n[1]</td>˛
                           <td>
-                              <input type='checkbox' name='check_list[]' value='$nombre'><br/>
+                              <input type='checkbox' name='check_list[]' value='$nombre'><label>$nombre</label><br/>
                           </td>
                         </tr>";
                 }
