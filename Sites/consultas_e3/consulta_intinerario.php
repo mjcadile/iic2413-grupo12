@@ -29,7 +29,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       $ciudades = $result_ciudades -> fetchAll();
     ?>
 
-      <div class="card text-center border-info mb-3">
+      <div class="card-deck mb-3">
+          <div class="card">
           <form align="center" action="hacer_intinerario.php" method="post">
               <h5 class="text-center rounded-bottom bg-info text-white mb-8">Escoge la ciudad y la fecha de la consulta.</h5>
               <p class='card-text'> Ciudad </p>
@@ -44,6 +45,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                     <input type='date' id='fecha' name='fecha'
                           value='$fecha_actual'
                           min='$fecha_actual' max='2025-12-31'>";?>
+          </div>
       </div>
 
     <div class="container-fluid mt-10">
