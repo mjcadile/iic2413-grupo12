@@ -1,6 +1,6 @@
 <?php
 # eid - uid - lid - fechacompra
-session_start()
+session_start();
 
 $fecha_actual = date("Y-m-d", time());
 

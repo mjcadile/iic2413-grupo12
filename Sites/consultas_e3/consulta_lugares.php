@@ -5,7 +5,7 @@
 
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
     <?php
-      session_start()
+      session_start();
       #Llama a conexión, crea el objeto PDO y obtiene la variable $db
       require("../config/conexion.php");
 
