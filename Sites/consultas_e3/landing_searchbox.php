@@ -141,13 +141,13 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                       </tr>
                                     </thead>
                                   <tbody>";
-                                  foreach ($obras as $n) {
+                                  foreach ($lugares as $n) {
                                     echo "<tr class='bg-dark'>
                                             <td>$n[1]</td>
                                             <td>$n[2]</td>
                                             <td>$n[3]</td>
                                             <td>
-                                            <form action='consulta_obras.php' method='post' >
+                                            <form action='consulta_lugares.php' method='post' >
                                                 <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                                 <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
                                                 <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
