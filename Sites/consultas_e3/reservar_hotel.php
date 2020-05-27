@@ -10,7 +10,7 @@
     $hid = number_format($hid);
     $fecha_entrada = $_POST["start"];
     $fecha_salida = $_POST["finish"];
-    if (strtotime($fecha_entrada) <= strtotime($fecha_entrada)){
+    if (strtotime($fecha_entrada) <= strtotime($fecha_salida)){
         $username = $_SESSION['user'];
         $query_uid = "SELECT uid FROM Usuarios WHERE Usuarios.username = '$username';";
         $result = $db_19 -> prepare($query_uid);
