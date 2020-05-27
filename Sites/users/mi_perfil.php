@@ -112,8 +112,8 @@ foreach ($usuario as $us) {
               
             <?php
                   foreach ($entradas_museos as $e) {
-                      $query_lugar = "SELECT nombre, horario_apretura, horario_cierre FROM Lugares 
-                          WHERE Lugares.lid = '$e[0]';";
+                      $query_lugar = "SELECT Lugares.nombre, Museos.horario_apertura, Museos.horario_cierre 
+                          FROM Lugares, Museos WHERE Lugares.lid = Museos.lid AND Museos.lid = '$e[0]';";
                       $result_lugar = $db_12 -> prepare($query_lugar);
                       $result_lugar -> execute();
                       $lugares = $result_lugar -> fetchAll();
