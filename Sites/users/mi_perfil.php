@@ -3,6 +3,7 @@ session_start();
 ?>
 
 <?php 
+include('../templates/header_sin_nada.html');
 require("../config/conexion.php");  
 $username = $_SESSION["user"];
 $query_usuario = "SELECT nombre_usuario FROM Usuarios WHERE username = '$username';";
