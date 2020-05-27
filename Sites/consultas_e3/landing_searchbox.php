@@ -19,7 +19,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       require("../config/conexion.php");
 
       #Se guarda lo que viene de index.php
-      $palabra = $_POST["searchbox"];
+      $busqueda = $_POST["searchbox"];
 
        # $_POST["opcion_1"] --> artistas
        # $_POST["opcion_2"] --> obras
@@ -50,52 +50,124 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       $result -> execute();
       $lugares = $result -> fetchAll();
 
-
-      $header_artistas = "<div class='container-fluid mt-10'>
-      <h2 class='text-center rounded-bottom bg-info text-white mb-8'>Búsqueda de artistas</h2>
-      <div class='scrollable'>
-        <div class='table-responsive'>
-          <table class='table table-bordered table-hover table-striped text-center table-dark'>
-            <thead>
-              <tr>
-                <th class='text-white bg-danger' scope='col' >Nombre</th>
-                <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
-              </tr>
-            </thead>
-          <tbody>";
-      
-      $header_lugares = "<div class='container-fluid mt-10'>
-      <h2 class='text-center rounded-bottom bg-info text-white mb-8'>Búsqueda de lugares</h2>
-      <div class='scrollable'>
-        <div class='table-responsive'>
-          <table class='table table-bordered table-hover table-striped text-center table-dark'>
-            <thead>
-              <tr>
-                <th class='text-white bg-danger' scope='col'>Lugar</th>
-                <th class='text-white bg-danger' scope='col'>Ciudad</th>
-                <th class='text-white bg-danger' scope='col'>País</th>
-                <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
-              </tr>
-            </thead>
-          <tbody>";
-      
-      $header_obras = "<div class='container-fluid mt-10'>
-      <h2 class='text-center rounded-bottom bg-info text-white mb-8'>Búsqueda de obras</h2>
-      <div class='scrollable'>
-        <div class='table-responsive'>
-          <table class='table table-bordered table-hover table-striped text-center table-dark'>
-            <thead>
-              <tr>
-                <th class='text-white bg-danger' scope='col'>Obra</th>
-                <th class='text-white bg-danger' scope='col'>Ciudad</th>
-                <th class='text-white bg-danger' scope='col'>País</th>
-                <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
-              </tr>
-            </thead>
-          <tbody>";
-
+      echo
+      "<section id='tabs' class='project-tab'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <nav>
+                            <div class='nav nav-tabs nav-fill' id='nav-tab' role='tablist'>
+                                <a class='nav-item nav-link active' id='nav-artistas-tab' data-toggle='tab' href='#nav-artistas' role='tab' aria-controls='nav-artistas' aria-selected='true'>Resultados Artistas</a>
+                                <a class='nav-item nav-link' id='nav-obras-tab' data-toggle='tab' href='#nav-obras' role='tab' aria-controls='nav-obras' aria-selected='false'>Resultados Obras</a>
+                                <a class='nav-item nav-link' id='nav-lugares-tab' data-toggle='tab' href='#nav-lugares' role='tab' aria-controls='nav-lugares' aria-selected='false'>Resultados Lugares</a>
+                            </div>
+                        </nav>
+                        <div class='tab-content' id='nav-tabContent'>
+                            <div class='tab-pane fade show active' id='nav-artistas' role='tabpanel' aria-labelledby='nav-artistas-tab'>
+                              <div class='scrollable'>
+                                <div class='table-responsive'>
+                                  <table class='table table-bordered table-hover table-striped text-center table-dark'>
+                                    <thead>
+                                      <tr>
+                                        <th class='text-white bg-danger' scope='col' >Nombre</th>
+                                        <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
+                                      </tr>
+                                    </thead>
+                                  <tbody>";
+                                  foreach ($artistas as $n) {
+                                    echo "<tr class='bg-dark'>
+                                            <td>$n[1]</td>
+                                            <td>
+                                            <form action='consulta_artistas.php' method='post' >
+                                                <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
+                                                <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
+                                                <input class='btn btn-primary' type='submit' value='Sobre este artista'>
+                                            </form>
+                                            </td>
+                                          </tr>";
+                                  }
+                                  echo 
+                                    "</tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>";
+                          echo          
+                            "<div class='tab-pane fade' id='nav-obras' role='tabpanel' aria-labelledby='nav-obras-tab'>
+                              <div class='scrollable'>
+                                <div class='table-responsive'>
+                                  <table class='table table-bordered table-hover table-striped text-center table-dark'>
+                                    <thead>
+                                      <tr>
+                                        <th class='text-white bg-danger' scope='col'>Obra</th>
+                                        <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                                        <th class='text-white bg-danger' scope='col'>País</th>
+                                        <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
+                                      </tr>
+                                    </thead>
+                                  <tbody>";
+                                  foreach ($obras as $n) {
+                                    echo "<tr class='bg-dark'>
+                                            <td>$n[1]</td>
+                                            <td>$n[2]</td>
+                                            <td>$n[3]</td>
+                                            <td>
+                                            <form action='consulta_obras.php' method='post' >
+                                                <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
+                                                <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
+                                                <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
+                                            </form>
+                                            </td>
+                                          </tr>";
+                                  }
+                                  echo 
+                                    "</tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>";
+                            
+                          echo    
+                            "<div class='tab-pane fade' id='nav-lugares' role='tabpanel' aria-labelledby='nav-lugares-tab'>
+                              <div class='scrollable'>
+                                <div class='table-responsive'>
+                                  <table class='table table-bordered table-hover table-striped text-center table-dark'>
+                                    <thead>
+                                      <tr>
+                                        <th class='text-white bg-danger' scope='col'>Lugar</th>
+                                        <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                                        <th class='text-white bg-danger' scope='col'>País</th>
+                                        <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
+                                      </tr>
+                                    </thead>
+                                  <tbody>";
+                                  foreach ($obras as $n) {
+                                    echo "<tr class='bg-dark'>
+                                            <td>$n[1]</td>
+                                            <td>$n[2]</td>
+                                            <td>$n[3]</td>
+                                            <td>
+                                            <form action='consulta_obras.php' method='post' >
+                                                <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
+                                                <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
+                                                <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
+                                            </form>
+                                            </td>
+                                          </tr>";
+                                  }
+                                  echo 
+                                    "</tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>";
     ?>
-    <?php
+    <!--?php
     #solo lugares
       if (empty($_POST["opcion_1"]) and empty($_POST["opcion_2"]) and empty($_POST["opcion_3"]) == FALSE) { 
         echo $header_lugares;
@@ -395,5 +467,5 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
         </div>
     </div>";
       }
-    ?>
+    ?-->
   <?php include('../templates/footer.html');?>
