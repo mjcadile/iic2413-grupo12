@@ -62,7 +62,9 @@
         </div>
       </div>
     </div>
-        <input type='submit' class='btn btn-primary mt-8 mb-5' value='Consultar' />
+    <div class="card text-center border-info mb-3">
+        <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
+    </div>
     </form>
     <form action="../index.php" method="get">
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú Principal">
