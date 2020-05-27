@@ -32,7 +32,7 @@
       </div>
 
     <div class="container-fluid mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los artistas</h2>
+      <h5 class="text-center rounded-bottom bg-info text-white mb-8">Escoge a los artistas que deseas visitar.</h5>
       <div class="scrollable"> 
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
@@ -63,7 +63,9 @@
               ?>
             </tbody>
           </table>
-          <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
+          <form action="../index.php" method="get">
+              <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
+          </form>
         </div>
       </div>
     </div>
