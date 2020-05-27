@@ -18,16 +18,20 @@
 	    $nombres = $result -> fetchAll();
     ?>
 
+      <div class="card text-center border-info mb-3">
+          <h5 class='card-title'> Escoge la ciudad y la fecha de la consulta. </h5>
+          <?php echo "
+            <p class='card-text'> Ciudad </p>
+                <input type='text' name='ciudad'>
+            <p class='card-text'> Fecha </p>
+                <input type='date' id='fecha' name='fecha'
+                      value='$fecha_actual'
+                      min='$fecha_actual' max='2025-12-31'>"?>
+      </div>
+
     <div class="container-fluid mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Todos los artistas</h2>
-      <div class="scrollable">
-      <?php echo "
-        <p class='card-text'> Ciudad </p>
-            <input type='text' name='ciudad'>
-        <p class='card-text'> Fecha </p>
-            <input type='date' id='fecha' name='fecha'
-                  value='$fecha_actual'
-                  min='$fecha_actual' max='2025-12-31'>"?>
+      <div class="scrollable"> 
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
             <thead>
