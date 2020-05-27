@@ -17,26 +17,32 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       require("../config/conexion.php");
 
       $fecha_actual = date("Y-m-d", time());
-      #Se construye la consulta como un string
+      #Consulta nombre de artistas
  	    $query = "SELECT * FROM Artistas;";
-   
-      #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
 	    $result = $db_12 -> prepare($query);
 	    $result -> execute();
-	    $nombres = $result -> fetchAll();
+      $nombres = $result -> fetchAll();
+      #Consulta nombre ciudades
+      $query_ciudades = "SELECT nombre_ciudad FROM Ciudades;";
+      $result_ciudades = $db_19 -> prepare($query_ciudades);
+      $result_ciudades -> execute();
+      $ciudades = $result_ciudades -> featchAll();
     ?>
 
       <div class="card text-center border-info mb-3">
           <form align="center" action="hacer_intinerario.php" method="post">
               <h5 class="text-center rounded-bottom bg-info text-white mb-8">Escoge la ciudad y la fecha de la consulta.</h5>
+              <p class='card-text'> Ciudad </p>
+                  <select name='selecciona la ciudad'>
+                  <?php foreach ($ciudades as $c){
+                      echo "<option value='$c[0]'>$c[0]</option>"              
+                  }?>
+                  </select>
               <?php echo "
-                <p class='card-text'> Ciudad </p>
-                    <input type='text' name='ciudad'>
                 <p class='card-text'> Fecha </p>
                     <input type='date' id='fecha' name='fecha'
                           value='$fecha_actual'
                           min='$fecha_actual' max='2025-12-31'>"?>
-
       </div>
 
     <div class="container-fluid mt-10">
