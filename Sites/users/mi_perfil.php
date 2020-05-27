@@ -71,8 +71,8 @@ foreach ($usuario as $us) {
   <img src="https://www.lavanguardia.com/r/GODO/LV/p7/WebSite/2020/03/20/Recortada/img_mbigas_20200320-143919_imagenes_lv_terceros_cuadritus-kpjD-U4742685883827EF-992x558@LaVanguardia-Web.jpg" id="bg" alt="">
     <?php
       #Aca agregar 1° consulta sobre los museos
- 	    $query_museos = "SELECT lid, fecha_compra FROM Usuarios, Entradas 
-       WHERE Usuarios.uid = Reservas.uid AND Usuarios.username = '$username';";
+ 	    $query_museos = "SELECT Entradas.lid, Entradas.fecha_compra FROM Usuarios, Entradas 
+       WHERE Usuarios.uid = Entradas.uid AND Usuarios.username = '$username';";
       $result_museos = $db_19 -> prepare($query_museos);
       $result_museos -> execute();
       $entradas_museos = $result_museos -> fetchAll();

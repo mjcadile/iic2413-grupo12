@@ -29,4 +29,9 @@ $query = "INSERT INTO Entradas VALUES('$eid', '$uid', '$lid', '$fecha_actual');"
 $agregar = $db_19 -> prepare($query);
 $agregar -> execute();
 $resultado = $agregar -> fetchAll();
+
+header('Status: 301 Moved Permanently', false, 301);
+header('Location: ../index.php');
+header("Connection: close");
+exit()
 ?>
