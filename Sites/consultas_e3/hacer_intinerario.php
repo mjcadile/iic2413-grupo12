@@ -16,12 +16,31 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       <img src="https://d2jv9003bew7ag.cloudfront.net/uploads/MoCP-Chicago.jpg" id="bg" alt="">
           <?php
           $fecha_viaje = $_POST["fecha"];
-          $ciudad = $_POST["ciudad"];
+          $cid = $_POST["ciudad"];
+          $cid = number_format(intval($cid));
           echo $ciudad."</br>";
           echo $fecha_viaje."</br>";
           foreach($_POST['check_list'] as $selected){
             echo $selected."</br>";
           }
+
+          $query = "SELECT itinerario($cid, 24);";
+          $result = $db_19 -> prepare($query);
+          $result -> execute();
+          $intine = $result -> fetchAll();
+
+          $query_int = "SELECT * FROM Itinerario;";
+          $result_int = $db_19 -> prepare($query_int);
+          $result_int -> execute();
+          $intinerario = $result_int -> fetchAll();
+
+          foreach($intinerario as $i){
+            echo $i[0]."</br>";
+            echo $i[1]."</br>";
+            echo $i[2]."</br>";
+
+          }
+          
         ?>
     </div>
 <body>
