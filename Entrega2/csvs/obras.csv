@@ -1,40 +1,40 @@
 oid;nombre;ano_inicio;ano_termino;periodo;lid
 1;San Sebastian;1479;1480;Renacimiento;1
-2;La Anunciacion;1472;1475;Renacimiento;0
-3;Bautismo de Cristo;1472;1475;Renacimiento;0
-4;La Estatua de San Pedro;1300;1305;Gotico;0
+2;La Anunciacion;1472;1475;Renacimiento;2
+3;Bautismo de Cristo;1472;1475;Renacimiento;2
+4;La Estatua de San Pedro;1300;1305;Gotico;3
 5;El Santo Entierro;1602;1604;Barroco;4
 6;Tondo Taddei;1504;1506;Renacimiento;5
-7;Crucifixion de San Pedro;1600;1601;Barroco;0
+7;Crucifixion de San Pedro;1600;1601;Barroco;6
 8;La Anunciacion;1607;1608;Barroco;7
-9;La cabeza de Medusa;1596;1597;Barroco;0
-10;Maria Magdalena Penitente;1453;1455;Renacimiento;0
+9;La cabeza de Medusa;1596;1597;Barroco;2
+10;Maria Magdalena Penitente;1453;1455;Renacimiento;8
 11;La Libertad guiando al pueblo;1829;1830;Romanticismo;1
-12;El juicio Final;1541;1563;Renacimiento;0
+12;El juicio Final;1541;1563;Renacimiento;9
 13;Pitufiescultura;2018;2019;Neoclasicismo Romano de mediados del siglo XVII 1/2;10
 14;PitufiFresco;2019;2020;Neoclasicismo Romano de mediados del siglo XVII 1/2;1
 15;La Fuente de Neptuno;1573;1574;Renacimiento;11
 16;La Fuente de los Cuatro Rios;1648;1651;Barroco;11
 17;La anunciacion;1618;1619;Barroco;1
-18;Extasis de Santa Teresa;1645;1652;Barroco;0
+18;Extasis de Santa Teresa;1645;1652;Barroco;12
 19;Pulcin della Minerva;1666;1667;Barroco;13
 20;Santos Piazza San Pietro;1656;1667;Barroco;14
-21;Apolo y Dafne;1622;1625;Barroco;0
-22;Maesta di Ognissanti;1309;1310;Gotico;0
+21;Apolo y Dafne;1622;1625;Barroco;15
+22;Maesta di Ognissanti;1309;1310;Gotico;2
 23;La anunciacion;1300;1304;Gotico;1
-24;Polittico di Badia;1299;1300;Gotico;0
+24;Polittico di Badia;1299;1300;Gotico;2
 25;La consagracion de Napoleon;1805;1807;Neoclasicismo;1
 26;Manneken Pis;1618;1619;Barroco;16
 27;La ultima cena;1495;1498;Renacimiento;17
 28;La Mona Lisa;1503;1519;Renacimiento;1
-29;La Piedad;1498;1499;Renacimiento;0
-30;El David;1501;1504;Renacimiento;0
+29;La Piedad;1498;1499;Renacimiento;3
+30;El David;1501;1504;Renacimiento;18
 31;El Moises;1513;1515;Renacimiento;19
 32;La creacion de Adan;1500;1511;Renacimiento;20
 33;El Juicio Final;1537;1541;Renacimiento;20
 34;Estancias de Rafael;1508;1524;Renacimiento;4
 35;La transfiguracion;1517;1520;Renacimiento;4
-36;Madonna Sixtina;1513;1514;Renacimiento;0
-37;Las Gracias;1504;1505;Renacimiento;0
-38;La primavera;1477;1478;Renacimiento;0
-39;El nacimiento de Venus;1482;1485;Renacimiento;0
+36;Madonna Sixtina;1513;1514;Renacimiento;21
+37;Las Gracias;1504;1505;Renacimiento;22
+38;La primavera;1477;1478;Renacimiento;2
+39;El nacimiento de Venus;1482;1485;Renacimiento;2
