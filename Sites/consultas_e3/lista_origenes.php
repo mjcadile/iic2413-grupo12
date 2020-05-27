@@ -8,6 +8,9 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 }else{
     include('../templates/header_sin_searchbox.html');
 }?>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
 
 <body>
   <img src="https://cdn.pixabay.com/photo/2014/11/02/10/41/aircraft-513641_1280.jpg" id="bg" alt="">

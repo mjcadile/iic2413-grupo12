@@ -7,6 +7,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 }else{
     include('../templates/header_sin_searchbox.html');
 }?>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+
 
 <body>
   <!--div style= "background-image: url('https://gracemooreyoga.files.wordpress.com/2017/01/hja1uhg7b3ziilj4qie-g-wide.jpg');"!-->
