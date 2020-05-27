@@ -24,16 +24,22 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             echo $selected."</br>";
           }
 
-          $query = "SELECT itinerario('$cid', '24');";
-          $result = $db_19 -> prepare($query);
-          $result -> execute();
+          $sql = "SELECT itinerario('$cid',24)";
+          $res = pg_prepare($db_19, "my_query", $sql);
+          $res = pg_execute($db_19, "my_query");
+
+
+          #$query = "SELECT itinerario('$cid', '24');";
+          #$result = $db_19 -> prepare($query);
+          #$result -> execute();
+
 
           $query_int = "SELECT * FROM Itinerario;";
           $result_int = $db_19 -> prepare($query_int);
           $result_int -> execute();
-          $intinerario = $result_int -> fetchAll();
+          $itinerario = $result_int -> fetchAll();
 
-          foreach($intinerario as $i){
+          foreach($itinerario as $i){
             if (isset(i[0])){
               echo $i[0]."</br>";
             }
