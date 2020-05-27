@@ -50,8 +50,11 @@ foreach ($usuario as $us) {
                         </form>
                     </ul-->
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link disabled" href=""><?php echo "$nombre"; ?></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="logout.php">Cerrar sesion</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="eliminar_cuenta.php">Eliminar mi cuenta</a>
