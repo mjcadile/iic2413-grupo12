@@ -19,7 +19,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       require("../config/conexion.php");
 
       #Se guarda lo que viene de index.php
-      $busqueda = $_POST["searchbox"];
+      $busqueda = $_POST["search"];
 
        # $_POST["opcion_1"] --> artistas
        # $_POST["opcion_2"] --> obras
