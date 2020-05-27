@@ -62,7 +62,7 @@
         </div>
       </div>
     </div>
-        <input type='submit' class='btn btn-primary mt-2 mb-2' value='Consultar' />
+        <input type='submit' class='btn btn-primary mt-8 mb-5' value='Consultar' />
     </form>
     <form action="../index.php" method="get">
       <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú Principal">
