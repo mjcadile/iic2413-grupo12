@@ -23,7 +23,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 	    $result -> execute();
       $nombres = $result -> fetchAll();
       #Consulta nombre ciudades
-      $query_ciudades = "SELECT nombre_ciudad FROM Ciudades;";
+      $query_ciudades = "SELECT nombre_ciudad, cid FROM Ciudades;";
       $result_ciudades = $db_19 -> prepare($query_ciudades);
       $result_ciudades -> execute();
       $ciudades = $result_ciudades -> fetchAll();
@@ -37,7 +37,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                   <select name='ciudad'>
                       <option value='0'>Seleciona la ciudad de origen</option>
                       <?php foreach ($ciudades as $c){
-                          echo "<option value='$c[0]'>$c[0]</option>";             
+                          echo "<option value='$c[1]'>$c[0]</option>";             
                       }?>
                   </select>
               <?php echo "
