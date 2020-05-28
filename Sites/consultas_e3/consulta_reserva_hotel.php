@@ -60,7 +60,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                 echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>$mensaje</h7>";
             }
             if (! isset($_POST["hid"])){
-                echo "<h7 class='text-center rounded-bottom bg-info text-red mb-8'>Las fecha de salida tiene que ir 
+                echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>Las fecha de salida tiene que ir 
                 antes de la de entrada.</h7>";
             }?>
           </div>

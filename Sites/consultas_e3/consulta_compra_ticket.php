@@ -55,6 +55,12 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 
     <div class= 'container mt-10'>
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Elige la fecha de tu viaje. </h2>
+          <div class="card">
+            <?php 
+            if (isset($mensaje)){
+                echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>$mensaje</h7>";
+            }?>
+          </div>
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
