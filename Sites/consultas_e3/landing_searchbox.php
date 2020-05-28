@@ -89,7 +89,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                 <a class='nav-item nav-link active' id='nav-artistas-tab' data-toggle='tab' href='#nav-artistas' role='tab' aria-controls='nav-artistas' aria-selected='true'>Resultados Artistas</a>
                                 <a class='nav-item nav-link' id='nav-obras-tab' data-toggle='tab' href='#nav-obras' role='tab' aria-controls='nav-obras' aria-selected='false'>Resultados Obras</a>
                                 <a class='nav-item nav-link' id='nav-lugares-tab' data-toggle='tab' href='#nav-lugares' role='tab' aria-controls='nav-lugares' aria-selected='false'>Resultados Lugares</a>
-                                <a class='nav-item nav-link' id='nav-vuelos-tab' data-toggle='tab' href='#nav-vuelos' role='tab' aria-controls='nav-vuelos' aria-selected='false'>Resultados Vuelos</a>
+                                <a class='nav-item nav-link' id='nav-vuelos-tab' data-toggle='tab' href='#nav-vuelos' role='tab' aria-controls='nav-vuelos' aria-selected='false'>Resultados Viajes</a>
                                 <a class='nav-item nav-link' id='nav-hoteles-tab' data-toggle='tab' href='#nav-hoteles' role='tab' aria-controls='nav-hoteles' aria-selected='false'>Resultados Hoteles</a>
                             </div>
                         </nav>
@@ -252,7 +252,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                                                   <input type = 'hidden' name = 'dcid' id = 'dcid' value = $n[2] >
                                                   <input type = 'hidden' name = 'destino' id = 'destino' value = $n[3] >
-                                                  <input class='btn btn-primary' type='submit' value='Más sobre el vuelo'>
+                                                  <input class='btn btn-primary' type='submit' value='Más sobre el viaje'>
                                               </form>
                                               </td>
                                             </tr>";
@@ -267,7 +267,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
                                                   <input type = 'hidden' name = 'dcid' id = 'dcid' value = $n[3] >
                                                   <input type = 'hidden' name = 'destino' id = 'destino' value = $n[2] >
-                                                  <input class='btn btn-primary' type='submit' value='Más sobre el vuelo'>
+                                                  <input class='btn btn-primary' type='submit' value='Más sobre el viaje'>
                                               </form>
                                               </td>
                                             </tr>";
