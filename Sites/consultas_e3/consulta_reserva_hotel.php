@@ -54,6 +54,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 
     <div class= 'container mt-10'>
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del hotel  <?php echo $nombre_hotel; ?></h2>
+        <div class="card">
             <?php 
             if (isset($mensaje)){
                 echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>$mensaje</h7>";
@@ -62,6 +63,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                 echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>Las fecha de salida tiene que ir 
                 antes de la de entrada.</h7>";
             }?>
+          </div>
 
       <div class="scrollable">
         <div class="table-responsive">
