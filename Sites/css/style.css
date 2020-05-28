@@ -133,6 +133,6 @@ a:hover{
     box-shadow: 0 1px 0 0 #4dd0e1;
   }
 
-.active-cyan .fa, .active-cyan-2 .fa {
+.active-cyan .fa-search, .active-cyan-2 .fa-search {
     color: #4dd0e1;
   }
