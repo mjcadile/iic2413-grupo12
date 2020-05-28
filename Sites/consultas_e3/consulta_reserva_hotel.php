@@ -58,10 +58,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
         <div class="card">
             <?php 
             if (isset($mensaje)){
-                echo "<h7 class='card-text center'>$mensaje</h7>";
+                echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>$mensaje</h7>";
             }
             if (! isset($_POST["hid"])){
-                echo "<h7 class='card-text center'>Las fecha de salida tiene que ir 
+                echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>Las fecha de salida tiene que ir 
                 antes de la de entrada.</h7>";
             }?>
           </div>
