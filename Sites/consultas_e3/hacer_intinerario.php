@@ -15,6 +15,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
     <div class="card text-center border-info mb-3">
       <img src="https://d2jv9003bew7ag.cloudfront.net/uploads/MoCP-Chicago.jpg" id="bg" alt="">
           <?php
+          require("../config/conexion.php");
           $fecha_viaje = $_POST["fecha"];
           $cid = $_POST["ciudad"];
           $cid = intval($cid);
@@ -25,7 +26,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           }
 
   
-          $query = "SELECT itinerario('$cid', 24)";
+          $query = "SELECT itinerario(1, 24);";
           $result = $db_19 -> prepare($query);
           $result -> execute();
 
