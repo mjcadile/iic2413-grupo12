@@ -7,6 +7,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           include('../templates/header_sin_searchbox_login.html');
 }else{
     include('../templates/header_sin_searchbox.html');
+    $mensaje = "Para comprar el ticket debes iniciar sesion."
 }?>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -47,11 +48,19 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       $image = $manage["items"][1]["link"];
 
       ?>
+
   <img src= <?php echo $image ?> id="bg" alt="">
       
 
     <div class= 'container mt-10'>
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del hotel  <?php echo $nombre_hotel; ?></h2>
+      <?php 
+      if ()
+      }
+      if (isset($mensaje)){
+        echo $mensaje;
+      }?>
+
       <div class="scrollable">
         <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped text-center table-dark">
