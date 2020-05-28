@@ -272,6 +272,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                               </form>
                                               </td>
                                             </tr>";
+                                    }
                                     echo 
                                       "</tbody>
                                       </table>
