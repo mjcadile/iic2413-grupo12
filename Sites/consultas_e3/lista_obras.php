@@ -45,7 +45,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                   $nombre = $n[1];
                   #$nombre = str_replace(' ', '+', $n[1]);
                   echo "<tr class='bg-dark'>
-                          <td>$nombre</td>
+                          <td>$n[1]</td>
                           <td>
                           <form action='consulta_obras.php' method='post' >
                               <input type = 'hidden' name = 'nombre' id = 'nombre' value = $nombre >
