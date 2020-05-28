@@ -37,13 +37,13 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $itinerario = $result_int -> fetchAll();
 
           foreach($itinerario as $i){
-            if (isset(i[0])){
+            if (isset($i[0])){
               echo $i[0]."</br>";
             }
-            if (isset(i[1])){
+            if (isset($i[1])){
               echo $i[1]."</br>";
             }
-            if (isset(i[2])){
+            if (isset($i[2])){
               echo $i[2]."</br>";
             }
           }
