@@ -213,7 +213,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                             <td>$n[2]</td>
                                             <td>$n[3]</td>
                                             <td>
-                                            <form action='consulta_lugares.php' method='post' >
+                                            <form action='consulta_reserva_hotel.php' method='post' >
                                                 <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
                                                 <input type = 'hidden' name = 'hid' id = 'hid' value = $n[0] >
                                                 <input class='btn btn-primary' type='submit' value='Más sobre este hotel'>
@@ -260,13 +260,13 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                     foreach ($vuelos_destino as $n) {
                                       echo "<tr class='bg-dark'>
                                               <td>$n[1]</td>
-                                              <td>$n[3]</td>
+                                              <td>$n[2]</td>
                                               
                                               <td>
                                               <form action='consulta_compra_ticket.php' method='post' >
                                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
-                                                  <input type = 'hidden' name = 'dcid' id = 'dcid' value = $n[4] >
-                                                  <input type = 'hidden' name = 'destino' id = 'destino' value = $n[3] >
+                                                  <input type = 'hidden' name = 'dcid' id = 'dcid' value = $n[3] >
+                                                  <input type = 'hidden' name = 'destino' id = 'destino' value = $n[2] >
                                                   <input class='btn btn-primary' type='submit' value='Más sobre el vuelo'>
                                               </form>
                                               </td>
