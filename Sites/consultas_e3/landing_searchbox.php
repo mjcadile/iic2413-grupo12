@@ -50,7 +50,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       $query_vuelos_destino = "SELECT DISTINCT Origin.origen, Origin.nombre_ciudad, ParisDestiny.nombre_ciudad, ParisDestiny.destino FROM
       (SELECT DISTINCT Destinos.origen, Ciudades.nombre_ciudad FROM Ciudades, Destinos WHERE Ciudades.cid = Destinos.origen) AS Origin, 
       (SELECT DISTINCT Destinos.destino, Ciudades.nombre_ciudad FROM Destinos, Ciudades WHERE
-      Ciudades.cid = Destinos.destino AND LOWER(Ciudades.nombre_ciudad) LIKE LOWER('%paris%')) AS ParisDestiny, Destinos WHERE Origin.origen = Destinos.origen AND
+      Ciudades.cid = Destinos.destino AND LOWER(Ciudades.nombre_ciudad) LIKE LOWER('%$busqueda%')) AS ParisDestiny, Destinos WHERE Origin.origen = Destinos.origen AND
       Destinos.destino = ParisDestiny.destino;";
       
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
