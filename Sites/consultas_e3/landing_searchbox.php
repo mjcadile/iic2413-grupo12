@@ -41,15 +41,15 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       FROM Ciudades, Paises, Hoteles WHERE  Ciudades.cid = Hoteles.cid AND Ciudades.pid = Paises.pid 
       AND LOWER(Hoteles.nombre_hotel) LIKE LOWER('%$busqueda%');";
         
-      $query_vuelos_origen = "SELECT DISTINCT ParisOrigin.origen, ParisOrigin.nombre_ciudad, Destiny.destino, Destiny.nombre_ciudad, Destiny.hora FROM
-      (SELECT Destinos.origen, Ciudades.nombre_ciudad FROM Ciudades, Destinos WHERE LOWER(Ciudades.nombre_ciudad) LIKE LOWER('%$busqueda%') AND 
-      Ciudades.cid = Destinos.origen) AS ParisOrigin, (SELECT Destinos.hora, Destinos.destino, Ciudades.nombre_ciudad FROM Destinos, Ciudades WHERE
+      $query_vuelos_origen = "SELECT DISTINCT ParisOrigin.origen, ParisOrigin.nombre_ciudad, Destiny.destino, Destiny.nombre_ciudad FROM
+      (SELECT DISTINCT Destinos.origen, Ciudades.nombre_ciudad FROM Ciudades, Destinos WHERE LOWER(Ciudades.nombre_ciudad) LIKE LOWER('%$busqueda%') AND 
+      Ciudades.cid = Destinos.origen) AS ParisOrigin, (SELECT DISTINCT Destinos.destino, Ciudades.nombre_ciudad FROM Destinos, Ciudades WHERE
       Ciudades.cid = Destinos.destino) AS Destiny, Destinos WHERE ParisOrigin.origen = Destinos.origen AND
       Destinos.destino = Destiny.destino;";
 
-      $query_vuelos_destino = "SELECT DISTINCT Origin.origen, Origin.nombre_ciudad, Origin.hora, ParisDestiny.nombre_ciudad, ParisDestiny.destino FROM
-      (SELECT Destinos.origen, Ciudades.nombre_ciudad, Destinos.hora FROM Ciudades, Destinos WHERE Ciudades.cid = Destinos.origen) AS Origin, 
-      (SELECT Destinos.destino, Ciudades.nombre_ciudad FROM Destinos, Ciudades WHERE
+      $query_vuelos_destino = "SELECT DISTINCT Origin.origen, Origin.nombre_ciudad, ParisDestiny.nombre_ciudad, ParisDestiny.destino FROM
+      (SELECT DISTINCT Destinos.origen, Ciudades.nombre_ciudad FROM Ciudades, Destinos WHERE Ciudades.cid = Destinos.origen) AS Origin, 
+      (SELECT DISTINCT Destinos.destino, Ciudades.nombre_ciudad FROM Destinos, Ciudades WHERE
       Ciudades.cid = Destinos.destino AND LOWER(Ciudades.nombre_ciudad) LIKE LOWER('%paris%')) AS ParisDestiny, Destinos WHERE Origin.origen = Destinos.origen AND
       Destinos.destino = ParisDestiny.destino;";
       
@@ -238,7 +238,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                         <tr>
                                           <th class='text-white bg-danger' scope='col'>Origen</th>
                                           <th class='text-white bg-danger' scope='col'>Destino</th>
-                                          <th class='text-white bg-danger' scope='col'>Hora</th>
                                           <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
                                         </tr>
                                       </thead>
@@ -247,7 +246,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                       echo "<tr class='bg-dark'>
                                               <td>$n[1]</td>
                                               <td>$n[3]</td>
-                                              <td>$n[4]</td>
+                                            
                                               <td>
                                               <form action='consulta_compra_ticket.php' method='post' >
                                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
@@ -262,7 +261,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                       echo "<tr class='bg-dark'>
                                               <td>$n[1]</td>
                                               <td>$n[3]</td>
-                                              <td>$n[2]</td>
+                                              
                                               <td>
                                               <form action='consulta_compra_ticket.php' method='post' >
                                                   <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
