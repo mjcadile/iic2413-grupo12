@@ -42,8 +42,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
               
               <?php
                 foreach ($nombres as $n) {
-                  $nombre = $n[1];
-                  #$nombre = str_replace(' ', '+', $n[1]);
+                  #$nombre = $n[1];
+                  $nombre = str_replace(' ', '+', $n[1]);
                   echo "<tr class='bg-dark'>
                           <td>$n[1]</td>
                           <td>
