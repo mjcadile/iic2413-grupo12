@@ -54,13 +54,19 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 
     <div class= 'container mt-10'>
       <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Información del hotel  <?php echo $nombre_hotel; ?></h2>
-      <?php 
-      if (isset($mensaje)){
-        echo "$mensaje"
-      }
-      if (! isset($_POST["hid"])){
-        echo "Las fecha de salida tiene que ir antes de la de entrada.";
-      }?>
+      <div class="card-deck mb-3">
+        <div class="card">
+            <?php 
+            if (isset($mensaje)){
+                echo "$mensaje";
+                echo "<p class='card-text'>$mensaje</p>"
+            }
+            if (! isset($_POST["hid"])){
+                echo "<p class='card-text'>Las fecha de salida tiene que ir 
+                antes de la de entrada.</p>";
+            }?>
+          </div>
+      </div>
 
       <div class="scrollable">
         <div class="table-responsive">
