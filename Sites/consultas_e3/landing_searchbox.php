@@ -36,7 +36,23 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       $query_lugares = "SELECT DISTINCT Lugares.lid, Lugares.nombre, Ciudades.nombre, Paises.nombre
       FROM Lugares, Ciudades, Paises WHERE  Lugares.lid = Lugares.lid AND Lugares.cid = Ciudades.cid AND
       Ciudades.pid = Paises.pid AND LOWER(Lugares.nombre) LIKE LOWER('%$busqueda%');";
+
+      $query_hoteles = "SELECT DISTINCT Hoteles.hid, Hoteles.nombre_hotel, Ciudades.nombre_ciudad, Paises.nombre_pais, Hoteles.precio_hotel 
+      FROM Ciudades, Paises, Hoteles WHERE  Ciudades.cid = Hoteles.cid AND Ciudades.pid = Paises.pid 
+      AND LOWER(Hoteles.nombre_hotel) LIKE LOWER('%$busqueda%');";
         
+      $query_vuelos_origen = "SELECT DISTINCT ParisOrigin.origen, ParisOrigin.nombre_ciudad, Destiny.destino, Destiny.nombre_ciudad, Destiny.hora FROM
+      (SELECT Destinos.origen, Ciudades.nombre_ciudad FROM Ciudades, Destinos WHERE LOWER(Ciudades.nombre_ciudad) LIKE LOWER('%$busqueda%') AND 
+      Ciudades.cid = Destinos.origen) AS ParisOrigin, (SELECT Destinos.hora, Destinos.destino, Ciudades.nombre_ciudad FROM Destinos, Ciudades WHERE
+      Ciudades.cid = Destinos.destino) AS Destiny, Destinos WHERE ParisOrigin.origen = Destinos.origen AND
+      Destinos.destino = Destiny.destino;";
+
+      $query_vuelos_destino = "SELECT DISTINCT Origin.origen, Origin.nombre_ciudad, Origin.hora, ParisDestiny.nombre_ciudad, ParisDestiny.destino FROM
+      (SELECT Destinos.origen, Ciudades.nombre_ciudad, Destinos.hora FROM Ciudades, Destinos WHERE Ciudades.cid = Destinos.origen) AS Origin, 
+      (SELECT Destinos.destino, Ciudades.nombre_ciudad FROM Destinos, Ciudades WHERE
+      Ciudades.cid = Destinos.destino AND LOWER(Ciudades.nombre_ciudad) LIKE LOWER('%paris%')) AS ParisDestiny, Destinos WHERE Origin.origen = Destinos.origen AND
+      Destinos.destino = ParisDestiny.destino;";
+      
       #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
       $result = $db_12 -> prepare($query_obras);
       $result -> execute();
@@ -50,6 +66,19 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
       $result -> execute();
       $lugares = $result -> fetchAll();
 
+      $result = $db_19 -> prepare($query_hoteles);
+      $result -> execute();
+      $hoteles = $result -> fetchAll();
+
+      $result = $db_19 -> prepare($query_vuelos_origen);
+      $result -> execute();
+      $vuelos_origen = $result -> fetchAll();
+
+      $result = $db_19 -> prepare($query_vuelos_destino);
+      $result -> execute();
+      $vuelos_destino = $result -> fetchAll();
+
+
       echo
       "<section id='tabs' class='project-tab'>
             <div class='container'>
@@ -60,6 +89,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                 <a class='nav-item nav-link active' id='nav-artistas-tab' data-toggle='tab' href='#nav-artistas' role='tab' aria-controls='nav-artistas' aria-selected='true'>Resultados Artistas</a>
                                 <a class='nav-item nav-link' id='nav-obras-tab' data-toggle='tab' href='#nav-obras' role='tab' aria-controls='nav-obras' aria-selected='false'>Resultados Obras</a>
                                 <a class='nav-item nav-link' id='nav-lugares-tab' data-toggle='tab' href='#nav-lugares' role='tab' aria-controls='nav-lugares' aria-selected='false'>Resultados Lugares</a>
+                                <a class='nav-item nav-link' id='nav-vuelos-tab' data-toggle='tab' href='#nav-vuelos' role='tab' aria-controls='nav-vuelos' aria-selected='false'>Resultados Vuelos</a>
+                                <a class='nav-item nav-link' id='nav-hoteles-tab' data-toggle='tab' href='#nav-hoteles' role='tab' aria-controls='nav-hoteles' aria-selected='false'>Resultados Hoteles</a>
                             </div>
                         </nav>
                         <div class='tab-content' id='nav-tabContent'>
@@ -160,312 +191,102 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                                     </table>
                                   </div>
                                 </div>
-                              </div>
+                              </div>";
+
+                              echo    
+                            "<div class='tab-pane fade' id='nav-hoteles' role='tabpanel' aria-labelledby='nav-hoteles-tab'>
+                              <div class='scrollable'>
+                                <div class='table-responsive'>
+                                  <table class='table table-bordered table-hover table-striped text-center table-dark'>
+                                    <thead>
+                                      <tr>
+                                        <th class='text-white bg-danger' scope='col'>Nombre</th>
+                                        <th class='text-white bg-danger' scope='col'>Ciudad</th>
+                                        <th class='text-white bg-danger' scope='col'>País</th>
+                                        <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
+                                      </tr>
+                                    </thead>
+                                  <tbody>";
+                                  foreach ($hoteles as $n) {
+                                    echo "<tr class='bg-dark'>
+                                            <td>$n[1]</td>
+                                            <td>$n[2]</td>
+                                            <td>$n[3]</td>
+                                            <td>
+                                            <form action='consulta_lugares.php' method='post' >
+                                                <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
+                                                <input type = 'hidden' name = 'hid' id = 'hid' value = $n[0] >
+                                                <input class='btn btn-primary' type='submit' value='Más sobre este hotel'>
+                                            </form>
+                                            </td>
+                                          </tr>";
+                                  }
+                                  echo 
+                                    "</tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>";
+
+
+                              echo          
+                              "<div class='tab-pane fade' id='nav-vuelos' role='tabpanel' aria-labelledby='nav-vuelos-tab'>
+                                <div class='scrollable'>
+                                  <div class='table-responsive'>
+                                    <table class='table table-bordered table-hover table-striped text-center table-dark'>
+                                      <thead>
+                                        <tr>
+                                          <th class='text-white bg-danger' scope='col'>Origen</th>
+                                          <th class='text-white bg-danger' scope='col'>Destino</th>
+                                          <th class='text-white bg-danger' scope='col'>Hora</th>
+                                          <th color = 'red' class='text-white bg-warning' scope='col'>Consultar</th>
+                                        </tr>
+                                      </thead>
+                                    <tbody>";
+                                    foreach ($vuelos_origen as $n) {
+                                      echo "<tr class='bg-dark'>
+                                              <td>$n[1]</td>
+                                              <td>$n[3]</td>
+                                              <td>$n[4]</td>
+                                              <td>
+                                              <form action='consulta_compra_ticket.php' method='post' >
+                                                  <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
+                                                  <input type = 'hidden' name = 'dcid' id = 'dcid' value = $n[2] >
+                                                  <input type = 'hidden' name = 'destino' id = 'destino' value = $n[3] >
+                                                  <input class='btn btn-primary' type='submit' value='Más sobre el vuelo'>
+                                              </form>
+                                              </td>
+                                            </tr>";
+                                    }
+                                    foreach ($vuelos_destino as $n) {
+                                      echo "<tr class='bg-dark'>
+                                              <td>$n[1]</td>
+                                              <td>$n[3]</td>
+                                              <td>$n[2]</td>
+                                              <td>
+                                              <form action='consulta_compra_ticket.php' method='post' >
+                                                  <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
+                                                  <input type = 'hidden' name = 'dcid' id = 'dcid' value = $n[4] >
+                                                  <input type = 'hidden' name = 'destino' id = 'destino' value = $n[3] >
+                                                  <input class='btn btn-primary' type='submit' value='Más sobre el vuelo'>
+                                              </form>
+                                              </td>
+                                            </tr>";
+                                    echo 
+                                      "</tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>";
     ?>
-    <!--?php
-    #solo lugares
-      if (empty($_POST["opcion_1"]) and empty($_POST["opcion_2"]) and empty($_POST["opcion_3"]) == FALSE) { 
-        echo $header_lugares;
-                    foreach ($lugares as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_lugares.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>";
-      }
-      #solo obras
-      elseif (empty($_POST["opcion_1"]) and empty($_POST["opcion_2"]) == FALSE and empty($_POST["opcion_3"])){ 
-        echo $header_obras;
-                    foreach ($obras as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_obras.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>";
-      }
-      #solo artistas
-      elseif (empty($_POST["opcion_1"]) == FALSE and empty($_POST["opcion_2"]) and empty($_POST["opcion_3"])) { 
-        echo $header_artistas;
-                    foreach ($artistas as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_artistas.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre este artista'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>";
-      }
-      #lugares y artistas
-      elseif (empty($_POST["opcion_1"]) == FALSE and empty($_POST["opcion_2"]) and empty($_POST["opcion_3"]) == FALSE) { 
-        echo $header_lugares;
-                    foreach ($lugares as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_lugares.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-          echo 
-                "</tbody>
-                 </table>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>";
-          
-          echo $header_artistas;
-                      foreach ($artistas as $n) {
-                        echo "<tr class='bg-dark'>
-                                <td>$n[1]</td>
-                                <td>
-                                <form action='consultas_e3/consulta_artistas.php' method='post' >
-                                    <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                    <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
-                                    <input class='btn btn-primary' type='submit' value='Sobre este artista'>
-                                </form>
-                                </td>
-                              </tr>";
-                      }
-          echo 
-                  "</tbody>
-                  </table>
-                </div>
-              </div>
-            </div>";
-
-      }
-      #lugares y obras
-      elseif (empty($_POST["opcion_1"]) and empty($_POST["opcion_2"]) == FALSE and empty($_POST["opcion_3"]) == FALSE) {
-        echo $header_lugares;
-                    foreach ($lugares as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_lugares.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-          echo 
-                "</tbody>
-                 </table>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>";
-
-          echo $header_obras;
-                    foreach ($obras as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_obras.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>";
-      }
-      #artistas y obras
-      elseif (empty($_POST["opcion_1"]) == FALSE and empty($_POST["opcion_2"]) == FALSE and empty($_POST["opcion_3"])) {
-        echo $header_artistas;
-                    foreach ($artistas as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_artistas.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre este artista'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>";
-
-        echo $header_obras;
-                    foreach ($obras as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_obras.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>";
-      }
-      elseif (empty($_POST["opcion_1"]) == FALSE and empty($_POST["opcion_2"]) == FALSE and empty($_POST["opcion_3"]) == FALSE) {
-        echo $header_lugares;
-                    foreach ($lugares as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_lugares.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'lid' id = 'lid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre este lugar'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-          echo 
-                "</tbody>
-                 </table>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>";
-
-          echo $header_obras;
-                    foreach ($obras as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>$n[2]</td>
-                              <td>$n[3]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_obras.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'oid' id = 'oid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre esta obra'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>
-        <br>
-        <br>";
-
-        echo $header_artistas;
-                    foreach ($artistas as $n) {
-                      echo "<tr class='bg-dark'>
-                              <td>$n[1]</td>
-                              <td>
-                              <form action='consultas_e3/consulta_artistas.php' method='post' >
-                                  <input type = 'hidden' name = 'nombre' id = 'nombre' value = $n[1] >
-                                  <input type = 'hidden' name = 'aid' id = 'aid' value = $n[0] >
-                                  <input class='btn btn-primary' type='submit' value='Sobre este artista'>
-                              </form>
-                              </td>
-                            </tr>";
-                    }
-        echo 
-              "</tbody>
-               </table>
-            </div>
-          </div>
-        </div>";
-      }
-      else {
-        echo "<div id='myModal' class='modal fade'>
-        <div class='modal-dialog'>
-            <div class='modal-content'>
-                <div class='modal-header'>
-                    <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-                    <h4 class='modal-title'>No se han podido encontrar referencias</h4>
-                </div>
-                <div class='modal-body'>
-                    <p>Revisa que al menos una checkbox esté marcada.</p>
-                    <p>De lo contrario, se puede deber a un error en la página.</p>
-                    <form action='../index.php' method='get'>
-                      <input type='submit' class='btn btn-primary mt-8 mb-5' value='Volver al menú'>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>";
-      }
-    ?-->
+  
+  <form action="../index.php" method="get">
+    <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú principal">
+  </form>
+  
   <?php include('../templates/footer.html');?>
