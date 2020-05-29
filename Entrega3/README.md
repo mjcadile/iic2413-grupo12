@@ -14,7 +14,9 @@ En la información personal se puede encontrar
 Para poder iniciar sesión con lo usuarios creados por el curso, se debe ingresar el username además la contraseña, la cual para cada usuario preexistente es su username + "123". Por ejemplo, para el usuario con username 'JessicaGraham' su contraseña es 'JessicaGraham123'. Para los nuevos usuarios que se registraron mediente la app, para iniciar sesión, deben ingresar su username y la contraseña puesta al momento de registrarse.
 
 ## Procedimiento almacenado
-
+El procedimiento almacenado está en el archivo ```itinerario.sql```.
+La idea es buscar todos los destinos posibles desde una ciudad de origen. Luego, se filtran los resultados según las ciudades que tienen obras de los artistas seleccionados. Después, se insertan los datos de los destinos en la tabla Itinerario_final, que es la que se ocupa para mostrar todo en la página web.
+Implementamos una función adicional en esta parte que es la opción de elegir un intervalo de espera máximo entre viajes para un mismo itinerario.
 
 ## Funcionalidad adicional
 La funcionalidad adicional que implementamos es una barra de búsqueda o "search box". En esta, se pueden buscar de manera más directa artistas, obras, lugares, hoteles y viajes. El funcionamiento de esta se basa en hacer consultas del estilo "LIKE ('%%')", de tal forma de que se entreguen resultados que coincidan en al menos la palabra que se está buscando. Los resultados se entregan en forma de pestañas (una para cada categoría), facilitando la visualización de estos. Además, se añade un botón en cada resultado para poder acceder a más detalles; ya sea detalles de una obra, artista, o si el usuario se encuentra loggeado poder acceder a reservar hoteles o tickets de viajes, por ejemplo. 
