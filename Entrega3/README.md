@@ -1,16 +1,16 @@
 # Entrega 3 Proyecto grupo 12/19
 
 ## Usuarios y acceso
-### Registrarse
+#### Registrarse
 Para poder registrarse en la aplicación se debe llenar el formulario, el cual no permite ingresar un username que ya fue creado y además si las contraseñas ingresadas en la confirmación de contraseña son distintas tampoco se podrá registrar. Una vez completado el formulario de registro el usuario quedará como que inició sesión automáticamente.
 
-### Eliminar cuenta
+#### Eliminar cuenta
 Para poder eliminar la cuenta, se debe ir a "Mi perfil", botón que se encuentra en el "narvar" al momento de haber iniciado sesión. En el narvar de ventana "Mi perfil" (arriba a la derecha), podrá encontrar el botón de eliminar cuenta, el cual elimina la cuenta automáticamente. Luego de eso, la persona que eliminó su cuenta no podrá iniciar sesión.
 
-### Información personal
+#### Información personal
 Para poder ver la informacion personal, se debe ir a "Mi perfil", botón que se encuentra en el "narvar" al momento de haber iniciado sesión. En la información personal se encuentran las entradas a los museos, tambien se encuentran las reservas en hoteles y los tickets de viajes comprados por el usuario. 
 
-### Login 
+#### Login 
 Para poder iniciar sesión con lo usuarios creados por el curso, se debe ingresar el username además la contraseña, la cual para cada usuario preexistente es su username + "123". Por ejemplo, para el usuario con username 'JessicaGraham' su contraseña es 'JessicaGraham123'. Para los nuevos usuarios que se registraron mediente la app, para iniciar sesión, deben ingresar su username y la contraseña puesta al momento de registrarse.
 
 ## Procedimiento almacenado
