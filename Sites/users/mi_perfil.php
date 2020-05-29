@@ -1,13 +1,9 @@
 <?php
 session_start();
-?>
-
-<?php 
 include('../templates/header_sin_nada.html');
 require("../config/conexion.php");  
 $username = $_SESSION["user"];
 $query_usuario = "SELECT nombre_usuario FROM Usuarios WHERE username = '$username';";
-    
 $result_user = $db_19 -> prepare($query_usuario);
 $result_user -> execute();
 $usuario = $result_user -> fetchAll(); 
