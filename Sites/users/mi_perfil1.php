@@ -64,7 +64,7 @@ foreach ($usuario as $us) {
 
 
 <body>
-    <img src="https://www.lavanguardia.com/r/GODO/LV/p7/WebSite/2020/03/20/Recortada/img_mbigas_20200320-143919_imagenes_lv_terceros_cuadritus-kpjD-U4742685883827EF-992x558@LaVanguardia-Web.jpg" id="bg" alt="">
+    <img src="https://www.lavanguardia.com/r/GODO/LV/p5/WebSite/2018/06/15/Recortada/img_lbernaus_20180615-100456_imagenes_lv_terceros_istock-492416114-109-kn3E-U45119239404E0-992x558@LaVanguardia-Web.jpg" id="bg" alt="">
     <?php
         #Aca agregar 1° consulta sobre los museos
         $query_museos = "SELECT Entradas.lid, Entradas.fecha_compra FROM Usuarios, Entradas 
