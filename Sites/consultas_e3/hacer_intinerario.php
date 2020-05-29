@@ -26,7 +26,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           #}
 
           $array_artistas = $_POST['check_list'];
-          echo $array_artistas;
   
           $query = "SELECT itinerario('$cid', '24', $fecha_viaje, $array_artistas);";
           $result = $db_19 -> prepare($query);
@@ -39,15 +38,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $itinerario = $result_int -> fetchAll();
 
           foreach($itinerario as $i){
-            if (isset($i[0])){
-              echo $i[0]."</br>";
-            }
-            if (isset($i[1])){
-              echo $i[1]."</br>";
-            }
-            if (isset($i[2])){
-              echo $i[2]."</br>";
-            }
+            echo $i
           }
           
         ?>
