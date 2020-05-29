@@ -40,17 +40,70 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $result -> execute();
 
 
-          $query_int = "SELECT * FROM Itinerario_final;";
+          $query_int = "SELECT * FROM Itinerario_final ORDER BY precio_total;";
           $result_int = $db_19 -> prepare($query_int);
           $result_int -> execute();
           $itinerario = $result_int -> fetchAll();
+          ?>
 
-          foreach($itinerario as $i){
-            echo $i[1]."</br>";
-          }
-          
-        ?>
+
+      <div class="container-fluid mt-10">
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Escoge el origen del viaje</h2>
+      <div class="card">
+            <?php 
+            if (isset($mensaje)){
+                echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>$mensaje</h7>";
+            }?>
+      </div>
+      <div class="scrollable">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped text-center table-dark">
+            <thead>
+              <tr>
+                <th class="text-white bg-danger" scope="col">Itinerario</th>
+                <th class="text-white bg-danger" scope="col">Origen</th>
+                <th class="text-white bg-danger" scope="col">Destino</th>
+                <th class="text-white bg-danger" scope="col">Hora de salida</th>
+                <th class="text-white bg-danger" scope="col">Fecha de salida</th>
+                <th class="text-white bg-danger" scope="col">Hora de llegada</th>
+                <th class="text-white bg-danger" scope="col">Fecha de llegada</th>
+                <th class="text-white bg-danger" scope="col">Medio</th>
+                <th class="text-white bg-danger" scope="col">Precio</th>
+                <th class="text-white bg-danger" scope="col">Precio Itinerario</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <?php
+                $contador = 1;
+                foreach ($itinerario as $i) {
+                  echo "<tr class='bg-dark'>
+                            <td>$contador</td><td>$i[0]</td><td>$i[1]</td><td>$i[4]</td><td>$i[10]</td><td>$i[7]</td><td>$i[13]</td><td>$i[16]</td><td>$i[19]</td><td>$i[22]</td>
+                        </tr>";
+                  if (isset($i[2])){
+                    echo "<tr class='bg-dark'>
+                        <td>$i[1]</td><td>$i[2]</td>
+                      </tr>";
+                    }
+                  if (isset($i[3])){
+                      echo "<tr class='bg-dark'>
+                          <td>$i[1]</td><td>$i[2]</td>
+                        </tr>";
+                      }
+                  $contador ++;
+                }  
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+    <form action="../index.php" method="get">
+      <input type="submit" class="btn btn-primary mt-8 mb-5" value="Menú Principal">
+    </form>
+  </div>
+  <?php include('../templates/footer.html');?>
+  </div>
 <body>
 
   
