@@ -21,12 +21,14 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $cid = intval($cid);
           echo $cid."</br>";
           echo $fecha_viaje."</br>";
-          foreach($_POST['check_list'] as $selected){
-            echo $selected."</br>";
-          }
+          #foreach($_POST['check_list'] as $selected){
+          #  echo $selected."</br>";
+          #}
 
+          $array_artistas = $_POST['check_list'];
+          echo $array_artistas;
   
-          $query = "SELECT itinerario('$cid', '24', $fecha_viaje, $_POST['check_list']);";
+          $query = "SELECT itinerario('$cid', '24', $fecha_viaje, $array_artistas);";
           $result = $db_19 -> prepare($query);
           $result -> execute();
 
