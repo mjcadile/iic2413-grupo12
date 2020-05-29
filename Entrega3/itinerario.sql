@@ -207,11 +207,90 @@ BEGIN
         IF (destinos_itin.did_1 IS NOT NULL AND destinos_itin.did_2 IS NOT NULL AND destinos_itin.did_3 IS NOT NULL) THEN
             FOR destinos IN (SELECT * FROM Destinos)
             LOOP
-                FOR destinos_2 IN (SELECT * FROM Destinos)
-                LOOP
-                    FOR destinos_3 IN (SELECT * FROM Destinos)
+                IF (destinos.did = destinos_itin.did_1) THEN
+                    FOR destinos_2 IN (SELECT * FROM Destinos)
                     LOOP
-                        IF (destinos_itin.did_1 = destinos.did AND destinos_itin.did_2 = destinos_2.did AND destinos_itin.did_3 = destinos_3.did) THEN
+                        IF (destinos_2.did = destinos_itin.did_2) THEN
+                            FOR destinos_3 IN (SELECT * FROM Destinos)
+                            LOOP
+                                IF (destinos_itin.did_3 = destinos_3.did) THEN
+                                    FOR lugar IN (SELECT cid, nombre_ciudad FROM Ciudades)
+                                    LOOP
+                                        IF (lugar.cid = destinos.origen) THEN
+                                            ciudades_nombre[1] = lugar.nombre_ciudad;
+                                        END IF;
+                                        IF (lugar.cid = destinos.destino) THEN
+                                            ciudades_nombre[2] = lugar.nombre_ciudad;
+                                        END IF;
+                                        IF (lugar.cid = destinos_2.destino) THEN
+                                            ciudades_nombre[3] = lugar.nombre_ciudad;
+                                        END IF;
+                                        IF (lugar.cid = destinos_3.destino) THEN
+                                            ciudades_nombre[4] = lugar.nombre_ciudad;
+                                        END IF;
+                                    END LOOP;
+
+
+                                    IF (CURRENT_TIME > destinos.hora AND CURRENT_DATE = fecha) THEN
+                                        fechas[1] = fecha + interval '1 day';
+                                    ELSE
+                                        fechas[1] = fecha;
+                                    END IF;
+                                    IF (destinos.hora + destinos.duracion * interval '1 hour' < destinos_2.hora) THEN
+                                        fechas[2] = fechas[1];
+                                    ELSE
+                                        fechas[2] = fechas[1] + interval '1 day';
+                                    END IF;
+
+                                    IF (destinos_2.hora + destinos_2.duracion * interval '1 hour' < destinos_3.hora) THEN
+                                        fechas[3] = fechas[2];
+                                    ELSE
+                                        fechas[3] = fechas[2] + interval '1 day';
+                                    END IF;
+
+
+                                    IF (destinos.hora + destinos.duracion * interval '1 hour' < destinos.hora) THEN
+                                        fechas_llegada[1] = fechas[1] + interval '1 day';
+                                    ELSE
+                                        fechas_llegada[1] = fechas[1];
+                                    END IF;
+
+                                    IF (destinos_2.hora + destinos.duracion * interval '1 hour' < destinos_2.hora) THEN
+                                        fechas_llegada[2] = fechas[2] + interval '1 day';
+                                    ELSE
+                                        fechas_llegada[2] = fechas[2];
+                                    END IF;
+
+                                    IF (destinos_3.hora + destinos.duracion * interval '1 hour' < destinos_3.hora) THEN
+                                        fechas_llegada[3] = fechas[3] + interval '1 day';
+                                    ELSE
+                                        fechas_llegada[3] = fechas[3];
+                                    END IF;
+
+                                    INSERT INTO Itinerario_final 
+                                    VALUES(ciudades_nombre[1], ciudades_nombre[2], ciudades_nombre[3], ciudades_nombre[4],
+                                           destinos.hora, destinos_2.hora, destinos_3.hora,
+                                           destinos.hora + destinos.duracion * interval '1 hour',
+                                           destinos_2.hora + destinos_2.duracion * interval '1 hour',
+                                           destinos_3.hora + destinos_3.duracion * interval '1 hour',
+                                           fechas[1], fechas[2], fechas[3], fechas_llegada[1], fechas_llegada[2], fechas_llegada[3],
+                                           destinos.medio, destinos_2.medio, destinos_3.medio,
+                                           destinos.precio_destino, destinos_2.precio_destino, destinos_3.precio_destino,
+                                           destinos.precio_destino + destinos_2.precio_destino + destinos_3.precio_destino);
+                                END IF;
+                            END LOOP;
+                        END IF;
+                    END LOOP;
+                END IF;
+            END LOOP;
+
+        ELSEIF (destinos_itin.did_1 IS NOT NULL AND destinos_itin.did_2 IS NOT NULL) THEN
+            FOR destinos IN (SELECT * FROM Destinos)
+            LOOP
+                IF (destinos.did = destinos_itin.did_1) THEN
+                    FOR destinos_2 IN (SELECT * FROM Destinos)
+                    LOOP
+                        IF (destinos_itin.did_2 = destinos_2.did) THEN
                             FOR lugar IN (SELECT cid, nombre_ciudad FROM Ciudades)
                             LOOP
                                 IF (lugar.cid = destinos.origen) THEN
@@ -223,22 +302,17 @@ BEGIN
                                 IF (lugar.cid = destinos_2.destino) THEN
                                     ciudades_nombre[3] = lugar.nombre_ciudad;
                                 END IF;
-                                IF (lugar.cid = destinos_3.destino) THEN
-                                    ciudades_nombre[4] = lugar.nombre_ciudad;
-                                END IF;
                             END LOOP;
 
-                            fechas[1] = fecha;
-                            IF (destinos.hora + destinos.duracion * interval '1 hour' < destinos_2.hora) THEN
-                                fechas[2] = fecha;
+                            IF (CURRENT_TIME > destinos.hora AND CURRENT_DATE = fecha) THEN
+                                fechas[1] = fecha + interval '1 day';
                             ELSE
-                                fechas[2] = fecha + interval '1 day';
+                                fechas[1] = fecha;
                             END IF;
-
-                            IF (destinos_2.hora + destinos_2.duracion * interval '1 hour' < destinos_3.hora) THEN
-                                fechas[3] = fechas[2];
+                            IF (destinos.hora + destinos.duracion * interval '1 hour' < destinos_2.hora) THEN
+                                fechas[2] = fechas[1];
                             ELSE
-                                fechas[3] = fechas[2] + interval '1 day';
+                                fechas[2] = fechas[1] + interval '1 day';
                             END IF;
 
 
@@ -254,80 +328,20 @@ BEGIN
                                 fechas_llegada[2] = fechas[2];
                             END IF;
 
-                            IF (destinos_3.hora + destinos.duracion * interval '1 hour' < destinos_3.hora) THEN
-                                fechas_llegada[3] = fechas[3] + interval '1 day';
-                            ELSE
-                                fechas_llegada[3] = fechas[3];
-                            END IF;
-
                             INSERT INTO Itinerario_final 
-                            VALUES(ciudades_nombre[1], ciudades_nombre[2], ciudades_nombre[3], ciudades_nombre[4],
-                                   destinos.hora, destinos_2.hora, destinos_3.hora,
+                            VALUES(ciudades_nombre[1], ciudades_nombre[2], ciudades_nombre[3], NULL,
+                                   destinos.hora, destinos_2.hora, NULL,
                                    destinos.hora + destinos.duracion * interval '1 hour',
                                    destinos_2.hora + destinos_2.duracion * interval '1 hour',
-                                   destinos_3.hora + destinos_3.duracion * interval '1 hour',
-                                   fechas[1], fechas[2], fechas[3], fechas_llegada[1], fechas_llegada[2], fechas_llegada[3],
-                                   destinos.medio, destinos_2.medio, destinos_3.medio,
-                                   destinos.precio_destino, destinos_2.precio_destino, destinos_3.precio_destino,
-                                   destinos.precio_destino + destinos_2.precio_destino + destinos_3.precio_destino);
+                                   NULL,
+                                   fechas[1], fechas[2], NULL, fechas_llegada[1], fechas_llegada[2], NULL,
+                                   destinos.medio, destinos_2.medio, NULL,
+                                   destinos.precio_destino, destinos_2.precio_destino, NULL,
+                                   destinos.precio_destino + destinos_2.precio_destino);
                         END IF;
 
                     END LOOP;
-                END LOOP;
-            END LOOP;
-
-        ELSEIF (destinos_itin.did_1 IS NOT NULL AND destinos_itin.did_2 IS NOT NULL) THEN
-            FOR destinos IN (SELECT * FROM Destinos)
-            LOOP
-                FOR destinos_2 IN (SELECT * FROM Destinos)
-                LOOP
-                    IF (destinos_itin.did_1 = destinos.did AND destinos_itin.did_2 = destinos_2.did) THEN
-                        FOR lugar IN (SELECT cid, nombre_ciudad FROM Ciudades)
-                        LOOP
-                            IF (lugar.cid = destinos.origen) THEN
-                                ciudades_nombre[1] = lugar.nombre_ciudad;
-                            END IF;
-                            IF (lugar.cid = destinos.destino) THEN
-                                ciudades_nombre[2] = lugar.nombre_ciudad;
-                            END IF;
-                            IF (lugar.cid = destinos_2.destino) THEN
-                                ciudades_nombre[3] = lugar.nombre_ciudad;
-                            END IF;
-                        END LOOP;
-
-                        fechas[1] = fecha;
-                        IF (destinos.hora + destinos.duracion * interval '1 hour' < destinos_2.hora) THEN
-                            fechas[2] = fecha;
-                        ELSE
-                            fechas[2] = fecha + interval '1 day';
-                        END IF;
-
-
-                        IF (destinos.hora + destinos.duracion * interval '1 hour' < destinos.hora) THEN
-                            fechas_llegada[1] = fechas[1] + interval '1 day';
-                        ELSE
-                            fechas_llegada[1] = fechas[1];
-                        END IF;
-
-                        IF (destinos_2.hora + destinos.duracion * interval '1 hour' < destinos_2.hora) THEN
-                            fechas_llegada[2] = fechas[2] + interval '1 day';
-                        ELSE
-                            fechas_llegada[2] = fechas[2];
-                        END IF;
-
-                        INSERT INTO Itinerario_final 
-                        VALUES(ciudades_nombre[1], ciudades_nombre[2], ciudades_nombre[3], NULL,
-                               destinos.hora, destinos_2.hora, NULL,
-                               destinos.hora + destinos.duracion * interval '1 hour',
-                               destinos_2.hora + destinos_2.duracion * interval '1 hour',
-                               NULL,
-                               fechas[1], fechas[2], NULL, fechas_llegada[1], fechas_llegada[2], NULL,
-                               destinos.medio, destinos_2.medio, NULL,
-                               destinos.precio_destino, destinos_2.precio_destino, NULL,
-                               destinos.precio_destino + destinos_2.precio_destino);
-                    END IF;
-
-                END LOOP;
+                END IF;
             END LOOP;
         ELSE
             FOR destinos IN (SELECT * FROM Destinos)
@@ -343,7 +357,11 @@ BEGIN
                         END IF;
                     END LOOP;
 
-                    fechas[1] = fecha;
+                    IF (CURRENT_TIME > destinos.hora AND CURRENT_DATE = fecha) THEN
+                        fechas[1] = fecha + interval '1 day';
+                    ELSE
+                        fechas[1] = fecha;
+                    END IF;
 
                     IF (destinos.hora + destinos.duracion * interval '1 hour' < destinos.hora) THEN
                         fechas_llegada[1] = fechas[1] + interval '1 day';
@@ -365,6 +383,5 @@ BEGIN
             END LOOP;
         END IF;
     END LOOP;
-    
 END;
 $$ LANGUAGE plpgsql
