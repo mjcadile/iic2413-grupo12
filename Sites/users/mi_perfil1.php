@@ -98,9 +98,9 @@ foreach ($usuario as $us) {
                     <div class='col-md-12'>
                         <nav>
                             <div class='nav nav-tabs nav-fill' id='nav-tab' role='tablist'>
-                                <a class='nav-item nav-link active' id='nav-museos-tab' data-toggle='tab' href='#nav-museos' role='tab' aria-controls='nav-museos' aria-selected='true'>Mis entradas a museos</a>
-                                <a class='nav-item nav-link' id='nav-hoteles-tab' data-toggle='tab' href='#nav-hoteles' role='tab' aria-controls='nav-hoteles' aria-selected='false'>Mis reservas de hoteles</a>
-                                <a class='nav-item nav-link' id='nav-tickets-tab' data-toggle='tab' href='#nav-tickets' role='tab' aria-controls='nav-tickets' aria-selected='false'>Mis tickets de viaje</a>
+                                <a class='nav-item nav-link bg-light active' id='nav-museos-tab' data-toggle='tab' href='#nav-museos' role='tab' aria-controls='nav-museos' aria-selected='true'>Mis entradas a museos</a>
+                                <a class='nav-item nav-link bg-light' id='nav-hoteles-tab' data-toggle='tab' href='#nav-hoteles' role='tab' aria-controls='nav-hoteles' aria-selected='false'>Mis reservas de hoteles</a>
+                                <a class='nav-item nav-link bg-light' id='nav-tickets-tab' data-toggle='tab' href='#nav-tickets' role='tab' aria-controls='nav-tickets' aria-selected='false'>Mis tickets de viaje</a>
                             </div>
                         </nav>
                         <div class='tab-content' id='nav-tabContent'>
