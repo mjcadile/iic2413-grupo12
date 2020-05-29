@@ -17,31 +17,30 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           require("../config/conexion.php");
           $fecha_viaje = $_POST["fecha"];
           $cid = $_POST["ciudad"];
-          $cid = intval($cid);
           $horas = $_POST["horas"];
-          $horas = intval($horas);
-
-          $artistas = "ARRAY[";
-          foreach($_POST['check_list'] as $selected){
-            $artistas .= "'";
-            $artistas .= $selected;
-            $artistas .= "'";
-            $artistas .= ",";
-          }
-          $artistas = substr($artistas, 0, -1);  // devuelve "abcde"
-          $artistas .= "]";
-          #$array_artistas = $_POST['check_list'];
+          if ($horas != "Horas de espera" && $cid != "Selecciona" && isset($_POST['check_list'])){
+            $cid = intval($cid);
+            $horas = intval($horas);
+            $artistas = "ARRAY[";
+            foreach($_POST['check_list'] as $selected){
+              $artistas .= "'";
+              $artistas .= $selected;
+              $artistas .= "'";
+              $artistas .= ",";
+            }
+            $artistas = substr($artistas, 0, -1); 
+            $artistas .= "]";
 
   
-          $query = "SELECT itinerario('$cid', '$horas', '$fecha_viaje', $artistas);";
-          $result = $db_19 -> prepare($query);
-          $result -> execute();
+            $query = "SELECT itinerario('$cid', '$horas', '$fecha_viaje', $artistas);";
+            $result = $db_19 -> prepare($query);
+            $result -> execute();
 
 
-          $query_int = "SELECT * FROM Itinerario_final ORDER BY precio_total;";
-          $result_int = $db_19 -> prepare($query_int);
-          $result_int -> execute();
-          $itinerario = $result_int -> fetchAll();
+            $query_int = "SELECT * FROM Itinerario_final ORDER BY precio_total;";
+            $result_int = $db_19 -> prepare($query_int);
+            $result_int -> execute();
+            $itinerario = $result_int -> fetchAll();
           ?>
 
       <div class="container-fluid mt-10">
@@ -106,5 +105,12 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
   <?php include('../templates/footer.html');?>
   </div>
 <body>
+<?php }else{
+  $_SESSION["itinerario"] = "No funcionó";
+  header('Status: 301 Moved Permanently', false, 301);
+  header('Location: ../index.php');
+  header("Connection: close");
+  exit();
+}?>
 
   

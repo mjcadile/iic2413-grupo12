@@ -35,7 +35,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
               <h5 class="text-center rounded-bottom bg-info text-white mb-8">Escoge la ciudad y la fecha de la consulta.</h5>
               <p class='card-text'> Ciudad </p>
                   <select name='ciudad'>
-                      <option value='0'>Seleciona la ciudad de origen</option>
+                      <option value='Selecciona'>Selecciona la ciudad de origen</option>
                       <?php foreach ($ciudades as $c){
                           echo "<option value='$c[1]'>$c[0]</option>";             
                       }?>
@@ -48,7 +48,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
               ?>
               <p class='card-text'> Selecciona las horas de espera máxima en cada ciudad </p>
                   <select name='horas'>
-                      <option value='0'>Horas de espera</option>
+                      <option value='Horas de espera'>Horas de espera</option>
                       <?php        
                         $j = 1;
                         while ($j <= 24) {
@@ -56,6 +56,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                             $j++;
                         }?>
                   </select>
+              <?php if (isset($_SESSION["itinerario"])){
+                  echo "<p class='card-text'> Llena todos los campos correspondientes </p>";
+                  unset($_SESSION["itinerario"])
+                }?>
           </div>
       </div>
 
