@@ -28,7 +28,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $array_artistas = $_POST['check_list'];
 
   
-          $query = "SELECT itinerario('$cid', 24, '$fecha_viaje', ARRAY['Andrea Mantegna', 'Andrea del Verrocchio']);";
+          $query = "SELECT itinerario('$cid', 24, '$fecha_viaje', '$array_artistas');";
           $result = $db_19 -> prepare($query);
           $result -> execute();
 
