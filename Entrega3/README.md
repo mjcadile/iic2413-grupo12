@@ -25,7 +25,7 @@ Para poder iniciar sesión con lo usuarios creados por el curso, se debe ingresa
 Para comprar un ticket, un usuario en primer lugar debe escoger la ciudad de origen, al escogerla podrá ir a seleccionar la ciudad de destino, luego de esto se entregará un formulario con las horas disponibles de viaje, cualquier persona puede elegir la fecha de viaje, además se muestra el precio del ticket, pero sólo los usuarios que iniciaron sesion pueden comprar el ticket y luego de comprarlo podran verlo en su perfil.
 
 #### Reservar hoteles
-Al reservar un hotel, cualquier persona puede ver la lista de hoteles disponibles, tambien podra ir al formulario de reservas, solo que una persona que no ha iniciado sesion, no podra reservar. Para ver sus reservas, un usuario debe ir a su perfil.
+Al reservar un hotel, cualquier persona puede ver la lista de hoteles disponibles, tambien podra ir al formulario de reservas, solo que una persona que no ha iniciado sesion, no podra reservar. Para ver sus reservas, un usuario debe ir a su perfil. En el formulario no se pueden escoger fechas que ya pasaron y en el caso de que la fecha de salida sea antes que la fecha de entrada, el usuario no podrá comprar el ticket. 
 
 ## Procedimiento almacenado
 El procedimiento almacenado está en el archivo ```itinerario.sql```.
