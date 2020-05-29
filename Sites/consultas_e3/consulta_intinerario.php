@@ -58,7 +58,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                   </select>
               <?php if (isset($_SESSION["itinerario"])){
                   echo "<p class='card-text'> Llena todos los campos correspondientes </p>";
-                  unset($_SESSION["itinerario"])
+                  unset($_SESSION["itinerario"]);
                 }?>
           </div>
       </div>
