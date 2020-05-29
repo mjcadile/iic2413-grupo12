@@ -26,7 +26,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           }
 
   
-          $query = "SELECT itinerario('$cid', '24');";
+          $query = "SELECT itinerario('$cid', '24', $fecha_viaje, $_POST['check_list']);";
           $result = $db_19 -> prepare($query);
           $result -> execute();
 
