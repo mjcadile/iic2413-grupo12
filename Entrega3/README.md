@@ -1,8 +1,20 @@
 # Entrega 3 Proyecto grupo 12/19
 
-## Login
+## Usuarios y acceso
+### Registrarse
+Para poder registrarse en la aplicacion se debe llenar el formulario, el cual no permite ingresar un username que ya fue creado y además si las contraseñas ingresadas en la confirmacion de contraseña son distintas tampoco se podra registrar. Una vez completado el formulario de registro el usuario quedará como que inicio sesion automaticamente.
+
+### Eliminar cuenta
+Para poder eliminar la cuenta, se debe ir a "Mi perfil", boton que se encuentra en el "narvar" al momento de haber iniciado sesion, en el narvar de ventana "Mi perfil" (arriba a la derecha), podra encontrar el boton de eliminar cuenta, el cual elimina la cuenta automaticamente, luego de eso, la persona que elimino su cuenta no podra iniciar sesion, y ese username estará nuevamente disponible para poder registrarse con el.
+
+### Información personal
+En la informacion persona se puede encontrar 
+
+### Login 
+Para poder inicia sesion con lo usuarios creados por el curso, se debe ingresar el username ademas la contraseña, la cual para cada usuario es su username + "123", por ejemplo para el usuario con username 'JessicaGraham' su contraseña es 'JessicaGraham123'. Para los nuevos usuarios que se registraron mediente la app, para iniciar sesion, deben ingresar su username y la contraseña puesta al momento de registrarse.
 
 ## Procedimiento almacenado
+
 
 ## Funcionalidad adicional
 La funcionalidad adicional qe implementamos es una barra de búsqueda o "search box". En esta, se pueden buscar de manera más directa artistas, obras, lugares, hoteles y viajes. El funcionamiento de esta se basa en hacer consultas del estilo "LIKE ('%%')", de tal forma de que se entreguen resultados que coincidan en al menos la palabra que se está buscando. Los resultados se entregan en forma de pestañas (una para cada categoría), facilitando la visualización de estos. Además, se añade un botón en cada resultado para poder acceder a más detalles: ya sea detalles de una obra, artista, o si el usuario se encuentra loggeado poder acceder a reservar hoteles o tickets de viajes, por ejemplo. 
