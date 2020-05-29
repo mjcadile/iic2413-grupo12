@@ -85,7 +85,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                       <td></td><td>$i[2]</td><td>$i[3]</td><td>$i[6]</td><td>$i[12]</td><td>$i[9]</td><td>$i[15]</td><td>$i[18]</td><td>$i[21]</td><td></td>
                         </tr>";
                       }
-                  echo "<tr class='bg-danger' style='border-bottom:1px solid white'>
+                  echo "<tr class='bg-secondary' style='border-bottom:1px solid white'>
                       <td colspan='100%'></td>
                   </tr>";    
                   $contador ++;
