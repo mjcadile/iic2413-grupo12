@@ -13,6 +13,20 @@ Para poder ver la informacion personal, se debe ir a "Mi perfil", botón que se 
 #### Login 
 Para poder iniciar sesión con lo usuarios creados por el curso, se debe ingresar el username además la contraseña, la cual para cada usuario preexistente es su username + "123". Por ejemplo, para el usuario con username 'JessicaGraham' su contraseña es 'JessicaGraham123'. Para los nuevos usuarios que se registraron mediente la app, para iniciar sesión, deben ingresar su username y la contraseña puesta al momento de registrarse.
 
+## Navegación
+
+#### Consulta por artistas
+
+#### Página de la obra
+
+#### Página de un lugar
+
+#### Compra de tickets de transporte
+Para comprar un ticket, un usuario en primer lugar debe escoger la ciudad de origen, al escogerla podrá ir a seleccionar la ciudad de destino, luego de esto se entregará un formulario con las horas disponibles de viaje, cualquier persona puede elegir la fecha de viaje, además se muestra el precio del ticket, pero sólo los usuarios que iniciaron sesion pueden comprar el ticket y luego de comprarlo podran verlo en su perfil.
+
+#### Reservar hoteles
+Al reservar un hotel, cualquier persona puede ver la lista de hoteles disponibles, tambien podra ir al formulario de reservas, solo que una persona que no ha iniciado sesion, no podra reservar. Para ver sus reservas, un usuario debe ir a su perfil.
+
 ## Procedimiento almacenado
 El procedimiento almacenado está en el archivo ```itinerario.sql```.
 La idea es buscar todos los destinos posibles desde una ciudad de origen. Luego, se filtran los resultados según las ciudades que tienen obras de los artistas seleccionados. Después, se insertan los datos de los destinos en la tabla Itinerario_final, que es la que se ocupa para mostrar todo en la página web.
