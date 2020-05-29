@@ -41,6 +41,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             foreach($i as $a){
               echo $a;
             }
+            echo "</br>";
           }
           
         ?>
