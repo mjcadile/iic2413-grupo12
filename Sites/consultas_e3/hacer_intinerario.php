@@ -12,15 +12,12 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 <meta name="HandheldFriendly" content="true">
 
 <body>
-    <div class="card text-center border-info mb-3">
       <img src="https://d2jv9003bew7ag.cloudfront.net/uploads/MoCP-Chicago.jpg" id="bg" alt="">
           <?php
           require("../config/conexion.php");
           $fecha_viaje = $_POST["fecha"];
           $cid = $_POST["ciudad"];
           $cid = intval($cid);
-          echo $cid."</br>";
-          echo $fecha_viaje."</br>";
 
           $artistas = "ARRAY[";
           foreach($_POST['check_list'] as $selected){
@@ -31,7 +28,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           }
           $artistas = substr($artistas, 0, -1);  // devuelve "abcde"
           $artistas .= "]";
-          echo $artistas."</br>";
           #$array_artistas = $_POST['check_list'];
 
   
@@ -45,7 +41,6 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $result_int -> execute();
           $itinerario = $result_int -> fetchAll();
           ?>
-
 
       <div class="container-fluid mt-10">
       <h2 class="text-center rounded-bottom bg-info text-white mb-8">Escoge el origen del viaje</h2>
@@ -91,7 +86,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                         </tr>";
                       }
                   echo "<tr class='bg-light'>
-                      <td></td>
+                      <td><strong></strong></td>
                   </tr>";    
                   $contador ++;
                 }  
