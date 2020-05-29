@@ -82,12 +82,12 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                         </tr>";
                   if (isset($i[2])){
                     echo "<tr class='bg-dark'>
-                        <td>$i[1]</td><td>$i[2]</td>
+                    <td></td><td>$i[1]</td><td>$i[2]</td><td>$i[5]</td><td>$i[11]</td><td>$i[8]</td><td>$i[14]</td><td>$i[17]</td><td>$i[20]</td><td></td>
                       </tr>";
                     }
                   if (isset($i[3])){
                       echo "<tr class='bg-dark'>
-                          <td>$i[1]</td><td>$i[2]</td>
+                      <td></td><td>$i[2]</td><td>$i[3]</td><td>$i[6]</td><td>$i[12]</td><td>$i[9]</td><td>$i[15]</td><td>$i[18]</td><td>$i[21]</td><td></td>
                         </tr>";
                       }
                   $contador ++;
