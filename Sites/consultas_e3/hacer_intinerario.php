@@ -32,7 +32,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $result -> execute();
 
 
-          $query_int = "SELECT * FROM Itinerario;";
+          $query_int = "SELECT * FROM Itinerario_final;";
           $result_int = $db_19 -> prepare($query_int);
           $result_int -> execute();
           $itinerario = $result_int -> fetchAll();
