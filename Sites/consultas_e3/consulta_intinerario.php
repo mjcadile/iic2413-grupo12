@@ -44,7 +44,18 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                 <p class='card-text'> Fecha </p>
                     <input type='date' id='fecha' name='fecha'
                           value='$fecha_actual'
-                          min='$fecha_actual' max='2025-12-31'>";?>
+                          min='$fecha_actual' max='2025-12-31'>";
+              ?>
+              <p class='card-text'> Selecciona las horas de espera máxima en cada ciudad </p>
+                  <select name='horas'>
+                      <option value='0'>Horas de espera</option>
+                      <?php        
+                        $j = 1;
+                        while ($j <= 24) {
+                            echo "<option value='$j'>$j</option>";
+                            $j++;
+                        }?>
+                  </select>
           </div>
       </div>
 

@@ -18,6 +18,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $fecha_viaje = $_POST["fecha"];
           $cid = $_POST["ciudad"];
           $cid = intval($cid);
+          $horas = $_POST["horas"];
+          $horas = intval($horas);
 
           $artistas = "ARRAY[";
           foreach($_POST['check_list'] as $selected){
@@ -31,7 +33,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           #$array_artistas = $_POST['check_list'];
 
   
-          $query = "SELECT itinerario('$cid', 24, '$fecha_viaje', $artistas);";
+          $query = "SELECT itinerario('$cid', '$horas', '$fecha_viaje', $artistas);";
           $result = $db_19 -> prepare($query);
           $result -> execute();
 
@@ -43,7 +45,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           ?>
 
       <div class="container-fluid mt-10">
-      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Escoge el origen del viaje</h2>
+      <h2 class="text-center rounded-bottom bg-info text-white mb-8">Itinerarios</h2>
       <div class="card">
             <?php 
             if (isset($mensaje)){
