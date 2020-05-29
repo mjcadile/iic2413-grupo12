@@ -24,13 +24,13 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 
           $artistas = "ARRAY[";
           foreach($_POST['check_list'] as $selected){
-            $artistas += "'";
-            $artistas += $selected;
-            $artistas += "'";
-            $artistas += ",";
+            $artistas .= "'";
+            $artistas .= $selected;
+            $artistas .= "'";
+            $artistas .= ",";
           }
           $artistas = substr($artistas, 0, -1);  // devuelve "abcde"
-          $artistas += "]";
+          $artistas .= "]";
           echo $artistas."</br>";
           #$array_artistas = $_POST['check_list'];
 
