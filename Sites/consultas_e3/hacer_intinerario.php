@@ -20,20 +20,21 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
           $horas = $_POST["horas"];
           $cid = intval($cid);
           $horas = intval($horas);
-          $artistas = "ARRAY[";
-          foreach($_POST['check_list'] as $selected){
-            $artistas .= "'";
-            $artistas .= $selected;
-            $artistas .= "'";
-            $artistas .= ",";
-          }
-          $artistas = substr($artistas, 0, -1); 
-          $artistas .= "]";
-          $query = "SELECT itinerario('$cid', '$horas', '$fecha_viaje', $artistas);";
-          $result = $db_19 -> prepare($query);
-          $result -> execute();
-
           if (isset($_POST['check_list'])){
+              $artistas = "ARRAY[";
+              foreach($_POST['check_list'] as $selected){
+                $artistas .= "'";
+                $artistas .= $selected;
+                $artistas .= "'";
+                $artistas .= ",";
+              }
+              $artistas = substr($artistas, 0, -1); 
+              $artistas .= "]";
+              $query = "SELECT itinerario('$cid', '$horas', '$fecha_viaje', $artistas);";
+              $result = $db_19 -> prepare($query);
+              $result -> execute();
+
+          
               $query_int = "SELECT * FROM Itinerario_final ORDER BY precio_total;";
               $result_int = $db_19 -> prepare($query_int);
               $result_int -> execute();
