@@ -35,10 +35,10 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
 
           if (isset($_POST['check_list'])){
               $query_int = "SELECT * FROM Itinerario_final ORDER BY precio_total;";
+              $result_int = $db_19 -> prepare($query_int);
+              $result_int -> execute();
+              $itinerario = $result_int -> fetchAll();
           }
-          $result_int = $db_19 -> prepare($query_int);
-          $result_int -> execute();
-          $itinerario = $result_int -> fetchAll();
           ?>
 
       <div class="container-fluid mt-10">
