@@ -41,6 +41,6 @@ Se agregó un "navbar" para facilitar la navegación a lo largo de la página. E
 Además, al final de cada página se agrega el botón de "Menú principal" para volver con facilidad a este, y si por ejemplo entro a ver más detalles de un artista, se agrega el botón de "Volver al listado de artistas" para vovler a revisarlos de manera más directa sin tener que pasar por Home primero. Esto último se replica para otras categorías.
 
 ## Bonus de imágenes
-
+Para esta categoría lo que se hizo fue crear un buscador personalizado de google que pudiera funcionar a traves de una api. A partir de esto, se para cada artista, obra o lugar se buscaba el nombre de este. Luego, se toma el primer resultado de las imágenes de tamaño xlarge. El tamaño de la imagen asegura un mínimo de calidad, pero también produce que a veces se demore un poco más en cargarlas. En esta imagen se busca su link de referencia y luego se usa este mismo como fondo de la página del resultado. También se aprovechó de agregar esta funcionalidad en las páginas de los hoteles
 
 ## Otras acotaciones

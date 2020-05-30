@@ -165,7 +165,7 @@ BEGIN
             END LOOP;
         END IF;
 
-        IF (destinos_itin.did_2 IS NOT NULL AND destinos_itin.did_3 IS NULL) THEN
+        IF (destinos_itin.did_2 IS NOT NULL) THEN
             FOR destinos IN (SELECT did, destino FROM Destinos)
             LOOP
                 IF (destinos_itin.did_2 = destinos.did) THEN
@@ -173,13 +173,13 @@ BEGIN
                         contador = contador;
                     ELSE
                         DELETE FROM Itinerario
-                        WHERE did_1 = destinos_itin.did_1 AND did_2 = destinos_itin.did_2 AND did_3 IS NULL;
+                        WHERE did_1 = destinos_itin.did_1 AND did_2 = destinos_itin.did_2;
                     END IF;
                 END IF;
             END LOOP;
         END IF;
 
-        IF (destinos_itin.did_1 IS NOT NULL AND destinos_itin.did_2 IS NULL AND destinos_itin.did_3 IS NULL) THEN
+        IF (destinos_itin.did_1 IS NOT NULL) THEN
             FOR destinos IN (SELECT did, destino FROM Destinos)
             LOOP
                 IF (destinos_itin.did_1 = destinos.did) THEN
@@ -187,7 +187,7 @@ BEGIN
                         contador = contador;
                     ELSE
                         DELETE FROM Itinerario
-                        WHERE did_1 = destinos_itin.did_1 AND did_2 IS NULL AND did_3 IS NULL;
+                        WHERE did_1 = destinos_itin.did_1;
                     END IF;
                 END IF;
             END LOOP;
