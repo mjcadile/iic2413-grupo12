@@ -69,6 +69,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
             <tbody>
               
               <?php
+              if (isset($itinerario)){
                 $contador = 1;
                 foreach ($itinerario as $i) {
                   echo "<tr class='bg-dark'>
@@ -89,6 +90,7 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                   </tr>";    
                   $contador ++;
                 }  
+              }
               ?>
   
             </tbody>
