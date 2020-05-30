@@ -16,10 +16,13 @@ Para poder iniciar sesión con lo usuarios creados por el curso, se debe ingresa
 ## Navegación
 
 #### Consulta por artistas
+Desde la página principal, se puede acceder al listado completo de artistas mediante el botón "Ver más". Además, una vez en la página de un lugar, se puede acceder a la información de artistas que tienen obras en aquel lugar.
 
 #### Página de la obra
+Para acceder a una página de una obra, se puede acceder de tres formas: mediante la lista completa de obras desde la página principal, y luego accediendo al detalle de cada obra; mediante consultas por artistas y viendo las obras de cada artista (página de artista); mediante el listado completo de lugares desde la página principal, y luego accediendo al detalle de las obras en aquel lugar seleccionado (página de lugar).
 
 #### Página de un lugar
+Para acceder a una página de un lugar, se puede acceder de dos formas: mediante el acceso al listado completo de lugares desde la página principal, y luego al detalle de cada uno, y desde la página de una obra; 
 
 #### Compra de tickets de transporte
 Para comprar un ticket, un usuario en primer lugar debe escoger la ciudad de origen, al escogerla podrá ir a seleccionar la ciudad de destino, luego de esto se entregará un formulario con las horas disponibles de viaje, cualquier persona puede elegir la fecha de viaje, además se muestra el precio del ticket, pero sólo los usuarios que iniciaron sesion pueden comprar el ticket y luego de comprarlo podran verlo en su perfil.
@@ -42,5 +45,3 @@ Además, al final de cada página se agrega el botón de "Menú principal" para 
 
 ## Bonus de imágenes
 Para esta categoría lo que se hizo fue crear un buscador personalizado de google que pudiera funcionar a traves de una api. A partir de esto, se para cada artista, obra o lugar se buscaba el nombre de este. Luego, se toma el primer resultado de las imágenes de tamaño xlarge. El tamaño de la imagen asegura un mínimo de calidad, pero también produce que a veces se demore un poco más en cargarlas. En esta imagen se busca su link de referencia y luego se usa este mismo como fondo de la página del resultado. También se aprovechó de agregar esta funcionalidad en las páginas de los hoteles
-
-## Otras acotaciones
