@@ -29,6 +29,7 @@ db = client["grupo12"]
 usuarios = db.users
 mensajes = db.messages
 
+'''
 result = mensajes.create_index("messages")
 if result:
     msje = "se ha creado el indice correctamente"
@@ -36,6 +37,7 @@ if result:
 else:
     msje = "no se ha podido crear el indice"
     print(msje)
+'''
 
 # Iniciamos la aplicación de flask
 app = Flask(__name__)
@@ -67,7 +69,6 @@ def get_messages():
     '''
     uid1 = request.args.get('id1', default=None, type=int)
     uid2 = request.args.get('id2', default=None, type=int)
-    print(uid1, uid2)
 
     if (uid1 is None) or (uid2 is None):
         # Omitir el _id porque no es json serializable
@@ -80,7 +81,7 @@ def get_messages():
     #print(mensajes_uid1, mensajes_uid2)
     if mensajes_uid1 or mensajes_uid2:
         return json.jsonify(mensajes_uid1 + mensajes_uid2)
-    return { "error": f"No hay mensajes entre los usuarios {uid1} y {uid2}"}
+    return {"error": f"No hay mensajes entre los usuarios {uid1} y {uid2}"}
 
 
 @app.route("/users/<int:uid>")
@@ -92,7 +93,7 @@ def get_user(uid):
     mensajes_user = list(mensajes.find({"sender": uid}, {"_id": 0}))
     if user:
         return json.jsonify(user + mensajes_user)
-    return { "error": "Usuario no encontrado, intente con otro id"}
+    return {"error": "Usuario no encontrado, intente con otro id"}
 
 
 @app.route("/messages/<int:mid>")
@@ -103,18 +104,17 @@ def get_message(mid):
     mensaje = list(mensajes.find({"mid": mid}, {"_id": 0}))
     if mensaje:
         return json.jsonify(mensaje)
-    return { "error": "Mensaje no encontrado, intente con otro id"}
+    return {"error": "Mensaje no encontrado, intente con otro id"}
 
 
-@app.route("/text-search", methods=['POST'])
+@app.route("/text-search")
 def text_search():
-    
-    if request.json is None:
+    data = dict(json.loads(request.data))
+
+    if not data:
         #  retornamos todos los mensajes
         resultados = list(mensajes.find({}, {"_id": 0}))
         return json.jsonify(resultados)
-
-    data = {key: request.json[key] for key in TXT_KEYS}
 
     userId = 0
 
@@ -124,27 +124,27 @@ def text_search():
         if key == "desired":
             desired = data["desired"]  # lista con palabras que se quieren buscar
             for frase in desired:
-                busqueda += frase  # agregamos las palabras solo separadas por espacios (buscamos ucrrencia de una o la otra, o ambas)
+                busqueda += frase  # agregamos las palabras solo separadas por espacios (buscamos ocurrencia de una o la otra, o ambas)
                 busqueda += " "
         elif key == "required": 
             required = data["required"]  # lista con palabras que tienen que estar presentes
             for frase in required:
-                modificada = "\"{}\"".format(frase)
+                modificada = "\\\"{}\\\"".format(frase)
                 busqueda += modificada  # agregamos frases que si o si deben estar en la busqueda
                 busqueda += " "
         elif key == "forbidden": 
             forbidden = data["forbidden"]  # lista con palabras que no pueden estar
             for frase in forbidden:
-                modificada = "-\"{}\"".format(frase)
-                busqueda += modificada  # agregamos frases que no pueden estar en la busqueda
-                if frase == forbidden[-1]:
-                    break
+                busqueda += "-" + frase  # agregamos frases que no pueden estar en la busqueda
                 busqueda += " "
         elif key == "userId":
             userId = int(data["userId"])  # entero con el id de usuario
+
+    busqueda = f"\"{busqueda[:-1]}\""  # sacamos espacio del final y agregamos comillas
+    mensajes.create_index([("message", "text")]) # se crea el indice
     
     if len(data.keys()) == 1 and data.keys()[0] == "forbidden":
-        # no retorna nada, ya que son solo palabras prohibidas
+
         return json.jsonify({"error": "Solo se entregaron palabras prohibidas, no se ha podido hacer la busqueda."})
 
     if userId == 0:
@@ -158,7 +158,7 @@ def text_search():
         #  mensajes_filter_user = mensajes.find({"sender": userId}, {"_id": 0})
         
         #  ACA TIRA EL ERROR
-        mensajes_busqueda = list(mensajes.find({"$text": {"$search": "{}".format(busqueda)}}, {"_id": 0}))
+        mensajes_busqueda = list(mensajes.find({"$text": {"$search": busqueda}}, {"_id": 0}))
         #
 
         lista_especifica = []
@@ -168,6 +168,7 @@ def text_search():
         if lista_especifica:
             return json.jsonify(lista_especifica)
         return json.jsonify({"error": "No se encontraron referencias a lo solicitado"})
+
 
 @app.route("/messages", methods=['POST'])
 def receive_message():
@@ -201,6 +202,7 @@ def receive_message():
         success = False
         return json.jsonify({"success": success, "log": msj})
 
+
 @app.route("/messages/<int:mid>", methods=['DELETE'])
 def delete_message(mid):
     result = mensajes.delete_one({"mid": int(mid)})
@@ -212,6 +214,7 @@ def delete_message(mid):
         success = True
 
     return json.jsonify({"success": success, "log": msj})
+
 
 if __name__ == "__main__":
     #app.run()
