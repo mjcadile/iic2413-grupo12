@@ -47,7 +47,7 @@ def home():
     '''
     Página de inicio
     '''
-    return "<h1>¡API Grupo12-19!</h1>"
+    return "<h1>¡Bienvenido a la API del Grupo 12-19!</h1>"
 
 
 @app.route("/users")
@@ -81,7 +81,7 @@ def get_messages():
     #print(mensajes_uid1, mensajes_uid2)
     if mensajes_uid1 or mensajes_uid2:
         return json.jsonify(mensajes_uid1 + mensajes_uid2)
-    return {"error": f"No hay mensajes entre los usuarios {uid1} y {uid2}"}
+    return json.jsonify({"error": f"No hay mensajes entre los usuarios {uid1} y {uid2}"})
 
 
 @app.route("/users/<int:uid>")
@@ -93,7 +93,7 @@ def get_user(uid):
     mensajes_user = list(mensajes.find({"sender": uid}, {"_id": 0}))
     if user:
         return json.jsonify(user + mensajes_user)
-    return {"error": "Usuario no encontrado, intente con otro id"}
+    return json.jsonify({"error": "Usuario no encontrado, intente con otro id"})
 
 
 @app.route("/messages/<int:mid>")
@@ -104,7 +104,7 @@ def get_message(mid):
     mensaje = list(mensajes.find({"mid": mid}, {"_id": 0}))
     if mensaje:
         return json.jsonify(mensaje)
-    return {"error": "Mensaje no encontrado, intente con otro id"}
+    return json.jsonify({"error": "Mensaje no encontrado, intente con otro id"})
 
 
 @app.route("/text-search")
@@ -157,9 +157,7 @@ def text_search():
         #  retornamos el text-search pero para el usuario indicado
         #  mensajes_filter_user = mensajes.find({"sender": userId}, {"_id": 0})
         
-        #  ACA TIRA EL ERROR
         mensajes_busqueda = list(mensajes.find({"$text": {"$search": busqueda}}, {"_id": 0}))
-        #
 
         lista_especifica = []
         for msn in mensajes_busqueda:
