@@ -120,7 +120,7 @@ def text_search():
 
     busqueda = ""
 
-    for key in data.keys():
+    for key in list(data.keys()):
         if key == "desired":
             desired = data["desired"]  # lista con palabras que se quieren buscar
             for frase in desired:
@@ -143,8 +143,20 @@ def text_search():
     busqueda = f"\"{busqueda[:-1]}\""  # sacamos espacio del final y agregamos comillas
     mensajes.create_index([("message", "text")]) # se crea el indice
     
-    if len(data.keys()) == 1 and data.keys()[0] == "forbidden":
-
+    if len(list(data.keys())) == 1 and list(data.keys())[0] == "forbidden":
+        men = list(mensajes.find({}, {"_id": 0}))
+        busqueda = busqueda.replace('-', '').replace('\"','').split()
+        mensajes_forbidden = list()
+        for mensje in men:
+            aux = True
+            for palabra in busqueda:
+                if palabra in mensje["message"]:
+                    aux = False
+                    break
+            if aux:
+                mensajes_forbidden.append(mensje)
+        if mensajes_forbidden:
+            return json.jsonify(mensajes_forbidden)
         return json.jsonify({"error": "Solo se entregaron palabras prohibidas, no se ha podido hacer la busqueda."})
 
     if userId == 0:
