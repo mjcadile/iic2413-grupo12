@@ -22,22 +22,10 @@ client = MongoClient(URL)
 # Utilizamos la base de datos del grupo
 db = client["grupo12"]
 
-# Creamos los índices para el textsearch
-
 
 # Seleccionamos la collección de usuarios y mensajes // creamos el indice en mensajes
 usuarios = db.users
 mensajes = db.messages
-
-'''
-result = mensajes.create_index("messages")
-if result:
-    msje = "se ha creado el indice correctamente"
-    print(msje)
-else:
-    msje = "no se ha podido crear el indice"
-    print(msje)
-'''
 
 # Iniciamos la aplicación de flask
 app = Flask(__name__)
@@ -109,7 +97,13 @@ def get_message(mid):
 
 @app.route("/text-search")
 def text_search():
-    data = dict(json.loads(request.data))
+    try:
+        data = dict(json.loads(request.data))
+    except:
+        # si no se manda body ocurre un error
+        # entonces mandamos todos los mensajes
+        resultados = list(mensajes.find({}, {"_id": 0}))
+        return json.jsonify(resultados)
 
     if not data:
         #  retornamos todos los mensajes
@@ -129,7 +123,7 @@ def text_search():
         elif key == "required": 
             required = data["required"]  # lista con palabras que tienen que estar presentes
             for frase in required:
-                modificada = "\\\"{}\\\"".format(frase)
+                modificada = "\"{}\"".format(frase)
                 busqueda += modificada  # agregamos frases que si o si deben estar en la busqueda
                 busqueda += " "
         elif key == "forbidden": 
@@ -140,7 +134,7 @@ def text_search():
         elif key == "userId":
             userId = int(data["userId"])  # entero con el id de usuario
 
-    busqueda = f"\"{busqueda[:-1]}\""  # sacamos espacio del final y agregamos comillas
+    busqueda = busqueda[:-1]  # sacamos espacio del final
     mensajes.create_index([("message", "text")]) # se crea el indice
     
     if len(list(data.keys())) == 1 and list(data.keys())[0] == "forbidden":
@@ -188,7 +182,6 @@ def receive_message():
 
     data = {key: request.json[key] for key in MSG_KEYS}
     count = mensajes.count_documents({})
-    print(count)
 
     # venga o no el parametro mid en el json, se agrega igual o se cambia
     data["mid"] = count + 1
