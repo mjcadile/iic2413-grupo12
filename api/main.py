@@ -117,9 +117,13 @@ def text_search():
     for key in list(data.keys()):
         if key == "desired":
             desired = data["desired"]  # lista con palabras que se quieren buscar
-            for frase in desired:
-                busqueda += frase  # agregamos las palabras solo separadas por espacios (buscamos ocurrencia de una o la otra, o ambas)
-                busqueda += " "
+            if len(desired) > 0:
+                for frase in desired:
+                    busqueda += frase  # agregamos las palabras solo separadas por espacios (buscamos ocurrencia de una o la otra, o ambas)
+                    busqueda += " "
+            elif  len(data.keys()) == 1:
+                return json.jsonify(resultados)
+
         elif key == "required": 
             required = data["required"]  # lista con palabras que tienen que estar presentes
             for frase in required:
@@ -162,10 +166,12 @@ def text_search():
     else:
         #  retornamos el text-search pero para el usuario indicado
         #  mensajes_filter_user = mensajes.find({"sender": userId}, {"_id": 0})
-        
-        mensajes_busqueda = list(mensajes.find({"$text": {"$search": busqueda}}, {"_id": 0}))
 
+        mensajes_busqueda = list(mensajes.find({"$text": {"$search": busqueda}}, {"_id": 0}))
+        
         lista_especifica = []
+        if list(data.keys()) == ['userId']:
+            mensajes_busqueda = list(mensajes.find({}, {"_id": 0}))
         for msn in mensajes_busqueda:
             if int(msn["sender"]) == userId:
                 lista_especifica.append(msn)
@@ -206,9 +212,9 @@ def receive_message():
         return json.jsonify({"success": success, "log": msj})
 
 
-@app.route("/messages/<int:mid>", methods=['DELETE'])
-def delete_message(mid):
-    result = mensajes.delete_one({"mid": int(mid)})
+@app.route("/message/<int:id>", methods=['DELETE'])
+def delete_message(id):
+    result = mensajes.delete_one({"mid": int(id)})
     if not result:
         msj = "El id no existe. No se ha podido borrar el mensaje"
         success = False
