@@ -39,7 +39,7 @@ gunicorn main:app --workers=3 --reload
 
 ## Principales librerias utilizadas
 
-``` flask ``` : Framework para levantar aplicaciones desde python.
+``` flask ``` : Framework para levantar la API desde python.
 
 ``` pymongo ``` : Nos sirve para conectarnos a la base de datos desde python a MongoDB.
 
