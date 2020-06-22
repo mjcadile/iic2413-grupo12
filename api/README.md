@@ -37,6 +37,11 @@ Cualquier otro sistema operativo
 gunicorn main:app --workers=3 --reload
 ```
 
+## Principales librerias utilizadas
+
+``` flask ``` : Framework para levantar aplicaciones desde python.
+``` pymongo ``` : Nos sirve para conectarnos a la base de datos desde python a MongoDB.
+
 ## Otras observaciones
 
 La aplicacion funciona cuando se entregan inputs en tipo JSON, es decir un diccionario con el formato que se indica en el enunciado. No funciona con inputs como los que venian en los casos de prueba. Por ejemplo si tenemos:
