@@ -5,10 +5,8 @@ session_start();
     require("../config/conexion.php");
     
     $fecha_actual = date("Y-m-d", time());
-
-    $lid = $_POST["lid"];
-    $lid = number_format($lid);
-
+    $did = $_POST["did"];
+    $did = number_format($did);
     $fecha_viaje = $_POST["fecha"];
     $fecha_viaje = date($fecha_viaje);
     
@@ -42,7 +40,6 @@ session_start();
     $resultado = $db_19 -> prepare($query_as);
     $resultado -> execute();
     $asientos = $resultado -> fetchAll();
-
     $verificador = FALSE;
     $esta_en = FALSE;
     $i = 1;
@@ -70,9 +67,5 @@ session_start();
         header('Location: ../index.php');
         header("Connection: close");
         exit();
-    }else{
-        header('Status: 301 Moved Permanently', false, 301);
-        header('Location: ../index.php');
-        header("Connection: close");
     }
 ?>
