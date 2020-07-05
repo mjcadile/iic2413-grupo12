@@ -19,6 +19,6 @@ foreach ($usuario as $us) {
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/1');
   $response = json_decode($response);
   foreach($response as $item) {
-    echo "$item->stack";
+    echo "<p>$item->stack</p>";
   }
 ?>
