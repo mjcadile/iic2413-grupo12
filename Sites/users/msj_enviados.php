@@ -21,7 +21,7 @@ foreach ($usuario as $us) {
   if (count($response) == 1) {
     echo "<h1>$response</h1>";
   } else {
-    $mensajes = array_slice($response, 1)
+    $mensajes = array_slice($response, 1);
     foreach($mensajes as $array) {
       $fecha = $array[0];
       $lat = $array[1];
