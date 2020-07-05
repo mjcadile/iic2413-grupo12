@@ -39,6 +39,6 @@ foreach ($usuario as $us) {
             <h3>$receptant</h3>
             <h3>$sender</h3>
             </div>";
-
     }
+  }
   ?>
