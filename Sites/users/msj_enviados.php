@@ -20,7 +20,7 @@ foreach ($usuario as $us) {
 <br>
 <?php 
   
-  $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/1');
+  $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
   $response = json_decode($response, true);
   if (count($response) == 1) {
     echo "<h1>$response</h1>";
