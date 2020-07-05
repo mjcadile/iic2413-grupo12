@@ -28,11 +28,9 @@ echo "$fecha_fin";
 
 <img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
 <br>
-<div class='card text-center'>
-    <div class='card-body'>
-        <div id="mapid" style="height: 300px; width: 400px;"></div>
-    </div>
-</div>
+
+<div id="mapid" style="height: 600px; width: 600px;"></div>
+
           
 
 
@@ -43,21 +41,7 @@ echo "$fecha_fin";
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
   $response = json_decode($response, true);
   $mensajes = array_slice($response, 1);
-  foreach($mensajes as $array) {
-    $contador += 1;
-    $atributos = array();
-    foreach ($array as $item) {
-      array_push($atributos, $item);
-    }
-    $fecha = $atributos[0];
-    $lat = $atributos[1];
-    $long = $atributos[2];
-    $message = $atributos[3];
-    $mid = $atributos[4];
-    $receptant = $atributos[5];
-    $sender = $atributos[6]; 
-    echo "$fecha, $lat, $long, $message, $mid, $receptant, $sender";
-}?>
+  ?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -70,7 +54,30 @@ echo "$fecha_fin";
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
+
+    <?php
+        foreach($mensajes as $array) {
+            $atributos = array();
+            foreach ($array as $item) {
+            array_push($atributos, $item);
+            }
+            $fecha = $atributos[0];
+            if (strtotime($fecha) >= strtotime($fecha_inicio) && strtotime($fecha) <= strtotime($fecha_fin)){
+                $contador += 1;
+                $lat = $atributos[1];
+                $long = $atributos[2];
+                echo "L.marker([$lat, $long]).addTo(map);"
+        }  
+    }?>
+
     L.marker([51.5, -0.09]).addTo(map); 
 </script>
-
+<?php
+    if ($contador == 0 || $contador == 1) {
+        echo "<div class='jumbotron'>
+            <h5 class='display-4'>No tienes mensajes enviados!</h5>
+            <p class='lead'>Lo sentimos, al parecer aún no le envías mensajes a nadie entre esas fechas.</p>
+          </div>
+          <br>";
+}?>
 </html>
