@@ -16,8 +16,7 @@ foreach ($usuario as $us) {
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" id="bg" alt="">
-<br>
+<img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
 <br>
 <?php 
   
