@@ -12,8 +12,10 @@ foreach ($usuario as $us) {
     $nombre = $us[1];
 }
 require("../config/conexion.php");
-$fecha_entrada = $_POST["start"];
-$fecha_salida = $_POST["finish"];
+$fecha_inicio = $_POST["start"];
+$fecha_fin = $_POST["finish"];
+echo "$fecha_inicio"
+echo "$fecha_fin"
 
 ?>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -26,15 +28,8 @@ $fecha_salida = $_POST["finish"];
 
 <img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
 <br>
-
-
-    
-
-
-
-
 <div id="mapid" style="height: 300px"></div>
-   
+<br>
 
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
