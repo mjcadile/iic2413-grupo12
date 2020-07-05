@@ -31,9 +31,11 @@ echo "$fecha_fin";
 <table>
     <tbody>
         <tr>
+            <td></td>
             <td style="text-align: center; border: none">
             <div id="mapid" style="height: 300px; width: 400px;"></div>
             </td>
+            <td></td>
         </tr>
     <tbody>
 <table>
