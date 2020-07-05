@@ -41,6 +41,7 @@ echo "$fecha_fin";
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
   $response = json_decode($response, true);
   $mensajes = array_slice($response, 1);
+  echo "$mensajes"
   ?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
@@ -69,8 +70,6 @@ echo "$fecha_fin";
                 echo "L.marker([$lat, $long]).addTo(map);";
         }  
     }?>
-
-    L.marker([51.5, -0.09]).addTo(map); 
 </script>
 <?php
     if ($contador == 0 || $contador == 1) {
