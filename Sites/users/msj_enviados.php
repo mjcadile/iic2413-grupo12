@@ -31,6 +31,7 @@ foreach ($usuario as $us) {
       $receptant = $array[5];
       $sender = $array[6];
       echo "
+      <div class='container-fluid'>
         <div class='row'>
           <p> Mensaje #$mid </p>
           <div class='col-4'>
@@ -51,7 +52,8 @@ foreach ($usuario as $us) {
               <div class='tab-pane fade' id='list-messages' role='tabpanel' aria-labelledby='list-messages-list'>Longitud: $long  |  Latitud: $lat</div>
             </div>
           </div>
-        </div
+        </div>
+      </div>
       ";
     }
   }
