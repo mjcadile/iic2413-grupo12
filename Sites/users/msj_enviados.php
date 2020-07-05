@@ -54,7 +54,17 @@ foreach ($usuario as $us) {
           <br>";
   }
   if ($contador == 0 || $contador == 1) {
-    echo "<h2>Aún no haz enviado mensajes!</h2>";
+    echo "<div class='jumbotron'>
+            <h1 class='display-4'>No tienes mensajes enviados!</h1>
+            <p class='lead'>Lo sentimos, al parecer aún no le envías mensajes a nadie.</p>
+            <hr class='my-4'>
+            <p>Haz click aquí para utilizar nuestro servicio de mensajería.</p>
+            <p class='lead'>
+              <a class='btn btn-primary btn-lg' href='#' role='button'>Enviar mensajes</a>
+              <a class='btn btn-primary btn-lg' href='../index.php' role='button'>Home</a>
+            </p>
+          </div>
+          <br>";
   }
   ?>
   <?php include('../templates/footer.html');?>
