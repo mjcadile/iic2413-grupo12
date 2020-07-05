@@ -49,7 +49,7 @@ echo "$fecha_fin";
     $mid = $atributos[4];
     $receptant = $atributos[5];
     $sender = $atributos[6]; 
-    echo "$fecha, $lat, $long, $message, $mid, $receptant, $sender"
+    echo "$fecha, $lat, $long, $message, $mid, $receptant, $sender";
 }?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
