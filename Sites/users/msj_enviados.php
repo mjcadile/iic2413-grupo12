@@ -19,7 +19,7 @@ foreach ($usuario as $us) {
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/1');
   $response = json_decode($response, true);
   if (count($response) == 1) {
-    echo "<h1>$response</h1>"
+    echo "<h1>$response</h1>";
   } else {
     $mensajes = array_slice($response, 1)
     foreach($mensajes as $array) {
