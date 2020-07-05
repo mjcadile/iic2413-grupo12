@@ -14,8 +14,8 @@ foreach ($usuario as $us) {
 require("../config/conexion.php");
 $fecha_inicio = $_POST["start"];
 $fecha_fin = $_POST["finish"];
-echo "$fecha_inicio"
-echo "$fecha_fin"
+echo "$fecha_inicio";
+echo "$fecha_fin";
 
 ?>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
