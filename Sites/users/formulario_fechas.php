@@ -7,23 +7,30 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
     include('templates/header_login.html');
 }else{
     include('templates/header.html');
-}?>
-
-
-<?php
-    require("../config/conexion.php");
-    $fecha_actual = date("Y-m-d", time());
-    # Aca saco el uid
-    $username = $_SESSION['user'];
-    $query_uid = "SELECT uid FROM Usuarios WHERE Usuarios.username = '$username';";
-    $resultado = $db_19 -> prepare($query_uid);
-    $resultado -> execute();
-    $uid_usuario = $resultado -> fetchAll();
-    foreach ($uid_usuario as $u){
-        $uid = number_format(intval($u[0]));
-    }
-    
+}
+require("../config/conexion.php");
+$fecha_actual = date("Y-m-d", time());
+# Aca saco el uid
+$username = $_SESSION['user'];
+$query_uid = "SELECT uid, nombre_usuario FROM Usuarios WHERE Usuarios.username = '$username';";
+$resultado = $db_19 -> prepare($query_uid);
+$resultado -> execute();
+$uid_usuario = $resultado -> fetchAll();
+foreach ($uid_usuario as $u){
+    $uid = number_format(intval($u[0]));
+    $nombre = $u[1];
+}    
 ?>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
+<br>
+
+
+
+
+
 <img src="https://cdn.pixabay.com/photo/2014/11/02/10/41/aircraft-513641_1280.jpg" id="bg" alt="">
 
     <div class= 'container mt-10'>
@@ -51,9 +58,8 @@ if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" &&
                     <input class='btn btn-primary' type='submit' value='CONSULTAR'>
                 </form>
                 </td>
-              </tr>"
+              </tr>";
             }?>
-
         </div> 
     </div>
 
