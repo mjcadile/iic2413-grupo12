@@ -28,7 +28,7 @@ echo "$fecha_fin";
 
 <img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
 <br>
-<div id="mapid" style="height: 300px; width: 400px"></div>
+<div id="mapid" style="height: 300px; width: 400px; text-align: center"></div>
 <br>
 
 <?php 
