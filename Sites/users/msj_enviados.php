@@ -23,9 +23,9 @@ foreach ($usuario as $us) {
   } else {
     $mensajes = array_slice($response, 1);
     foreach($mensajes as $array) {
-      $atributos = array()
+      $atributos = array();
       foreach ($array as $item) {
-        array_push($atributos, $item)
+        array_push($atributos, $item);
       }
       echo "<p>$atributos[0]</p>
             <br>
