@@ -15,7 +15,7 @@ foreach ($usuario as $us) {
 <!--?$query_uid = "SELECT uid FROM Usuarios WHERE Usuarios.username = '$username';";?-->
 
 <?php 
-  $response = file_get_contents("https://lovely-glacier-09476.herokuapp.com/users/'$uid'");
+  $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'$uid'');
   $response = json_decode($response);
   foreach($response as $item) {
     echo "<div>
