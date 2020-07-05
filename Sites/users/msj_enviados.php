@@ -23,22 +23,15 @@ foreach ($usuario as $us) {
   } else {
     $mensajes = array_slice($response, 1);
     foreach($mensajes as $array) {
-      $fecha = $array[0];
-      $lat = $array[1];
-      $long = $array[2];
-      $message = $array[3];
-      $mid = $array[4];
-      $receptant = $array[5];
-      $sender = $array[6];
-      echo "<div class='container-fluid>
-            <h3>$fecha</h3>
-            <h3>$lat</h3>
-            <h3>$long</h3>
-            <h3>$message</h3>
-            <h3>$mid</h3>
-            <h3>$receptant</h3>
-            <h3>$sender</h3>
-            </div>";
+      $atributos = array()
+      foreach ($array as $item) {
+        array_push($atributos, $item)
+      }
+      echo "<p>$atributos[0]</p>
+            <br>
+            <p>$atributos[1]</p>
+            <br>
+            <p>$atributos[2]</p>";
     }
   }
   ?>
