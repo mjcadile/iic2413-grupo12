@@ -28,9 +28,29 @@ echo "$fecha_fin";
 
 <img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
 <br>
-<div id="mapid" style="height: 300px"></div>
+<div id="mapid" style="height: 160px"></div>
 <br>
 
+<?php 
+  $contador = 0;
+  $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
+  $response = json_decode($response, true);
+  $mensajes = array_slice($response, 1);
+  foreach($mensajes as $array) {
+    $contador += 1;
+    $atributos = array();
+    foreach ($array as $item) {
+      array_push($atributos, $item);
+    }
+    $fecha = $atributos[0];
+    $lat = $atributos[1];
+    $long = $atributos[2];
+    $message = $atributos[3];
+    $mid = $atributos[4];
+    $receptant = $atributos[5];
+    $sender = $atributos[6]; 
+    echo "$fecha, $lat, $long, $message, $mid, $receptant, $sender"
+}?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
