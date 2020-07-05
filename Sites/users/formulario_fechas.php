@@ -1,13 +1,6 @@
 <?php
 session_start();
-
-if (isset($_SESSION['user']) && $_SESSION['user'] != "Contraseña erronea" && 
-        $_SESSION['user'] != "Usuario no encontrado" && $_SESSION['user'] != "error username" && 
-        $_SESSION['user'] != "error contraseña"){
-    include('templates/header_login.html');
-}else{
-    include('templates/header.html');
-}
+include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
 $fecha_actual = date("Y-m-d", time());
 # Aca saco el uid
@@ -28,10 +21,6 @@ foreach ($uid_usuario as $u){
 <br>
 
 
-
-
-
-<img src="https://cdn.pixabay.com/photo/2014/11/02/10/41/aircraft-513641_1280.jpg" id="bg" alt="">
 
     <div class= 'container mt-10'>
         <h2 class="text-center rounded-bottom bg-info text-white mb-8"> Consultar mis mensajes enviados <?php echo $nombre_hotel; ?></h2>
