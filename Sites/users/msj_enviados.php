@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../templates/header_sin_nada.html');
+include('../templates/header_sin_searchbox_login.html');
 require("../config/conexion.php");  
 $username = $_SESSION["user"];
 $query_usuario = "SELECT Usuarios.uid, Usuarios.nombre_usuario FROM Usuarios WHERE username = '$username';";
@@ -13,7 +13,12 @@ foreach ($usuario as $us) {
 }
 ?>
 <!--?$query_uid = "SELECT uid FROM Usuarios WHERE Usuarios.username = '$username';";?-->
-
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg" id="bg" alt="">
+<br>
+<br>
 <?php 
   
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/1');
@@ -47,7 +52,10 @@ foreach ($usuario as $us) {
               <div class='card-footer text-muted'>
                 Fecha de emisión: $atributos[0]
               </div>
-            </div";
+            </div
+            <br>
+            <br>";
     }
   }
   ?>
+  <?php include('../templates/footer.html');?>
