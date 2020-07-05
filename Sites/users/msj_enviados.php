@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../templates/header_sin_searchbox_login.html');
+include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");  
 $username = $_SESSION["user"];
 $query_usuario = "SELECT Usuarios.uid, Usuarios.nombre_usuario FROM Usuarios WHERE username = '$username';";
