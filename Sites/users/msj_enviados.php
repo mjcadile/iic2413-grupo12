@@ -27,11 +27,27 @@ foreach ($usuario as $us) {
       foreach ($array as $item) {
         array_push($atributos, $item);
       }
-      echo "<p>$atributos[0]</p>
-            <br>
-            <p>$atributos[1]</p>
-            <br>
-            <p>$atributos[2]</p>";
+      $fecha = $atributos[0];
+      $lat = $atributos[1];
+      $long = $atributos[2];
+      $message = $atributos[3];
+      $mid = $atributos[4];
+      $receptant = $atributos[5];
+      $sender = $atributos[6]; 
+      echo "<div class='card text-center'>
+              <div class='card-header'>
+                Mensaje #$mid
+              </div>
+              <div class='card-body'>
+                <h5 class='card-title'>$message</h5>
+                <p class='card-text'>Ubicación: Lat: $lat  |  Long: $long</p>
+                <p class='card-text'>ID remitente: $sender</p>
+                <p class='card-text'>ID destinatario: $receptant</p>
+              </div>
+              <div class='card-footer text-muted'>
+                Fecha de emisión: $atributos[0]
+              </div>
+            </div";
     }
   }
   ?>
