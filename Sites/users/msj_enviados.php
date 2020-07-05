@@ -47,7 +47,7 @@ foreach ($usuario as $us) {
               <p>ID de emisor: $sender</p>
               <p>ID de destinatario: $receptant</p>
               </div>
-              <div class='tab-pane fade' id='list-profile' role='tabpanel' aria-labelledby='list-profile-list'>"$mensaje"</div>
+              <div class='tab-pane fade' id='list-profile' role='tabpanel' aria-labelledby='list-profile-list'>$mensaje</div>
               <div class='tab-pane fade' id='list-messages' role='tabpanel' aria-labelledby='list-messages-list'>Longitud: $long  |  Latitud: $lat</div>
             </div>
           </div>
