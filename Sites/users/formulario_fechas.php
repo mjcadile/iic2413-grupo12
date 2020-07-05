@@ -33,17 +33,20 @@ foreach ($uid_usuario as $u){
                 echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>Las fecha de inicio tiene que ir 
                 antes de la de fin.</h7>";
                 echo "<tr class='bg-dark'>
+                <br>
                 <td>
                 <form action='ubicaciones_mensajes.php' method='post' >
                     <label for='inicio'>Fecha inicio</label>
                     <input type='date' id='start' name='start'
                     value='$fecha_actual'>
                 </td>
+                <br>
                 <td>
                     <label for='fin'>Fecha fin</label>
                     <input type='date' id='finish' name='finish'
                     value='$fecha_actual'>
                 </td>
+                <br>
                 <td>
                     <input type = 'hidden' name = 'uid' id = 'uid' value = $uid >
                     <input class='btn btn-primary' type='submit' value='CONSULTAR'>
