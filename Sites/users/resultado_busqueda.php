@@ -9,8 +9,8 @@ $data = $_POST['search'];
 
 
 $curl = curl_init();
-$consulta = '{"desired": ["Metallica", "canción"],
-             "required": ["Hola"]}';
+$consulta = '"desired": ["Metallica", "canción"],
+             "required": ["Hola"]';
 $prueba = json_encode($consulta);
 
 echo "<div class='card text-center'>
