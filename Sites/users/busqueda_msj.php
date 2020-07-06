@@ -23,7 +23,10 @@ require("../config/conexion.php");
     echo "<div class='card'>
             <br>
               <div class='card-body'>
-                <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
+                <h5 class='card-title'>Una o varias frases que deben estar en el mensaje:</h5>
+                <h7 class='card-body'>Separar las frases con un punto (.)</h7>
+              </div>
+              <div class='card-body'>
                 <input name='search[]' type='text' placeholder='Escribe aquí'>
               </div>
             <br>
@@ -35,6 +38,9 @@ require("../config/conexion.php");
             <br>
               <div class='card-body'>
                 <h5 class='card-title'>Palabras que no pueden estar en el mensaje:</h5>
+                <h7 class='card-body'>Separar las palabras con un espacio</h7>
+              </div>
+              <div class='card-body'>
                 <input name='search[]' type='text' placeholder='Escribe aquí'>
               </div>
             <br>
@@ -46,6 +52,9 @@ require("../config/conexion.php");
             <br>
               <div class='card-body'>
                 <h5 class='card-title'>id del usuario emisor del mensaje:</h5>
+                <h7 class='card-body'>Insertar un número</h7>
+              </div>
+              <div class='card-body'>
                 <input name='search[]' type='text' placeholder='Escribe aquí'>
               </div>
             <br>
