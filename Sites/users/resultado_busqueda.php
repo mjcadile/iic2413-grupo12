@@ -5,7 +5,6 @@ require("../config/conexion.php");
 
 
 if (isset($_POST['search'])){
-  foreach($_POST['search'] as $selected){
     echo "<div class='card'>
             <br>
               <div class='card-body'>
@@ -14,7 +13,6 @@ if (isset($_POST['search'])){
             <br>
           </div>
           <br>";
-  }
 }
 
 ?>
