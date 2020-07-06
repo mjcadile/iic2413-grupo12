@@ -9,8 +9,10 @@ $data = $_POST['search'];
 
 
 $curl = curl_init();
-$consulta = '"desired": ["Metallica"],
-             "required": ["Hola"]';
+$consulta = '{
+              "desired": ["Metallica"],
+              "required": ["Hola"]
+            }';
 $prueba = json_encode($consulta);
 
 echo "<div class='card text-center'>
@@ -30,7 +32,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => json_encode($consulta),
+  CURLOPT_POSTFIELDS => $consulta,
   CURLOPT_HTTPHEADER => array(),
 ));
 
