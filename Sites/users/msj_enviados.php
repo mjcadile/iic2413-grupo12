@@ -23,6 +23,10 @@ foreach ($usuario as $us) {
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
   $response = json_decode($response, true);
   $mensajes = array_slice($response, 1);
+  echo "<div class='jumbotron'>
+          <h1 class='display-4'>Mensajes recibidos</h1>
+        </div>
+        <br>";
   foreach($mensajes as $array) {
     $contador += 1;
     $atributos = array();

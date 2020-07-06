@@ -21,6 +21,10 @@ $contador = 0;
 $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/messages');
 $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
+echo "<div class='jumbotron'>
+          <h1 class='display-4'>Mensajes recibidos</h1>
+        </div>
+        <br>";
 foreach($mensajes as $array) {
   $atributos = array();
   foreach ($array as $item) {
@@ -55,8 +59,8 @@ foreach($mensajes as $array) {
 }
 if ($contador == 0 || $contador == 1) {
   echo "<div class='jumbotron'>
-          <h1 class='display-4'>No tienes mensajes enviados!</h1>
-          <p class='lead'>Lo sentimos, al parecer aún no le envías mensajes a nadie.</p>
+          <h1 class='display-4'>No tienes mensajes recibidos!</h1>
+          <p class='lead'>Lo sentimos, al parecer aún tienes mensajes recibidos.</p>
           <hr class='my-4'>
           <p>Haz click aquí para utilizar nuestro servicio de mensajería.</p>
           <p class='lead'>
