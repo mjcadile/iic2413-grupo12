@@ -29,7 +29,9 @@ echo "<div class='card'>
         <br>
           <div class='card-body'>
             <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
+            <form action='resultado_busqueda.php' method='post'>
             <input name='search[]' type='text' placeholder='Escribe aquí'>
+            </form>
           </div>
         <br>
       </div>
@@ -38,7 +40,7 @@ echo "<div class='card'>
 
 
 ?>
-<form action='resultado_busqueda.php' method='get'>
+<form action='resultado_busqueda.php' method='post'>
   <input type='submit' value='Buscar'>
 </form>
 <br>
