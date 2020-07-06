@@ -33,9 +33,8 @@ if ($err) {
   foreach ($response as $row) {
     echo "<div class='card-body'>
             <h7 class='card-title'>$row</h7>
-          </div>"
+          </div>";
   }
-  echo $response;
 }
 
 
