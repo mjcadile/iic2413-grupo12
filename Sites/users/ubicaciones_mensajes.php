@@ -1,5 +1,12 @@
 <?php
 session_start();
+$fecha_inicio = $_POST["start"];
+$fecha_fin = $_POST["finish"];
+if (strtotime($fecha_inicio) < strtotime($fecha_inicio)){
+    header('Status: 301 Moved Permanently', false, 301);
+    header('Location: formulario_fechas.php');
+    header("Connection: close");
+}else{
 include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");  
 $username = $_SESSION["user"];
@@ -12,8 +19,6 @@ foreach ($usuario as $us) {
     $nombre = $us[1];
 }
 require("../config/conexion.php");
-$fecha_inicio = $_POST["start"];
-$fecha_fin = $_POST["finish"];
 echo "$fecha_inicio";
 echo "$fecha_fin";
 
@@ -79,3 +84,6 @@ echo "$fecha_fin";
           <br>";
 }?>
 </html>
+<?php 
+}
+?>
