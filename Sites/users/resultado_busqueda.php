@@ -9,8 +9,8 @@ $data = $_POST['search'];
 
 
 $curl = curl_init();
-$consulta['data'] = ["desired" => ["Metallica", "canción"],
-                     "required" => ["Hola"]];
+$consulta = ["desired" => ["Metallica", "canción"],
+             "required" => ["Hola"]];
 
 
 
@@ -23,7 +23,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => json_encode($consulta['data']),
+  CURLOPT_POSTFIELDS => json_encode($consulta),
   CURLOPT_HTTPHEADER => array(),
 ));
 
