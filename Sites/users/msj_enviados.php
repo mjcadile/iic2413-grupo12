@@ -24,11 +24,11 @@ foreach ($usuario as $us) {
   $response = json_decode($response, true);
   $mensajes = array_slice($response, 1);
   echo "<div class='card'>
+      <br>
           <div class='card-body'>
-            <br>
-            <h3 style= font-size: xx-large;>Mensajes enviados</h3>
-            <br>
+            <h5 class='card-title'>Mensajes recibidos</h5>
           </div>
+          <br>
       </div>
       <br>";
   foreach($mensajes as $array) {
