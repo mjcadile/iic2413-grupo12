@@ -12,11 +12,7 @@ $curl = curl_init();
 $consulta['data'] = ["desired" => ["Metallica", "canción"],
                      "required" => ["Hola"]];
 
-echo "<div class='card text-center'>
-        <div class='card-header'>
-          $consulta['data']
-        </div>
-      </div>";
+
 
 
 curl_setopt_array($curl, array(
