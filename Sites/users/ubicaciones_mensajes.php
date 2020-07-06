@@ -52,7 +52,8 @@ echo "$fecha_fin";
         $contador += 1;
         $lat = $atributos[1];
         $long = $atributos[2];
-    }  
+    }
+}  
   ?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
