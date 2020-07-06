@@ -6,7 +6,24 @@ require("../config/conexion.php");
 echo "<div class='card'>
         <br>
           <div class='card-body'>
-            <h4 class='card-title'>Frase que deseablemente esté en el mensaje</h4>
+            <h5 class='card-title'>Frase que deseablemente esté en el mensaje:</h5>
+          </div>
+          <html>
+            <body>
+              <form action='busqueda_msj.php' method='GET'>
+                <input id='search' name='search' type='text' placeholder='Type here'>
+              </form>
+            </body>
+          </html>
+        <br>
+      </div>
+      <br>";
+
+
+echo "<div class='card'>
+        <br>
+          <div class='card-body'>
+            <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
           </div>
           <html>
             <body>
