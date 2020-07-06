@@ -6,7 +6,7 @@ require("../config/conexion.php");
 
 
 foreach($_POST['search'] as $selected){
-  echo "<h7 class='text-center rounded-bottom bg-info text-white mb-8'>$selected</h7>";
+  echo "<h1>$selected</h1>";
 }
 
 ?>
