@@ -25,10 +25,10 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
-$response = json_decode($response);
+$response_data = json_decode($response);
 echo "<div class='card'>
       <br>
-        <h7 class='card-title'>$response</h7>
+        <h7 class='card-title'>$response_data</h7>
       <br>
       </div><br>";
 
@@ -37,11 +37,7 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
-  foreach ($response as $row) {
-    echo "<div class='card-body'>
-            <h7 class='card-title'>$row</h7>
-          </div>";
-  }
+  echo "$response_data";
 }
 
 
