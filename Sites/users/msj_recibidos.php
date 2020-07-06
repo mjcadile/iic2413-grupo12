@@ -15,7 +15,7 @@ $query_usuarios = "SELECT Usuarios.uid, Usuarios.nombre_usuario FROM Usuarios;";
 $result_users = $db_19 -> prepare($query_usuarios);
 $result_users -> execute();
 $usuarios = $result_users -> fetchAll(); 
-foreach ($usuario as $us) {
+foreach ($usuarios as $us) {
     $uid_sender = $us[0];
     $nombre_sender = $us[1];
     $contador = 0;
