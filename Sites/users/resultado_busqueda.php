@@ -4,7 +4,7 @@ include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
 
 
-echo $_POST['search']
+echo $_POST['search'];
 
 ?>
 <br>

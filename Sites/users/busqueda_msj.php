@@ -40,7 +40,7 @@ echo "<div class='card'>
 
 
 ?>
-<form action='resultado_busqueda.php' method='post'>
+<form action='resultado_busqueda.php' method='get'>
   <input type='submit' value='Buscar'>
 </form>
 <br>
