@@ -9,8 +9,8 @@ $data = $_POST['search'];
 
 
 $curl = curl_init();
-$consulta['data'][] = ['desired' => ['Metallica', 'canción'],
-                       'required' => ['Hola']];
+$consulta['data'] = ["desired" => ["Metallica", "canción"],
+                     "required" => ["Hola"]];
 
 echo "<div class='card text-center'>
         <div class='card-header'>
