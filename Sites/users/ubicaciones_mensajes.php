@@ -79,7 +79,7 @@ echo "$fecha_fin";
                 $contador += 1;
                 $lat = $atributos[1];
                 $long = $atributos[2];
-                echo "L.marker([$lat, $long]).addTo(map);";
+                echo 'L.marker([' . $lat . ',' . $long . ']).addTo(map);';
         }  
     }?>
 </script>
