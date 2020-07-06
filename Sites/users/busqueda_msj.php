@@ -2,45 +2,43 @@
 session_start();
 include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
-
-echo "<div class='card'>
-        <br>
-          <div class='card-body'>
-            <h5 class='card-title'>Frase que deseablemente esté en el mensaje:</h5>
-            <input name='search' type='text' placeholder='Escribe aquí'>
-          </div>
-        <br>
-      </div>
-      <br>";
-
-
-echo "<div class='card'>
-        <br>
-          <div class='card-body'>
-            <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
-            <input name='search' type='text' placeholder='Escribe aquí'>
-          </div>
-        <br>
-      </div>
-      <br>";
-
-
-echo "<div class='card'>
-        <br>
-          <div class='card-body'>
-            <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
-            <form action='resultado_busqueda.php' method='get'>
-            <input name='search' type='text' placeholder='Escribe aquí'>
-            </form>
-          </div>
-        <br>
-      </div>
-      <br>";
-
-
-
 ?>
-<form action='resultado_busqueda.php' method='get'>
+
+<form action='resultado_busqueda.php' method='post'>
+  <?php
+    echo "<div class='card'>
+            <br>
+              <div class='card-body'>
+                <h5 class='card-title'>Frase que deseablemente esté en el mensaje:</h5>
+                <input name='search' type='text' placeholder='Escribe aquí'>
+              </div>
+            <br>
+          </div>
+          <br>";
+
+
+    echo "<div class='card'>
+            <br>
+              <div class='card-body'>
+                <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
+                <input name='search' type='text' placeholder='Escribe aquí'>
+              </div>
+            <br>
+          </div>
+          <br>";
+
+
+    echo "<div class='card'>
+            <br>
+              <div class='card-body'>
+                <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
+                <input name='search' type='text' placeholder='Escribe aquí'>
+              </div>
+            <br>
+          </div>
+          <br>";
+  ?>
+
   <input type='submit' value='Buscar'>
 </form>
 <br>
