@@ -7,12 +7,12 @@ $data = $_POST['search'];
 
 
 $curl = curl_init();
-$consulta = array('desired' => ['Metallica', 'canción'],
-                  'required' => ['Hola']);
+$consulta['data'][] = ['desired' => ['Metallica', 'canción'],
+                       'required' => ['Hola'];
 
 echo "<div class='card text-center'>
         <div class='card-header'>
-          $consulta
+          $consulta['data']
         </div>
       </div>";
 
@@ -25,7 +25,7 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => json_encode($consulta),
+  CURLOPT_POSTFIELDS => json_encode($consulta['data']),
   CURLOPT_HTTPHEADER => array(),
 ));
 
