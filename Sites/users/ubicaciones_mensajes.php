@@ -40,23 +40,7 @@ echo "$fecha_fin";
   $contador = 0;
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
   $response = json_decode($response, true);
-  $mensajes = array_slice($response, 1);
-  foreach($mensajes as $array) {
-    $atributos = array();
-    foreach ($array as $item) {
-    array_push($atributos, $item);
-    }
-    $fecha = $atributos[0];
-    echo "$fecha";
-    if (strtotime($fecha) >= strtotime($fecha_inicio) && strtotime($fecha) <= strtotime($fecha_fin)){
-        $contador += 1;
-        $lat = $atributos[1];
-        $long = $atributos[2];
-        echo $lat;
-        echo $long;
-        echo "<br>";
-    }
-}  
+  $mensajes = array_slice($response, 1);  
   ?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
@@ -87,7 +71,7 @@ echo "$fecha_fin";
     }?>
 </script>
 <?php
-    if ($contador == 0 || $contador == 1) {
+    if ($contador == 0) {
         echo "<div class='jumbotron'>
             <h5 class='display-4'>No tienes mensajes enviados!</h5>
             <p class='lead'>Lo sentimos, al parecer aún no le envías mensajes a nadie entre esas fechas.</p>
