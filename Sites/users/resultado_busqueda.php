@@ -1,4 +1,6 @@
 <?php
+# inspiracion: https://stackoverflow.com/questions/59873127/how-to-pass-raw-body-parameters-in-post-api
+
 session_start();
 include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
@@ -8,7 +10,7 @@ $data = $_POST['search'];
 
 $curl = curl_init();
 $consulta['data'][] = ['desired' => ['Metallica', 'canción'],
-                       'required' => ['Hola'];
+                       'required' => ['Hola']];
 
 echo "<div class='card text-center'>
         <div class='card-header'>
