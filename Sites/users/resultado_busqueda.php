@@ -9,7 +9,7 @@ $data = $_POST['search'];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/messages",
+  CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/users/5",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -17,8 +17,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
   CURLOPT_POSTFIELDS => "Body goes here",
-  CURLOPT_HTTPHEADER => array(
-  ),
+  CURLOPT_HTTPHEADER => array(),
 ));
 
 $response = curl_exec($curl);
