@@ -9,10 +9,8 @@ $data = $_POST['search'];
 
 
 $curl = curl_init();
-$consulta = '{
-              "desired": ["Metallica"],
-              "required": ["Hola"]
-            }';
+$consulta = array("desired" => ["Metallica"],
+                  "required" => ["Hola"]);
 $prueba = json_encode($consulta);
 
 echo "<div class='card text-center'>
@@ -27,7 +25,7 @@ echo "<div class='card text-center'>
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/text-search",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "json",
+  CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
