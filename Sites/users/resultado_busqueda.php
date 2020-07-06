@@ -9,7 +9,8 @@ $data = $_POST['search'];
 
 
 $curl = curl_init();
-$consulta = array("required" => ["nubes"]);
+$consulta = array("desired" => ["Metallica"]
+                  "required" => ["canción"]);
 
 $prueba = json_encode($consulta);
 
