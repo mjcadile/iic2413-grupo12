@@ -27,7 +27,7 @@ echo "<div class='card'>
 
 
 ?>
-<form action='resultado_busqueda.php' method='GET'>
+<form action='resultado_busqueda.php' method='POST'>
   <input type='submit' value='Buscar'>
 </form>
 <br>
