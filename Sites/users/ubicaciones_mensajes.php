@@ -31,7 +31,7 @@ if (strtotime($fecha_inicio) >= strtotime($fecha_fin)){
     <img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
     <br>
 
-    <div id="mapid" style="height: 500px;"></div>
+    <div id="mapid" style="height: 500px; margin-right: 100px; margin-left: 100px; "></div>
     <br>
 
     <?php 
@@ -75,6 +75,7 @@ if (strtotime($fecha_inicio) >= strtotime($fecha_fin)){
             </div>
             <br>";
     }?>
+    <?php include('../templates/footer.html');?>
     </html>
     <?php 
 }
