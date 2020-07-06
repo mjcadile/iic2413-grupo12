@@ -24,7 +24,7 @@ $mensajes = array_slice($response, 1);
 echo "<div class='card'>
       <br>
           <div class='card-body'>
-            <h3 class='card-title'>Mensajes enviados</h3>
+            <h2 class='card-title'>Mensajes enviados</h2>
           </div>
           <br>
       </div>
