@@ -10,9 +10,7 @@ echo "<div class='card'>
           </div>
           <html>
             <body>
-              <form action='busqueda_msj.php' method='GET'>
-                <input id='search' name='search' type='text' placeholder='Type here'>
-              </form>
+              <input id='search' name='search[]' type='text' placeholder='Escribe aquí'>
             </body>
           </html>
         <br>
@@ -27,10 +25,7 @@ echo "<div class='card'>
           </div>
           <html>
             <body>
-              <form action='busqueda_msj.php' method='GET'>
-                <input id='search' name='search' type='text' placeholder='Type here'>
-                <input id='submit' type='submit' value='Search'>
-              </form>
+              <input id='search' name='search[]' type='text' placeholder='Escribe aquí'>
             </body>
           </html>
         <br>
@@ -38,7 +33,12 @@ echo "<div class='card'>
       <br>";
 
 
+
 ?>
+<form action='busqueda_msj.php' method='GET'>
+  <input id='search' name='search' type='text' placeholder='Type here'>
+  <input id='submit' type='submit' value='Search'>
+</form>
 <br>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
