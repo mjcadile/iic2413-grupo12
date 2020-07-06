@@ -18,7 +18,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_POSTFIELDS => '{
                           "required": ["Hola"]
-                         }'),
+                         }',
   CURLOPT_HTTPHEADER => array(),
 ));
 
