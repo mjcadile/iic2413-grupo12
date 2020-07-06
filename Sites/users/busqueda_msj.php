@@ -25,9 +25,20 @@ echo "<div class='card'>
       <br>";
 
 
+echo "<div class='card'>
+        <br>
+          <div class='card-body'>
+            <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
+            <input name='search[]' type='text' placeholder='Escribe aquí'>
+          </div>
+        <br>
+      </div>
+      <br>";
+
+
 
 ?>
-<form action='resultado_busqueda.php' method='POST'>
+<form action='resultado_busqueda.php' method='get'>
   <input type='submit' value='Buscar'>
 </form>
 <br>

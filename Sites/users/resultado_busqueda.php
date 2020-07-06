@@ -4,7 +4,7 @@ include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
 
 
-if (isset($_POST['search'])){
+if (isset($_GET['search'])){
     echo "<div class='card'>
             <br>
               <div class='card-body'>
