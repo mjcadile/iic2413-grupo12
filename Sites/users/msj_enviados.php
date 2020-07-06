@@ -24,9 +24,13 @@ foreach ($usuario as $us) {
   $response = json_decode($response, true);
   $mensajes = array_slice($response, 1);
   echo "<div class='card'>
-          <h5 class='card-title'>Mensajes recibidos</h5>
-    </div>
-    <br>";
+          <div class='card-body'>
+            <br>
+            <h3 class='card-title'>Mensajes enviados</h3>
+            <br>
+          </div>
+      </div>
+      <br>";
   foreach($mensajes as $array) {
     $contador += 1;
     $atributos = array();
