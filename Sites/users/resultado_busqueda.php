@@ -37,7 +37,7 @@ curl_close($curl);
 
 
 $r = new HttpRequest('https://lovely-glacier-09476.herokuapp.com/text-search', HttpRequest::METH_GET);
-$r->setBody($prueba)
+$r->setBody($prueba);
 try {
     echo $r->send()->getBody();
 } catch (HttpException $ex) {
