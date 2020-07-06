@@ -26,7 +26,7 @@ foreach ($usuario as $us) {
   echo "<div class='card'>
           <div class='card-body'>
             <br>
-            <h3 class='card-title'>Mensajes enviados</h3>
+            <h3 style= font-size: large;>Mensajes enviados</h3>
             <br>
           </div>
       </div>
