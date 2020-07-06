@@ -7,7 +7,7 @@ echo "<div class='card'>
         <br>
           <div class='card-body'>
             <h5 class='card-title'>Frase que deseablemente esté en el mensaje:</h5>
-            <input name='search[]' type='text' value='Escribe aquí'>
+            <input name='search[]' type='text' placeholder='Escribe aquí'>
           </div>
         <br>
       </div>
@@ -18,12 +18,8 @@ echo "<div class='card'>
         <br>
           <div class='card-body'>
             <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
+            <input name='search[]' type='text' placeholder='Escribe aquí'>
           </div>
-          <html>
-            <body>
-              <input id='search' name='search[]' type='text' placeholder='Escribe aquí'>
-            </body>
-          </html>
         <br>
       </div>
       <br>";
