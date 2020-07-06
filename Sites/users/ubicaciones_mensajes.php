@@ -47,7 +47,7 @@ echo "$fecha_fin";
     array_push($atributos, $item);
     }
     $fecha = $atributos[0];
-    echo "$fecha"
+    echo "$fecha";
     if (strtotime($fecha) >= strtotime($fecha_inicio) && strtotime($fecha) <= strtotime($fecha_fin)){
         $contador += 1;
         $lat = $atributos[1];
