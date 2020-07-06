@@ -28,22 +28,13 @@ curl_setopt_array($curl, array(
   CURLOPT_ENCODING => "",
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_POSTFIELDS => $prueba,
+  CURLOPT_HTTPHEADER => array('Content-Type:application/json'))
 ));
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
 curl_close($curl);
 
-
-
-require_once "HTTP/Request.php";
-$r = new HttpRequest('https://lovely-glacier-09476.herokuapp.com/text-search', HttpRequest::METH_GET);
-$r->setBody($prueba);
-try {
-    echo $r->send()->getBody();
-} catch (HttpException $ex) {
-    echo $ex;
-}
 
 
 
