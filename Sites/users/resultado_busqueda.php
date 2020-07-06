@@ -35,6 +35,17 @@ $err = curl_error($curl);
 curl_close($curl);
 
 
+
+$r = new HttpRequest('https://lovely-glacier-09476.herokuapp.com/text-search', HttpRequest::METH_GET);
+$r->setBody($prueba)
+try {
+    echo $r->send()->getBody();
+} catch (HttpException $ex) {
+    echo $ex;
+}
+
+
+
 $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 
