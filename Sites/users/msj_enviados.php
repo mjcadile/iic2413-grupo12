@@ -25,7 +25,7 @@ foreach ($usuario as $us) {
   $mensajes = array_slice($response, 1);
   echo "<div class='card'>
       <div class='card-body'>
-        <strong><h3 class='card-title'>Mensajes recibidos</h3><strong>
+        <h3 class='card-title'>Mensajes recibidos</h3>
       </div>
     </div>
     <br>";
