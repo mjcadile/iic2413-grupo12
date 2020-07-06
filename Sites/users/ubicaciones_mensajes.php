@@ -2,7 +2,7 @@
 session_start();
 $fecha_inicio = $_POST["start"];
 $fecha_fin = $_POST["finish"];
-if (strtotime($fecha_inicio) < strtotime($fecha_inicio)){
+if (strtotime($fecha_inicio) >= strtotime($fecha_fin)){
     header('Status: 301 Moved Permanently', false, 301);
     header('Location: formulario_fechas.php');
     header("Connection: close");
