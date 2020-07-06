@@ -21,10 +21,12 @@ $contador = 0;
 $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/messages');
 $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
-echo "<div class='jumbotron'>
-          <h5 class='display-4'>Mensajes recibidos</h5>
-        </div>
-        <br>";
+echo "<div class='card'>
+            <div class='card-body'>
+              <h5 class='card-title'>Mensajes recibidos</h5>
+            </div>
+      </div>
+      <br>";
 foreach($mensajes as $array) {
   $atributos = array();
   foreach ($array as $item) {
