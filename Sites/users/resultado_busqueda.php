@@ -6,8 +6,8 @@ require("../config/conexion.php");
 if (isset($_POST['search'])){
   foreach($_POST['search'] as $selected){
     echo "$selected";
+  }
 }
-
 
 ?>
 <br>
