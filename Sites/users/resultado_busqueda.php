@@ -9,7 +9,7 @@ $data = $_POST['search'];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/text-search",
+  CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/messages",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
