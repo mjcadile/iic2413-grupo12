@@ -4,7 +4,10 @@ include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
 
 
-echo $_POST['search'];
+
+foreach($_POST['search'] as $selected){
+  echo "$selected";
+}
 
 ?>
 <br>
