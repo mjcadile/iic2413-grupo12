@@ -10,6 +10,8 @@ $curl = curl_init();
 $consulta = array('desired' => ['Metallica', 'canción'],
                   'required' => ['Hola']);
 
+echo "$consulta";
+
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/text-search",
