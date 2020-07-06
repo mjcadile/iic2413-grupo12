@@ -41,7 +41,18 @@ echo "$fecha_fin";
   $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
   $response = json_decode($response, true);
   $mensajes = array_slice($response, 1);
-  echo "$mensajes"
+  foreach($mensajes as $array) {
+    $atributos = array();
+    foreach ($array as $item) {
+    array_push($atributos, $item);
+    }
+    $fecha = $atributos[0];
+    echo "$fecha"
+    if (strtotime($fecha) >= strtotime($fecha_inicio) && strtotime($fecha) <= strtotime($fecha_fin)){
+        $contador += 1;
+        $lat = $atributos[1];
+        $long = $atributos[2];
+    }  
   ?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
