@@ -27,7 +27,7 @@ curl_setopt_array($curl, array(
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => $consulta,
+  CURLOPT_POSTFIELDS => $prueba,
 ));
 
 $response = curl_exec($curl);
