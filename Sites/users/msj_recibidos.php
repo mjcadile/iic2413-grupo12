@@ -23,7 +23,7 @@ $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 echo "<div class='card'>
             <div class='card-body'>
-              <h5 class='card-title'>Mensajes recibidos</h5>
+              <strong><h3 class='card-title'>Mensajes recibidos</h3><strong>
             </div>
       </div>
       <br>";
