@@ -3,11 +3,33 @@ session_start();
 include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
 
-
-
 $search = $_POST['search'];
 
-echo "<h1>$search[0]</h1>";
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/text-search",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "Body goes here",
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
+
 
 ?>
 <br>
