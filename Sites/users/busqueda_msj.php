@@ -31,7 +31,18 @@ require("../config/conexion.php");
     echo "<div class='card'>
             <br>
               <div class='card-body'>
-                <h5 class='card-title'>Frase que debe estar en el mensaje:</h5>
+                <h5 class='card-title'>Palabras que no pueden estar en el mensaje:</h5>
+                <input name='search[]' type='text' placeholder='Escribe aquí'>
+              </div>
+            <br>
+          </div>
+          <br>";
+
+
+    echo "<div class='card'>
+            <br>
+              <div class='card-body'>
+                <h5 class='card-title'>id del usuario emisor del mensaje:</h5>
                 <input name='search[]' type='text' placeholder='Escribe aquí'>
               </div>
             <br>

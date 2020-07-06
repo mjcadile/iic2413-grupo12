@@ -5,9 +5,9 @@ require("../config/conexion.php");
 
 
 
-foreach($_POST['search'] as $selected){
-  echo "<h1>$selected</h1>";
-}
+$search = $_POST['search'];
+
+echo "<h1>$search[0]</h1>";
 
 ?>
 <br>
