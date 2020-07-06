@@ -12,7 +12,7 @@ require("../config/conexion.php");
                 <h5 class='card-title'>Una o varias frases que deseablemente estén en el mensaje:</h5>
                 <h7 class='card-title'>Separar las frases con un punto (.)</h7>
               </div>
-              <div class='card-body'>
+              <div>
                 <input name='search[]' type='text' placeholder='Escribe aquí'>
               </div>
             <br>
