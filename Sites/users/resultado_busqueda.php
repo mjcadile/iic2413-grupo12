@@ -25,10 +25,12 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
-$response = array($response);
-echo "<div class='card-body'>
-            <h7 class='card-title'>$response</h7>
-          </div>";
+$response = json_decode($response);
+echo "<div class='card'>
+      <br>
+        <h7 class='card-title'>$response</h7>
+      <br>
+      </div><br>";
 
 curl_close($curl);
 
