@@ -24,7 +24,7 @@ foreach ($usuario as $us) {
   $response = json_decode($response, true);
   $mensajes = array_slice($response, 1);
   echo "<div class='jumbotron'>
-          <h1 class='display-4'>Mensajes recibidos</h1>
+          <h5 class='display-4'>Mensajes recibidos</h5>
         </div>
         <br>";
   foreach($mensajes as $array) {
