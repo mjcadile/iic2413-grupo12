@@ -28,7 +28,7 @@ curl_setopt_array($curl, array(
   CURLOPT_ENCODING => "",
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_POSTFIELDS => $prueba,
-  CURLOPT_HTTPHEADER => array('Content-Type:application/json'))
+  CURLOPT_HTTPHEADER => array('Content-Type:application/json'),
 ));
 
 $response = curl_exec($curl);
