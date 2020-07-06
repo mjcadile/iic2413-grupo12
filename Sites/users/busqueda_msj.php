@@ -35,9 +35,8 @@ echo "<div class='card'>
 
 
 ?>
-<form action='busqueda_msj.php' method='GET'>
-  <input id='search' name='search' type='text' placeholder='Type here'>
-  <input id='submit' type='submit' value='Search'>
+<form action='resultado_busqueda.php' method='GET'>
+  <input id='submit' type='submit' value='Buscar'>
 </form>
 <br>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
