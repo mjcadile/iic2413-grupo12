@@ -31,7 +31,7 @@ if (strtotime($fecha_inicio) >= strtotime($fecha_fin)){
     <img src="https://wallpaperaccess.com/full/2048343.jpg" id="bg" alt="">
     <br>
 
-    <div id="mapid" style="height: 500px; margin-right: 100px; margin-left: 100px; "></div>
+    <div id="mapid" style="height: 500px; margin-right: 100px; margin-left: 100px;"></div>
     <br>
 
     <?php 
@@ -46,12 +46,11 @@ if (strtotime($fecha_inicio) >= strtotime($fecha_fin)){
     crossorigin=""></script>
 
     <script> 
-        var map = L.map('mapid').setView([51.505, -0.09], 7); 
+        var map = L.map('mapid').setView([51.505, -0.09], 3); 
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
-
 
         <?php
             foreach($mensajes as $array) {
