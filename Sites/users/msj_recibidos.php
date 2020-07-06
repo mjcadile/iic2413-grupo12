@@ -19,7 +19,6 @@ $usuarios = $result_users -> fetchAll();
 
 $contador = 0;
 $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/messages');
-echo $response;
 $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 foreach($mensajes as $array) {
