@@ -10,7 +10,11 @@ $curl = curl_init();
 $consulta = array('desired' => ['Metallica', 'canción'],
                   'required' => ['Hola']);
 
-echo "$consulta";
+echo "<div class='card text-center'>
+        <div class='card-header'>
+          $consulta
+        </div>
+      </div>";
 
 
 curl_setopt_array($curl, array(
