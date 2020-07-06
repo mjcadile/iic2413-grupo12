@@ -27,13 +27,12 @@ echo "<div class='card text-center'>
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/text-search",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
+  CURLOPT_ENCODING => "json",
   CURLOPT_MAXREDIRS => 10,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_POSTFIELDS => $prueba,
-  CURLOPT_HTTPHEADER => array(),
+  CURLOPT_POSTFIELDS => $consulta,
 ));
 
 $response = curl_exec($curl);
