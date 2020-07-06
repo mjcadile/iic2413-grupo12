@@ -6,7 +6,7 @@ require("../config/conexion.php");
 echo "<div class='card'>
       <br>
           <div class='card-body'>
-            <h1 class='card-title'>Frase que deseablemente esté en el mensaje</h1>
+            <h4 class='card-title'>Frase que deseablemente esté en el mensaje</h4>
           </div>
           <br>
       </div>
