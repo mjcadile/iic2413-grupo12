@@ -8,7 +8,7 @@ $data = $_POST['search'];
 
 $curl = curl_init();
 $consulta = array('desired' => ['Metallica', 'canción'],
-                  'required' => ['Hola'])
+                  'required' => ['Hola']);
 
 
 curl_setopt_array($curl, array(
