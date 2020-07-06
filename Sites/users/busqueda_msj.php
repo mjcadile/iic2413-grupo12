@@ -4,23 +4,22 @@ include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
 
 echo "<div class='card'>
-      <br>
+        <br>
           <div class='card-body'>
             <h4 class='card-title'>Frase que deseablemente esté en el mensaje</h4>
           </div>
-          <br>
+          <html>
+            <body>
+              <form action='busqueda_msj.php' method='GET'>
+                <input id='search' name='search' type='text' placeholder='Type here'>
+                <input id='submit' type='submit' value='Search'>
+              </form>
+            </body>
+          </html>
+        <br>
       </div>
       <br>";
 
-echo "<html>
-        <body>
-
-          <form action='busqueda_msj.php' method='GET'>
-            <input id='search' name='search' type='text' placeholder='Type here'>
-            <input id='submit' type='submit' value='Search'>
-          </form>
-        </body>
-      </html>";
 
 ?>
 <br>
