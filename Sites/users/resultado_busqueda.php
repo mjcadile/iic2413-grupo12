@@ -17,8 +17,8 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_POSTFIELDS => "{
-    'desired': ['hola']
-  }",
+                          'desired': ['Hola']
+                         }",
   CURLOPT_HTTPHEADER => array(),
 ));
 
@@ -30,6 +30,11 @@ curl_close($curl);
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
+  foreach ($response as $row) {
+    echo "<div class='card-body'>
+            <h7 class='card-title'>$row</h7>
+          </div>"
+  }
   echo $response;
 }
 
