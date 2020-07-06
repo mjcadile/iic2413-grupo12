@@ -9,7 +9,8 @@ require("../config/conexion.php");
     echo "<div class='card'>
             <br>
               <div class='card-body'>
-                <h5 class='card-title'>Frase que deseablemente esté en el mensaje:</h5>
+                <h5 class='card-title'>Una o varias frases que deseablemente estén en el mensaje:</h5>
+                <h7 class='card-body'>Separar las frases con un punto (.)</h7>
                 <input name='search[]' type='text' placeholder='Escribe aquí'>
               </div>
             <br>
