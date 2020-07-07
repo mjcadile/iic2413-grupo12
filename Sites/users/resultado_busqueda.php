@@ -32,8 +32,6 @@ if (is_numeric($userId) == true){
 
 $prueba = json_encode($consulta);
 
-echo $prueba;
-
 
 $curl = curl_init();
 
@@ -99,7 +97,7 @@ if ($aux == true){
           <hr class='my-4'>
           <p>Haz click aquí para utilizar nuestro servicio de búsqueda de mensajes.</p>
           <p class='lead'>
-            <a class='btn btn-primary btn-lg' href='busqueda_msj.php' role='button'>Enviar mensajes</a>
+            <a class='btn btn-primary btn-lg' href='busqueda_msj.php' role='button'>Buscar mensajes</a>
             <a class='btn btn-primary btn-lg' href='../index.php' role='button'>Home</a>
           </p>
         </div>
