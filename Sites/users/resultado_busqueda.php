@@ -15,7 +15,7 @@ foreach ($desired as $key) {
 
 
 $curl = curl_init();
-$consulta = array("desired" => ["Metallica"],
+$consulta = array("desired" => $desired,
                   "required" => ["canción"]);
 
 $prueba = json_encode($consulta);
