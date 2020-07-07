@@ -14,20 +14,20 @@ $userId = $data[3];
 
 $consulta = array();
 
-if (is_null($desired) == false){
+if ($desired != ""){
   $consulta["desired"] = $desired;
 }
 
-if (is_null($required) == false){
+if ($required != ""){
   $consulta["required"] = $required;
 }
 
-if (is_null($forbidden) == false){
+if ($forbidden != ""){
   $consulta["forbidden"] = $forbidden;
 }
 
 if (is_numeric($userId) == true){
-  $consulta["userId"] = $userId;
+  $consulta["userId"] = intval($userId);
 }
 
 $prueba = json_encode($consulta);
