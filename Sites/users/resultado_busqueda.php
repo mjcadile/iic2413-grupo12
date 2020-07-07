@@ -15,6 +15,9 @@ $userId = $data[3];
 if (is_int($userId) == false){
   $userId = 0;
 }
+if (is_null($userId) == true){
+  $userId = 0;
+}
 
 
 $curl = curl_init();
