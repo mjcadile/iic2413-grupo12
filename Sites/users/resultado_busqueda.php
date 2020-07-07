@@ -12,37 +12,30 @@ $required = explode(".", $data[1]);
 $forbidden = explode(" ", $data[2]);
 $userId = $data[3];
 
-if (is_numeric($userId) == false){
-  $userId = 0;
-}
-if (is_null($userId) == true){
-  $userId = 0;
-}
+$consulta = array();
 
-if (is_null($desired) == true){
-  $desired = array();
+if (is_null($desired) == false){
+  array_push($consulta, "desired" => $desired);
 }
 
-if (is_null($required) == true){
-  $required = array();
+if (is_null($required) == false){
+  array_push($consulta, "required" => $required);
 }
 
-if (is_null($forbidden) == true){
-  $forbidden = array();
+if (is_null($forbidden) == false){
+  array_push($consulta, "forbidden" => $forbidden);
 }
 
-
-$curl = curl_init();
-$consulta = array("desired" => $desired,
-                  "required" => $required,
-                  "forbidden" => $forbidden,
-                  "userId" => intval($userId)
-                 );
+if (is_numeric($userId) == true){
+  array_push($consulta, "userId" => $userId)
+}
 
 $prueba = json_encode($consulta);
 
 echo $prueba;
 
+
+$curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/text-search",
