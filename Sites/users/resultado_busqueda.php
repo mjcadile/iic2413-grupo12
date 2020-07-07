@@ -41,6 +41,8 @@ $consulta = array("desired" => $desired,
 
 $prueba = json_encode($consulta);
 
+echo $prueba;
+
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://lovely-glacier-09476.herokuapp.com/text-search",
