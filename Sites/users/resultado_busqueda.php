@@ -25,7 +25,7 @@ $curl = curl_init();
 $consulta = array("desired" => $desired,
                   "required" => $required,
                   "forbidden" => $forbidden,
-                  "userId" => $userId
+                  "userId" => int($userId)
                  );
 
 $prueba = json_encode($consulta);
