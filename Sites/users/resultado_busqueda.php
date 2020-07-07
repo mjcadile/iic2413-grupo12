@@ -19,6 +19,7 @@ if (is_null($userId) == true){
   $userId = 0;
 }
 
+echo $userId;
 
 $curl = curl_init();
 $consulta = array("desired" => $desired,
