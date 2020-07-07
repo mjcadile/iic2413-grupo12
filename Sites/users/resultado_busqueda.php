@@ -7,20 +7,14 @@ require("../config/conexion.php");
 
 $data = $_POST['search'];
 
+echo $data[0];
+
 
 $curl = curl_init();
 $consulta = array("desired" => ["Metallica"],
                   "required" => ["canción"]);
 
 $prueba = json_encode($consulta);
-
-echo "<div class='card text-center'>
-        <div class='card-header'>
-          $prueba
-        </div>
-      </div>";
-
-
 
 
 curl_setopt_array($curl, array(
@@ -35,8 +29,6 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err = curl_error($curl);
 curl_close($curl);
-
-
 
 
 $response = json_decode($response, true);
