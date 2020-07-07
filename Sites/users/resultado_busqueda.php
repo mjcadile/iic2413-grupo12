@@ -54,11 +54,13 @@ curl_close($curl);
 $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 
+$aux = true;
 
 if ($err) {
   echo "cURL Error #:" . $err;
 } else {
   foreach($mensajes as $array) {
+    $aux = false;
     $atributos = array();
     foreach ($array as $item) {
       array_push($atributos, $item);
@@ -89,6 +91,20 @@ if ($err) {
   }
 }
 
+
+if ($aux == true){
+  echo "<div class='jumbotron'>
+          <h1 class='display-4'>¡No se obtuvieron mensajes!</h1>
+          <p class='lead'>Lo sentimos, intenta otra búsqueda.</p>
+          <hr class='my-4'>
+          <p>Haz click aquí para utilizar nuestro servicio de búsqueda de mensajes.</p>
+          <p class='lead'>
+            <a class='btn btn-primary btn-lg' href='busqueda_msj.php' role='button'>Enviar mensajes</a>
+            <a class='btn btn-primary btn-lg' href='../index.php' role='button'>Home</a>
+          </p>
+        </div>
+        <br>";
+}
 
 ?>
 <br>
