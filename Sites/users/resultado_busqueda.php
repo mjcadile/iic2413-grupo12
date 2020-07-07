@@ -20,15 +20,15 @@ if (is_null($userId) == true){
 }
 
 if (is_null($desired) == true){
-  $desired = "";
+  $desired = array();
 }
 
 if (is_null($required) == true){
-  $required = "";
+  $required = array();
 }
 
 if (is_null($forbidden) == true){
-  $forbidden = "";
+  $forbidden = array();
 }
 
 
