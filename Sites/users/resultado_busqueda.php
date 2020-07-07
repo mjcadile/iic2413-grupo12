@@ -12,7 +12,7 @@ $required = explode(".", $data[1]);
 $forbidden = explode(" ", $data[2]);
 $userId = $data[3];
 
-if (is_int($userId) == false){
+if (is_numeric($userId) == false){
   $userId = 0;
 }
 if (is_null($userId) == true){
