@@ -12,7 +12,7 @@ $required = explode(".", $data[1]);
 $forbidden = explode(" ", $data[2]);
 $userId = $data[3];
 
-if (not is_int($userId)){
+if (is_int($userId) == false){
   $userId = 0;
 }
 
@@ -20,7 +20,8 @@ if (not is_int($userId)){
 $curl = curl_init();
 $consulta = array("desired" => $desired,
                   "required" => $required,
-                  "forbidden" => $forbidden
+                  "forbidden" => $forbidden,
+                  "userId" => $userId
                  );
 
 $prueba = json_encode($consulta);
