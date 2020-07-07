@@ -9,11 +9,19 @@ $data = $_POST['search'];
 
 $desired = explode(".", $data[0]);
 $required = explode(".", $data[1]);
+$forbidden = explode(" ", $data[2]);
+$userId = $data[3];
+
+if (not is_int($userId)){
+  $userId = 0;
+}
 
 
 $curl = curl_init();
 $consulta = array("desired" => $desired,
-                  "required" => $required);
+                  "required" => $required,
+                  "forbidden" => $forbidden
+                 );
 
 $prueba = json_encode($consulta);
 
