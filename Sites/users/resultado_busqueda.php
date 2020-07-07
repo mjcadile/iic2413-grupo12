@@ -19,7 +19,18 @@ if (is_null($userId) == true){
   $userId = 0;
 }
 
-echo $userId;
+if (is_null($desired) == true){
+  $desired = "";
+}
+
+if (is_null($required) == true){
+  $required = "";
+}
+
+if (is_null($forbidden) == true){
+  $forbidden = "";
+}
+
 
 $curl = curl_init();
 $consulta = array("desired" => $desired,
