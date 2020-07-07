@@ -15,19 +15,19 @@ $userId = $data[3];
 $consulta = array();
 
 if (is_null($desired) == false){
-  array_push($consulta, "desired" => $desired);
+  $consulta["desired"] = $desired;
 }
 
 if (is_null($required) == false){
-  array_push($consulta, "required" => $required);
+  $consulta["required"] = $required;
 }
 
 if (is_null($forbidden) == false){
-  array_push($consulta, "forbidden" => $forbidden);
+  $consulta["forbidden"] = $forbidden;
 }
 
 if (is_numeric($userId) == true){
-  array_push($consulta, "userId" => $userId)
+  $consulta["userId"] = $userId;
 }
 
 $prueba = json_encode($consulta);
