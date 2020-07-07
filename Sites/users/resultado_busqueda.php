@@ -14,15 +14,15 @@ $userId = $data[3];
 
 $consulta = array();
 
-if ($desired != ""){
+if ($desired != [""]){
   $consulta["desired"] = $desired;
 }
 
-if ($required != ""){
+if ($required != [""]){
   $consulta["required"] = $required;
 }
 
-if ($forbidden != ""){
+if ($forbidden != [""]){
   $consulta["forbidden"] = $forbidden;
 }
 
