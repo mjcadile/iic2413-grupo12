@@ -7,7 +7,11 @@ require("../config/conexion.php");
 
 $data = $_POST['search'];
 
-echo $data[0];
+$desired = explode(".", $data[0]);
+
+foreach ($desired as $key) {
+  echo $key;
+}
 
 
 $curl = curl_init();
