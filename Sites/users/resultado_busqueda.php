@@ -8,15 +8,12 @@ require("../config/conexion.php");
 $data = $_POST['search'];
 
 $desired = explode(".", $data[0]);
-
-foreach ($desired as $key) {
-  echo $key;
-}
+$required = explode(".", $data[1]);
 
 
 $curl = curl_init();
 $consulta = array("desired" => $desired,
-                  "required" => ["canción"]);
+                  "required" => $required);
 
 $prueba = json_encode($consulta);
 
