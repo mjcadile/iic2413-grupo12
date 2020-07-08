@@ -2,35 +2,6 @@
 session_start();
 include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
-?>
-
-<form action='resultado_busqueda.php' method='post'>
-  <?php
-    echo "<div class='card'>
-            <br>
-              <div class='card-body'>
-                <h5 class='card-title'>Escriba el contenido del mensaje:</h5>
-              </div>
-              <div class='card-body'>
-                <input name='search[]' type='text' placeholder='Escribe aquí'>
-              </div>
-            <br>
-          </div>
-          <br>";
-
-    echo "<div class='card'>
-          <br>
-            <div class='card-body'>
-              <h5 class='card-title'>Escriba el ID del destinatario:</h5>
-            </div>
-            <div class='card-body'>
-              <input name='search[]' type='text' placeholder='Escribe aquí'>
-            </div>
-          <br>
-        </div>
-        <br>";
-
-
 
 $fecha = date("Y-m-d");
 $lat = -33.42;
@@ -65,6 +36,39 @@ curl_close($curl);
 
 $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
+?>
+
+<form action='resultado_busqueda.php' method='post'>
+  <?php
+
+  
+    echo "<div class='card'>
+            <br>
+              <div class='card-body'>
+                <h5 class='card-title'>Escriba el contenido del mensaje:</h5>
+              </div>
+              <div class='card-body'>
+                <input name='search[]' type='text' placeholder='Escribe aquí'>
+              </div>
+            <br>
+          </div>
+          <br>";
+
+    echo "<div class='card'>
+          <br>
+            <div class='card-body'>
+              <h5 class='card-title'>Escriba el ID del destinatario:</h5>
+            </div>
+            <div class='card-body'>
+              <input name='search[]' type='text' placeholder='Escribe aquí'>
+            </div>
+          <br>
+        </div>
+        <br>";
+
+
+
+
 ?>
 
 
