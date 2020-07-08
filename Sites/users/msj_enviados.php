@@ -68,7 +68,9 @@ foreach ($usuario as $us) {
             <hr class='my-4'>
             <p>Haz click aquí para utilizar nuestro servicio de mensajería.</p>
             <p class='lead'>
-              <a class='btn btn-primary btn-lg' href='/enviar_msj.php' role='button'>Enviar mensajes</a>
+              <a class='btn btn-primary btn-lg' href='enviar_msj.php' role='button'>Enviar mensajes</a>
+              <a class='btn btn-primary btn-lg' href='users/enviar_msj.php' role='button'>Enviar mensajes 2</a>
+              <a class='btn btn-primary btn-lg' href='/enviar_msj.php' role='button'>Enviar mensajes 3</a>
               <a class='btn btn-primary btn-lg' href='../index.php' role='button'>Home</a>
             </p>
           </div>
