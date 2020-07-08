@@ -25,9 +25,7 @@ $prueba = array(
     "lat" =>$lat,
     "long" => $long,
     "message" => $mensaje,
-    "mid"=> 1300,
-    "receptant" => $receptor,
-    "sender" => $uid); 
+    "receptant" => (int)$receptor); 
 
 $json = json_encode($prueba); 
 
@@ -51,7 +49,7 @@ $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 ?>
 
-<h1> <?php echo $response ?> </h1>  
+<h1 div class='card > <?php echo $mensajes ?> </h1>  
 
 
 
