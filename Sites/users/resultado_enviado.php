@@ -46,18 +46,18 @@ curl_close($curl);
 
 
 $response = json_decode($response, true);
-$mensajes = array_slice($response, 1);
 ?>
 
 <style>
-
 .sansserif {
-  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-}
-
-}
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+    }
 </style>
-<h1 div class="sansserif" class='card' > Mensaje guardado enviado correctamente  </h1>  
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="w3-container w3-black">
+<h1 class="sansserif"  > Mensaje  enviado correctamente </h1> 
+</div>
 
 
 
