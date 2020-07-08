@@ -3,6 +3,18 @@ session_start();
 include('../templates/header_sin_searchbox_login_msj.html');
 require("../config/conexion.php");
 
+$username = $_SESSION["user"];
+$query_usuario = "SELECT Usuarios.uid, Usuarios.nombre_usuario FROM Usuarios WHERE username = '$username';";
+$result_user = $db_19 -> prepare($query_usuario);
+$result_user -> execute();
+$usuario = $result_user -> fetchAll(); 
+foreach ($usuario as $us) {
+    $uid = $us[0];
+    $nombre = $us[1];
+
+
+$receptor = $_POST['r_id'];
+$mensaje = $_POST['message'];
 $fecha = date("Y-m-d");
 $lat = -33.42;
 $long = -70.62;
@@ -12,7 +24,7 @@ $prueba = array(
     "lat" =>$lat,
     "long" => $long,
     "message" => $mensaje,
-    "mid"=> $n_messages + 1,
+    "mid"=> 1300,
     "receptant" => $receptor,
     "sender" => $uid); 
 
@@ -38,38 +50,8 @@ $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 ?>
 
-<form action='resultado_busqueda.php' method='post'>
-  <?php
+<h1> <?php echo $response ?></h1>  
 
-  
-    echo "<div class='card'>
-            <br>
-              <div class='card-body'>
-                <h5 class='card-title'>Escriba el contenido del mensaje:</h5>
-              </div>
-              <div class='card-body'>
-                <input name='search[]' type='text' placeholder='Escribe aquí'>
-              </div>
-            <br>
-          </div>
-          <br>";
-
-    echo "<div class='card'>
-          <br>
-            <div class='card-body'>
-              <h5 class='card-title'>Escriba el ID del destinatario:</h5>
-            </div>
-            <div class='card-body'>
-              <input name='search[]' type='text' placeholder='Escribe aquí'>
-            </div>
-          <br>
-        </div>
-        <br>";
-
-
-
-
-?>
 
 
 
