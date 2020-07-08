@@ -25,7 +25,8 @@ $prueba = array(
     "lat" =>$lat,
     "long" => $long,
     "message" => $mensaje,
-    "receptant" => (int)$receptor); 
+    "receptant" => (int)$receptor,
+    "sender" => $uid); 
 
 $json = json_encode($prueba); 
 
