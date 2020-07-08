@@ -50,15 +50,11 @@ $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 ?>
 
-<h1> <?php echo $response ?></h1>  
+<h1> <?php echo $response; ?></h1>  
 
 
 
 
-
-
-<input type='submit' value='Enviar'>
-</form>
 <br>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
