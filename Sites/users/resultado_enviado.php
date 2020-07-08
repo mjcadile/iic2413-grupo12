@@ -49,7 +49,15 @@ $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 ?>
 
-<h1 div class='card > <?php echo $mensajes ?> </h1>  
+<style>
+
+.sansserif {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+}
+</style>
+<h1 div class="sansserif" class='card' > Mensaje guardado enviado correctamente  </h1>  
 
 
 
