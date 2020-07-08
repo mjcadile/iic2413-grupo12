@@ -11,6 +11,7 @@ $usuario = $result_user -> fetchAll();
 foreach ($usuario as $us) {
     $uid = $us[0];
     $nombre = $us[1];
+}
 
 
 $receptor = $_POST['r_id'];
@@ -50,7 +51,8 @@ $response = json_decode($response, true);
 $mensajes = array_slice($response, 1);
 ?>
 
-<h1> <?php echo $response; ?></h1>  
+<h1> <?php echo $response ?> </h1>  
+
 
 
 
