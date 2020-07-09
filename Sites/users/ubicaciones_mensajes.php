@@ -36,7 +36,7 @@ if (strtotime($fecha_inicio) >= strtotime($fecha_fin)){
 
     <?php 
     $contador = 0;
-    $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/users/'.$uid);
+    $response = file_get_contents('https://lovely-glacier-09476.herokuapp.com/messages');
     $response = json_decode($response, true);
     $mensajes = array_slice($response, 1);  
     ?>
@@ -56,10 +56,12 @@ if (strtotime($fecha_inicio) >= strtotime($fecha_fin)){
             foreach($mensajes as $array) {
                 $atributos = array();
                 foreach ($array as $item) {
-                array_push($atributos, $item);
+                    array_push($atributos, $item);
                 }
                 $fecha = $atributos[0];
-                if (strtotime($fecha) >= strtotime($fecha_inicio) && strtotime($fecha) <= strtotime($fecha_fin)){
+                $sender = $atributos[6];
+                if (strtotime($fecha) >= strtotime($fecha_inicio) && strtotime($fecha) <= strtotime($fecha_fin) 
+                    && $uid == $sender){
                     $contador += 1;
                     $lat = $atributos[1];
                     $long = $atributos[2];
