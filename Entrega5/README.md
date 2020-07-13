@@ -10,7 +10,7 @@ Usuario: JessicaGraham
 Contraseña: JessicaGraham123
 
 ## 1. Atributos de mensajes recibidos
-
+El archivo correspondiente se encuentra en la carpeta users, "msj_recibidos.php". Se consulta por todos los mensajes de la api y se filtran aquellos donde el id de "receptant" coincide con el de usuario actualmente loggeado. En caso de que no existan mensajes recibidos, se despliega un aviso indicándolo.
 
 ## 2. Atributos de mensajes enviados
 El archivo correspondiente se encuentra en la carpeta users, "msj_enviados.php". Se consulta por todos los mensajes de la api y se filtran aquellos donde el id de "sender" coincide con el de usuario actualmente loggeado. En caso de que no existan mensajes enviados, se despliega un aviso indicándolo.
@@ -26,7 +26,7 @@ Para buscar mensajes hay que ingresar en cada espacio el filtro correspondiente.
 
 
 ## 5. Visualización mapa
-
+Para ver la ubicación del usuario mediante la ubicación de sus mensajes emitidos, se debe ingresar en el navbar al dropdown 'messenger' y seleccionar 'Mapa', en el cual se debe ingresar la fecha de inicio y la de fin entre los cuales se quiere ver la ubicacion. En caso de que la fecha de fin este antes que la de inicio, la pagina solo se recargara, volviendo a mostrar el formulario y en el caso de no haber mensajes entre las fechas, se visualizara el mapa, pero abajo saldrá un mensaje que no se envio mensaje entre las fechas seleccionadas, en caso contrario en el mapa habrá un marcador que indique el lugar en el que estuvo el usuario. 
 
 ## Otras consideraciones
 
