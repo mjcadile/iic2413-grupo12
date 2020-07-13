@@ -28,8 +28,4 @@ Para buscar mensajes hay que ingresar en cada espacio el filtro correspondiente.
 ## 5. Visualización mapa
 Para ver la ubicación del usuario mediante la ubicación de sus mensajes emitidos, se debe ingresar en el navbar al dropdown 'messenger' y seleccionar 'Mapa', en el cual se debe ingresar la fecha de inicio y la de fin entre los cuales se quiere ver la ubicacion. En caso de que la fecha de fin este antes que la de inicio, la pagina solo se recargara, volviendo a mostrar el formulario y en el caso de no haber mensajes entre las fechas, se visualizara el mapa, pero abajo saldrá un mensaje que no se envio mensaje entre las fechas seleccionadas, en caso contrario en el mapa habrá un marcador que indique el lugar en el que estuvo el usuario. 
 
-## Otras consideraciones
-
-
-
 
