@@ -13,7 +13,7 @@ Contraseña: JessicaGraham123
 
 
 ## 2. Atributos de mensajes enviados
-
+El archivo correspondiente se encuentra en la carpeta users, "msj_enviados.php". Se consulta por todos los mensajes de la api y se filtran aquellos donde el id de "sender" coincide con el de usuario actualmente loggeado. En caso de que no existan mensajes enviados, se despliega un aviso indicándolo.
 
 ## 3. Enviar mensajes
 
